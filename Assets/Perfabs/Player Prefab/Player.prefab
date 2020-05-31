@@ -161,9 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e27203b0ec414f4194118e21cec9432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 100
-  jumpForce: 300
-  maxVelocity: 4
+  moveForce: 70
+  jumpForce: 250
+  maxVelocity: 2
   grounded: 0
   minX: -13
   maxX: 82
