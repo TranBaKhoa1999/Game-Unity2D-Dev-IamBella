@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera Script\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Controller Script\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\Player Script\Moving.cs" />
      <Compile Include="Assets\Scripts\Train Script\Train.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
