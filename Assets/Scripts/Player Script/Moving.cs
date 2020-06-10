@@ -77,6 +77,7 @@ public class Moving : MonoBehaviour
             if(grounded){
                 grounded =false;
                 forceY= jumpForce;
+                FindObjectOfType<AudioManager>().Play("jump");
             }
         }
         myBody.AddForce( new Vector2(forceX,forceY));
