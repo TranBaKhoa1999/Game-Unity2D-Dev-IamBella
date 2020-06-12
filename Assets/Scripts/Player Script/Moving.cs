@@ -78,6 +78,12 @@ public class Moving : MonoBehaviour
                 grounded =false;
                 forceY= jumpForce;
                 FindObjectOfType<AudioManager>().Play("jump");
+  //-------------------------------------------  Test Save + money counter -----------------------
+                MainMenuController.Money+=10;
+                
+                MainMenuController.level2=true;
+                MainMenuController.SaveData();
+ // ------------------------------------------- End test -------------------------
             }
         }
         myBody.AddForce( new Vector2(forceX,forceY));
