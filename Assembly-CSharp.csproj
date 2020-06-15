@@ -60,14 +60,12 @@
      <Compile Include="Assets\Scripts\Controller Script\LevelMenuController.cs" />
      <Compile Include="Assets\Scripts\Controller Script\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\Player Script\Moving.cs" />
-     <Compile Include="Assets\Scripts\Save Data Script\GameData.cs" />
      <Compile Include="Assets\Scripts\Save Data Script\Save.cs" />
-     <Compile Include="Assets\Scripts\Save Data Script\SaveScript.cs" />
      <Compile Include="Assets\Scripts\Shop Script\MoneyCounter.cs" />
      <Compile Include="Assets\Scripts\Train Script\Train.cs" />
-     <Compile Include="Assets\Scripts\UI Script\BlinkText.cs" />
-     <Compile Include="Assets\Scripts\UI Script\ScrollingTextManager.cs" />
-     <Compile Include="Assets\Scripts\UI Script\SelectLevel.cs" />
+     <Compile Include="Assets\Sprites\UI Script\BlinkText.cs" />
+     <Compile Include="Assets\Sprites\UI Script\ScrollingTextManager.cs" />
+     <Compile Include="Assets\Sprites\UI Script\SelectLevel.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

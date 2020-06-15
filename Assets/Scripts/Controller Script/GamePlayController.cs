@@ -9,6 +9,8 @@ public class GamePlayController : MonoBehaviour
     private Button resumeButton;
     [SerializeField]
     private GameObject blurCanvas;
+    [SerializeField]
+    private GameObject shopPanel;
     public void PauseGame(){
         if(pausePanel.activeSelf==false){
             Time.timeScale = 0f;
@@ -27,10 +29,16 @@ public class GamePlayController : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
         blurCanvas.SetActive(false);
+        shopPanel.SetActive(false);
     }
 
     public void BackToMenu(){
         Time.timeScale = 1f;
         Application.LoadLevel("LevelMenu");
+    }
+    public void Shop(){
+        Time.timeScale = 0f;
+        shopPanel.SetActive(true);
+        blurCanvas.SetActive(true);
     }
 }
