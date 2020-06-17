@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Controller Script\GamePlayController.cs" />
      <Compile Include="Assets\Scripts\Controller Script\LevelMenuController.cs" />
      <Compile Include="Assets\Scripts\Controller Script\MainMenuController.cs" />
+     <Compile Include="Assets\Scripts\Enemy Script\Gobin.cs" />
      <Compile Include="Assets\Scripts\Player Script\Moving.cs" />
      <Compile Include="Assets\Scripts\Save Data Script\Save.cs" />
      <Compile Include="Assets\Scripts\Shop Script\MoneyCounter.cs" />

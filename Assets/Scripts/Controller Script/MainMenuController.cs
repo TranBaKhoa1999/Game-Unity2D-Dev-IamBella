@@ -10,13 +10,15 @@ public class MainMenuController : MonoBehaviour
     }
     public static bool level3 { get ; set ; }=false;
     public static bool level2{ get ; set ; }=false;
+    public static int Shield;
     public static int Money;
      public static void SaveData() {
          string savePath = Application.persistentDataPath + "/gamesave.dat";
          var save = new Save(){
            Level2 = level2,
            Level3 = level3,
-           money = Money
+           money = Money,
+           shield = Shield
         };
 
         var binaryFormatter = new BinaryFormatter();
@@ -42,10 +44,13 @@ public class MainMenuController : MonoBehaviour
             level2 = save.Level2;
             level3= save.Level3;
             Money = save.money;
+            Shield = save.shield;
             Debug.Log("Loaded");
         }
         else{
             Debug.Log("Load Fail");
+            Money = 5000;
+            Shield = 3;
         }
     }
      private void Awake() {

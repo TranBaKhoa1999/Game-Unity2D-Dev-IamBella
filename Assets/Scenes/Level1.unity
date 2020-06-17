@@ -6403,7 +6403,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 842892383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305462835}
+        m_MethodName: BuyShield
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &842892383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8135,6 +8146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoneyTxt: {fileID: 935183605}
   MoneyTxt2: {fileID: 1115890242}
+  Shieldtxt: {fileID: 1241586494}
 --- !u!1 &1388933553
 GameObject:
   m_ObjectHideFlags: 0
