@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class LevelMenuController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -33,13 +34,13 @@ public class LevelMenuController : MonoBehaviour
         }
     }
     public void BackButtonOnClick(){
-        Application.LoadLevel("MainMenu");
+         SceneManager.LoadScene("MainMenu");
     }
     public void PlayLevel1Onlick(){
-        Application.LoadLevel("Level1");
+         SceneManager.LoadScene("Level1");
     }
     public void PlayLevel2Onlick(){
-        Application.LoadLevel("Level2");
+         SceneManager.LoadScene("Level2");
     }
     
 }

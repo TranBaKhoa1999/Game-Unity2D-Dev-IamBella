@@ -30,6 +30,11 @@ public class Moving : MonoBehaviour
     void FixedUpdate()
     {
             PlayerMoveKeyboard();
+//             if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && 
+//    anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+// {
+//     anim.SetBool("Attack", false);
+// }
     }
     void PlayerMoveKeyboard(){
         float forceX = 0f;
@@ -73,8 +78,11 @@ public class Moving : MonoBehaviour
         else if(h==0){
             anim.SetBool("Run",false);
         }
-        if(Input.GetKey (KeyCode.Space)){
+
+        
+        if(Input.GetKey (KeyCode.Space)){ // nhảy
             if(grounded){
+                //anim.SetTrigger("Jump");
                 grounded =false;
                 forceY= jumpForce;
                 FindObjectOfType<AudioManager>().Play("jump");
@@ -85,6 +93,9 @@ public class Moving : MonoBehaviour
                 MainMenuController.SaveData();
  // ------------------------------------------- End test -------------------------
             }
+        }
+        if(Input.GetKey (KeyCode.Return)){
+            //anim.SetBool("Attack",true);
         }
         myBody.AddForce( new Vector2(forceX,forceY));
         //  limited move range

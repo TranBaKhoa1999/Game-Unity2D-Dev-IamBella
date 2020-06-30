@@ -67,4 +67,7 @@ public class Gobin : MonoBehaviour
         }
 
     }
+    void OnTriggerExit2D(Collider2D target){
+            anim.SetBool("Attack",false);
+    }
 }

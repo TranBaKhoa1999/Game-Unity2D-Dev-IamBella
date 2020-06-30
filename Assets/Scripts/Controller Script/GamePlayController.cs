@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GamePlayController : MonoBehaviour
 {
     [SerializeField]
@@ -34,7 +35,7 @@ public class GamePlayController : MonoBehaviour
 
     public void BackToMenu(){
         Time.timeScale = 1f;
-        Application.LoadLevel("LevelMenu");
+         SceneManager.LoadScene("LevelMenu");
     }
     public void Shop(){
         Time.timeScale = 0f;

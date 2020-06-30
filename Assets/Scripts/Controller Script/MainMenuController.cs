@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     public void PlayGame(){
-        Application.LoadLevel("LevelMenu");
+         SceneManager.LoadScene("LevelMenu");
     }
     public static bool level3 { get ; set ; }=false;
     public static bool level2{ get ; set ; }=false;
