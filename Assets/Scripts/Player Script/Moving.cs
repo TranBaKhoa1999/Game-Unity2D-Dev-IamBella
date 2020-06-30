@@ -30,11 +30,16 @@ public class Moving : MonoBehaviour
     void FixedUpdate()
     {
             PlayerMoveKeyboard();
-//             if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && 
-//    anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
-// {
-//     anim.SetBool("Attack", false);
-// }
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") && 
+   anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+{
+    anim.SetBool("isPhysicalAttack", false);
+}
+if(anim.GetCurrentAnimatorStateInfo(0).IsName("MagicalAttack") && 
+   anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+{
+    anim.SetBool("isMagicalAttack", false);
+}
     }
     void PlayerMoveKeyboard(){
         float forceX = 0f;
@@ -54,10 +59,10 @@ public class Moving : MonoBehaviour
 
             
             Vector3 scale = transform.localScale;
-            scale.x = 1f;
+            scale.x = -0.639f;
             transform.localScale = scale;
 
-            anim.SetBool("Run",true);
+            anim.SetBool("Walk",true);
         }
         else if(h < 0 ){
             if(vel < maxVelocity){
@@ -70,19 +75,20 @@ public class Moving : MonoBehaviour
             }
             
             Vector3 scale =transform.localScale;
-            scale.x = -1f;
+            scale.x = 0.639f;
             transform.localScale = scale;
 
-            anim.SetBool("Run",true);
+            anim.SetBool("Walk",true);
         }
         else if(h==0){
-            anim.SetBool("Run",false);
+            anim.SetBool("Walk",false);
         }
 
         
         if(Input.GetKey (KeyCode.Space)){ // nhảy
             if(grounded){
-                //anim.SetTrigger("Jump");
+                anim.SetTrigger("Jump");
+                anim.SetBool("isPhysicalAttack", false);
                 grounded =false;
                 forceY= jumpForce;
                 FindObjectOfType<AudioManager>().Play("jump");
@@ -95,7 +101,17 @@ public class Moving : MonoBehaviour
             }
         }
         if(Input.GetKey (KeyCode.Return)){
-            //anim.SetBool("Attack",true);
+            if(anim.GetBool("Jump")==true){
+                
+            }
+            else{
+                if(anim.GetBool("isMagicalAttack")==false && grounded)
+                anim.SetBool("isPhysicalAttack",true);
+            }
+        }
+        else if(Input.GetKey (KeyCode.L)){
+            if(anim.GetBool("isPhysicalAttack")==false & grounded)
+            anim.SetBool("isMagicalAttack",true);
         }
         myBody.AddForce( new Vector2(forceX,forceY));
         //  limited move range
