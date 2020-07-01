@@ -120,7 +120,8 @@ MonoBehaviour:
   grounded: 0
   minX: -13
   maxX: 82
-  player: {fileID: 0}
+  player: {fileID: 1249508651050205191}
+  bullet: {fileID: 0}
 --- !u!50 &1249508651050205189
 Rigidbody2D:
   serializedVersion: 4

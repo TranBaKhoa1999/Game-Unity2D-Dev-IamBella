@@ -5003,6 +5003,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &686297357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+    type: 3}
+  m_PrefabInstance: {fileID: 862930248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &720737384 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5436199312924467793, guid: 978a884f05484204090d8f79c0c632bd,
@@ -5021,6 +5027,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1171914823}
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5078,6 +5089,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eae12c79dc3eee4d8f8c088a0608786, type: 3}
+--- !u!1 &1171914823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1963346990, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1245743849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1963346994, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 686297357}
     - target: {fileID: 6719951266321947653, guid: 7de23609097d25348897b43a5b4b684c,
         type: 3}
       propertyPath: m_Camera
