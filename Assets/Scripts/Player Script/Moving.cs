@@ -160,7 +160,7 @@ public class Moving : MonoBehaviour
          private IEnumerator BulletShow()
      {        
          //Wait for 14 secs.
-         yield return new WaitForSeconds(0.3f);
+         yield return new WaitForSeconds(0.5f);
          if(transform.localScale.x < 0){
             Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
          }

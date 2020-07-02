@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicalScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 10f;
+    private float speed = 13f;
     public Transform player;
     private float side;
     void Awake(){
