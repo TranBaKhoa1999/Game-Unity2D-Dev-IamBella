@@ -151,15 +151,22 @@ public class Moving : MonoBehaviour
             if(anim.GetBool("isPhysicalAttack")==false & grounded){
                 anim.SetBool("isMagicalAttack",true);
                 // BulletShow();
-                Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
+                StartCoroutine("BulletShow");
+                // Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
                 shotable=false;
             }
         }
     }
-    //      private IEnumerator BulletShow()
-    //  {        
-    //      //Wait for 14 secs.
-    //      yield return new WaitForSeconds(5);
+         private IEnumerator BulletShow()
+     {        
+         //Wait for 14 secs.
+         yield return new WaitForSeconds(0.3f);
+         if(transform.localScale.x < 0){
+            Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
+         }
+         else{
+            Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
+         }
 
-    //  }
+     }
 }
