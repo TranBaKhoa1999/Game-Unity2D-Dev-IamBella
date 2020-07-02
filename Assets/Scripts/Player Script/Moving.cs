@@ -7,7 +7,7 @@ public class Moving : MonoBehaviour
     public float moveForce = 20f; // tốc độ chạy
     public float jumpForce = 700f; // độ cao nhảy
     public float maxVelocity = 4f; // vận tốc
-
+    public static bool isPhysicAttack = false;
     public bool grounded;
 
     private Rigidbody2D myBody;
@@ -37,10 +37,12 @@ public class Moving : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
             {
                 anim.SetBool("isPhysicalAttack", false);
+                isPhysicAttack=false;
             }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("MagicalAttack") &&  // code sau khi hoàn thành vận skill thì ko vận lại lần nữa
         anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
         {
+            isPhysicAttack=false;
             anim.SetBool("isMagicalAttack", false);
         }
 
@@ -48,7 +50,7 @@ public class Moving : MonoBehaviour
             transform.position = transform.position;
         }
         else{
-                    PlayerMoveKeyboard();
+            PlayerMoveKeyboard();
         }
     }
     void PlayerMoveKeyboard(){
@@ -117,17 +119,14 @@ public class Moving : MonoBehaviour
             }
             else{
                 if(anim.GetBool("isMagicalAttack")==false && grounded){
+                     //StartCoroutine("TrueAttack");
+                    isPhysicAttack=true;
                     anim.SetBool("isPhysicalAttack",true);
                 }
             }
         }
-        // else if(Input.GetKey (KeyCode.L)){
-        //     if(anim.GetBool("isPhysicalAttack")==false & grounded){
-        //         anim.SetBool("isMagicalAttack",true);
-        //         //MagicalAttack();
-        //     }
-        // }
-        myBody.AddForce( new Vector2(forceX,forceY));
+
+        myBody.AddForce( new Vector2(forceX,forceY)); // di chuyển
         //  limited move range
         Vector3 temp = transform.position;
                 temp.x=player.position.x;
@@ -143,6 +142,9 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
+        // if(target.gameObject.tag=="Enemy" && anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") ){
+        //     target.gameObject.hp -=20;
+        // }
     }
 
     void MagicalAttack(){
@@ -169,4 +171,11 @@ public class Moving : MonoBehaviour
          }
 
      }
+    //  private IEnumerator TrueAttack()
+    //  {        
+    //      //Wait for 14 secs.
+    //      yield return new WaitForSeconds(0.1f);
+    //         isAttack=true;
+
+    //  }
 }

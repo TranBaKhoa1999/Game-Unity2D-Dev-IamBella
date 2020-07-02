@@ -10,7 +10,9 @@ public class Gobin : MonoBehaviour
     public float speed = 1f;
     private Rigidbody2D myBody;
     private Animator anim;
-    public static float hp;
+    [SerializeField]
+    private float hp;
+    public GameObject healthBar;
     // Start is called before the first frame update
     void Awake() {
         myBody = GetComponent<Rigidbody2D>();
@@ -18,30 +20,27 @@ public class Gobin : MonoBehaviour
     }
     void Start()
     {
-        hp=10;
     }
 
-    void Changedirection(){
-        collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("Ground"));
-        if(!collision){
-            Vector3 temp = transform.localScale;
-            if(temp.x == 0.25f){
-                temp.x = -0.25f;
-            }
-            else{
-                temp.x=0.25f;
-            }
-            transform.localScale = temp;
-        }
-    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move();
-        Changedirection();
+        bool x = anim.GetBool("isDie");
+        if(hp<=0){
+            anim.SetBool("isDie",true);
+            speed=0;
+            // Destroy(gameObject);
+        }
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f){
+            Destroy(gameObject);
+        }
+         //Debug.Log(anim.GetBool("isDie"));
+            Changedirection();
+            Move();
+            
     }
     void Move(){
-        myBody.velocity = new Vector2(transform.localScale.x, 0) * speed;
+            myBody.velocity = new Vector2(transform.localScale.x, 0) * speed;
     }
      void OnTriggerEnter2D(Collider2D target) {
         if(target.tag == "Player"){
@@ -57,17 +56,21 @@ public class Gobin : MonoBehaviour
                     anim.SetBool("Attack",true);
                 }
             }
-
+            //Debug.Log(Moving.isAttack);
+            if(Moving.isPhysicAttack==true){
+                hp-=10;
+                healthBar.transform.localScale = new Vector3(hp/100,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+            }
             //anim.SetBool("Attack",true);
-            Debug.Log(delta);
+            // Debug.Log(delta);
 
             //Destroy(target.gameObject);
         }
         else{
             if(target.tag=="Bullet"){
-                hp -=1f;
+                hp -=10;
                 Destroy(target.gameObject);
-                Debug.Log("damaged");
+                healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
             anim.SetBool("Attack",false);
         }
@@ -75,5 +78,18 @@ public class Gobin : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D target){
             anim.SetBool("Attack",false);
+    }
+    void Changedirection(){
+        collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("Ground"));
+        if(!collision){
+            Vector3 temp = transform.localScale;
+            if(temp.x == 0.25f){
+                temp.x = -0.25f;
+            }
+            else{
+                temp.x=0.25f;
+            }
+            transform.localScale = temp;
+        }
     }
 }

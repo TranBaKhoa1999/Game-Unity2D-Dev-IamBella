@@ -14,7 +14,5 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        localScale.x = Gobin.hp;
-        transform.localScale = localScale;
     }
 }
