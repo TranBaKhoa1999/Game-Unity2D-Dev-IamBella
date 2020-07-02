@@ -10,7 +10,7 @@ public class Gobin : MonoBehaviour
     public float speed = 1f;
     private Rigidbody2D myBody;
     private Animator anim;
-    private static float hp=100;
+    public static float hp;
     // Start is called before the first frame update
     void Awake() {
         myBody = GetComponent<Rigidbody2D>();
@@ -18,7 +18,7 @@ public class Gobin : MonoBehaviour
     }
     void Start()
     {
-        
+        hp=10;
     }
 
     void Changedirection(){
@@ -65,7 +65,7 @@ public class Gobin : MonoBehaviour
         }
         else{
             if(target.tag=="Bullet"){
-                hp -=10;
+                hp -=1f;
                 Destroy(target.gameObject);
                 Debug.Log("damaged");
             }
