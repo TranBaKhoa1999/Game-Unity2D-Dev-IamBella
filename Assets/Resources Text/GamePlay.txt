@@ -1,0 +1,10 @@
+1. Nhân vật:
+    - Pháp sư
+    - Hành động:
+        + Di chuyển: v = 20f, a = 4f
+        + Nhảy: j = 700f
+        + Tấn công cận chiến: ...
+        + Tấn công từ xa: 1 cầu tốc độ bay 12f
+        + HP: 100
+        + Giáp: *máu giả*
+     
