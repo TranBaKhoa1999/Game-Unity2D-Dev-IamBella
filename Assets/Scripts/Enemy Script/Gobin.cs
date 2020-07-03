@@ -49,16 +49,25 @@ public class Gobin : MonoBehaviour
             if(transform.localScale.x < 0){ // quái đi qua trái
                 if(delta.x < delta.y){
                     anim.SetBool("Attack",true);
+                    gameObject.layer=LayerMask.NameToLayer("Attack");
+                }
+                else{
+                    gameObject.layer=LayerMask.NameToLayer("notAttack");
                 }
             }
             else{ // quái đi qua phải
                 if(delta.x>delta.y){
                     anim.SetBool("Attack",true);
+                    gameObject.layer=LayerMask.NameToLayer("Attack");
+                }
+                else{
+                    gameObject.layer=LayerMask.NameToLayer("notAttack");
                 }
             }
             //Debug.Log(Moving.isAttack);
             if(Moving.isPhysicAttack==true){ // bị đánh thường
                 anim.SetTrigger("hurt");
+                gameObject.layer=LayerMask.NameToLayer("notAttack");
                 hp-=10;
                 healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
@@ -71,6 +80,7 @@ public class Gobin : MonoBehaviour
             if(target.tag=="Bullet"){ // bị bắn
                 hp -=10;
                 anim.SetTrigger("hurt");
+                gameObject.layer=LayerMask.NameToLayer("notAttack");
                 Destroy(target.gameObject);
                 healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
@@ -80,6 +90,7 @@ public class Gobin : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D target){
             anim.SetBool("Attack",false);
+            gameObject.layer=LayerMask.NameToLayer("notAttack");
     }
     void Changedirection(){
         collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("EnemyMoveRange"));

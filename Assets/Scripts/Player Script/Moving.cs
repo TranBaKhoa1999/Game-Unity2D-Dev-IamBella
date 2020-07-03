@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Moving : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Moving : MonoBehaviour
     private float maxVelocity = 2f; // vận tốc
     public static bool isPhysicAttack = false;
     public bool grounded;
+    private float maxHealth = 100f;
+    public float health=100;
 
     private Rigidbody2D myBody;
     private Animator anim;
@@ -16,8 +19,11 @@ public class Moving : MonoBehaviour
     public float minX,maxX;
     public Transform player;
 
+
     [SerializeField]
     public GameObject bullet;
+    [SerializeField]
+    public Image healthAmount;
     void Awake(){
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -52,6 +58,7 @@ public class Moving : MonoBehaviour
         else{
             PlayerMoveKeyboard();
         }
+        healthAmount.fillAmount = health/maxHealth;
     }
     void PlayerMoveKeyboard(){
         float forceX = 0f;
@@ -127,6 +134,7 @@ public class Moving : MonoBehaviour
         }
 
         myBody.AddForce( new Vector2(forceX,forceY)); // di chuyển
+
         //  limited move range
         Vector3 temp = transform.position;
                 temp.x=player.position.x;
@@ -142,21 +150,42 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
+        if(target.gameObject.tag=="Enemy" && target.gameObject.layer==11)
+        {
+            health-=10f;
+            anim.SetTrigger("isHurt");
+            // Vector3 temp = transform.position;
+            //     temp.x=player.position.x;
+            //     temp.x-=1f;
+            //     transform.position=temp;
+        }
     }
 
     void MagicalAttack(){ // bắn đạn
 
-        if(Input.GetKey (KeyCode.L) && shotable){;
+        if(Input.GetKey (KeyCode.L) && shotable){
             if(anim.GetBool("isPhysicalAttack")==false & grounded){
                 anim.SetBool("isMagicalAttack",true);
                 // BulletShow();
-                StartCoroutine("BulletShow");
+                                            StartCoroutine("BulletShow");
+                //StartCoroutine("BulletShow2"); // item liên hoàn
                 // Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
                 shotable=false;
             }
         }
     }
          private IEnumerator BulletShow() // hàm delay thời gian bắn đạn
+     {        
+         yield return new WaitForSeconds(0.75f);
+         if(transform.localScale.x < 0){
+            Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
+         }
+         else{
+            Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
+         }
+
+     }
+     private IEnumerator BulletShow2() // hàm delay thời gian bắn đạn
      {        
          yield return new WaitForSeconds(0.5f);
          if(transform.localScale.x < 0){
