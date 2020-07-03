@@ -142,12 +142,9 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
-        // if(target.gameObject.tag=="Enemy" && anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") ){
-        //     target.gameObject.hp -=20;
-        // }
     }
 
-    void MagicalAttack(){
+    void MagicalAttack(){ // bắn đạn
 
         if(Input.GetKey (KeyCode.L) && shotable){;
             if(anim.GetBool("isPhysicalAttack")==false & grounded){
@@ -159,9 +156,8 @@ public class Moving : MonoBehaviour
             }
         }
     }
-         private IEnumerator BulletShow()
+         private IEnumerator BulletShow() // hàm delay thời gian bắn đạn
      {        
-         //Wait for 14 secs.
          yield return new WaitForSeconds(0.5f);
          if(transform.localScale.x < 0){
             Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
@@ -171,11 +167,4 @@ public class Moving : MonoBehaviour
          }
 
      }
-    //  private IEnumerator TrueAttack()
-    //  {        
-    //      //Wait for 14 secs.
-    //      yield return new WaitForSeconds(0.1f);
-    //         isAttack=true;
-
-    //  }
 }

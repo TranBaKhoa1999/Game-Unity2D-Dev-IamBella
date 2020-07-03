@@ -8,17 +8,22 @@ public class MagicalScript : MonoBehaviour
     private float speed = 13f;
     public Transform player;
     private float side;
+    private float startPoint;
     void Awake(){
     }
     void Start()
     {
         side = player.transform.localScale.x;
+        startPoint = player.transform.position.x;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Move();
+        if(transform.position.x - startPoint> 6.8){  // hủy đạn sau khi bay 1 khoảng cách so với điểm xuất phát ( thiếu hàm || )
+            Destroy(gameObject);
+        }
     }
 
     void Move(){

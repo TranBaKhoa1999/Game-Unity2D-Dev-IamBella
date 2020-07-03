@@ -57,9 +57,10 @@ public class Gobin : MonoBehaviour
                 }
             }
             //Debug.Log(Moving.isAttack);
-            if(Moving.isPhysicAttack==true){
+            if(Moving.isPhysicAttack==true){ // bị đánh thường
+                anim.SetTrigger("hurt");
                 hp-=10;
-                healthBar.transform.localScale = new Vector3(hp/100,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+                healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
             //anim.SetBool("Attack",true);
             // Debug.Log(delta);
@@ -67,8 +68,9 @@ public class Gobin : MonoBehaviour
             //Destroy(target.gameObject);
         }
         else{
-            if(target.tag=="Bullet"){
+            if(target.tag=="Bullet"){ // bị bắn
                 hp -=10;
+                anim.SetTrigger("hurt");
                 Destroy(target.gameObject);
                 healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
@@ -80,7 +82,7 @@ public class Gobin : MonoBehaviour
             anim.SetBool("Attack",false);
     }
     void Changedirection(){
-        collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("Ground"));
+        collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("EnemyMoveRange"));
         if(!collision){
             Vector3 temp = transform.localScale;
             if(temp.x == 0.25f){
