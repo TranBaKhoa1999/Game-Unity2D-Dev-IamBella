@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    public float moveForce = 20f; // tốc độ chạy
-    public float jumpForce = 700f; // độ cao nhảy
-    public float maxVelocity = 4f; // vận tốc
+    private float moveForce = 70f; // tốc độ chạy
+    private float jumpForce = 250f; // độ cao nhảy
+    private float maxVelocity = 2f; // vận tốc
     public static bool isPhysicAttack = false;
     public bool grounded;
 
