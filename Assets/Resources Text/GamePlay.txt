@@ -1,10 +1,94 @@
 1. Nhân vật:
+
     - Pháp sư
     - Hành động:
-        + Di chuyển: v = 20f, a = 4f
-        + Nhảy: j = 700f
-        + Tấn công cận chiến: ...
-        + Tấn công từ xa: 1 cầu tốc độ bay 12f
+        + Di chuyển: v = 70f, a = 2f
+        + Nhảy: j = 250f
+        + Tấn công cận chiến: 20 damage
+        + Tấn công từ xa: 3 level
+            * Level 1: 1 quả cầu tốc bay 12f - 50 damage - 10 giây hồi chiêu
+            * Level 2: 1 quả cầu tốc bay 13f - 80 damage - 8 giây hồi chiêu
+            * Level 3: 1 quả cầu tốc bay 15f - 100 damage - 4 giây hồi chiêu
         + HP: 100
         + Giáp: *máu giả*
-     
+    
+
+2. Cửa hàng:
+
+    ~ Sử dụng trong vòng:
+        - Áo giáp: 
+            + Thêm 100 giáp
+            + Giá: 500 tiền
+        - Gậy phép: 
+            + Thêm 30 damage cận chiến
+            + Giá: 500 tiền
+        - Ngọc bất tử:
+            + Bất tử trong 10 giây
+            + Giá: 1000 tiền
+        - Thẻ hồi sinh *làm sau*
+
+    ~ Sử dụng vĩnh viễn:
+        - Nâng cấp chiêu Lv1 -> Lv2:
+            + Giá: 1000 tiền
+        - Nâng cấp chiêu Lv2 -> Lv3:
+            + Giá 3000 tiền
+
+
+3. Màn Game:
+
+    - LV1: 
+        + Phần thưởng qua màn lần đầu:
+
+
+4. Item đặc biệt:
+
+    - Ngự giáp:
+        + Mở khóa khi vượt qua màn 1
+        + Công dụng: Nhận thêm 100 Giáp
+        + Hiệu lực: hết màn
+        + Kích hoạt tự động
+
+    - Nhảy cao:
+        + Mở khóa khi vượt qua màn 1
+        + Công dụng: Tăng khả năng nhảy cao - j = 500f
+        + Hiệu lực: hết màn
+        + Kích hoạt tự động
+
+    - Thần tốc:
+        + Mở khóa khi vượt qua màn 2
+        + Công dụng: Tăng tốc độ di chuyển - v = 70f, a = 7f
+        + Hiệu lực: 1 phút
+        + Kích hoạt tự động
+
+    - Cuồng nộ: 
+        + Mở khóa khi vượt qua màn 3
+        + Công dụng: Làm nhân vật trở nên to hơn gấp đôi
+            * Tấn công cận chiến: 20 damage -> 40 damage
+            * Giáp: Thêm 50 giáp
+            * Di chuyển: v = 70f, a = 3f
+            * Nhảy: j = 320f
+        + Hiệu lực: 1 phút
+        + Kích hoạt tự động
+
+    - Liên hoàn:
+        + Mở khóa khi vượt qua màn 3
+        + Công dụng: Bắn cùng lúc 2 viên đạn - vật lý và damage của đạn giữ nguyên
+        + Hiệu lực: 1 phút
+        + Kích hoạt bởi người chơi
+
+    - Xuyên dương:
+        + Mở khóa khi vượt qua màn 4
+        + Công dụng: Bắn xuyên quái vật - tốc độ đạn 40f
+        + Hiệu lực 1 phút
+        + Kích hoạt bởi người chơi
+
+    - Sư hống:
+        + Mở khóa khi vượt qua màn 4
+        + Công dụng: Nổ chết tất cả quái trong màn hình - *thực tế trừ tất cả quái 1000 máu*
+        + Hiệu lực: 1 lần
+        + Kích hoạt bởi người chơi
+
+
+5. Quái:
+
+    - 
