@@ -18,8 +18,8 @@ TagManager:
   - 
   - Ground
   - EnemyMoveRange
-  - 
-  - 
+  - notAttack
+  - Attack
   - 
   - 
   - 
