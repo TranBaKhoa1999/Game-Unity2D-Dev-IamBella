@@ -1,0 +1,47 @@
+4. Item đặc biệt: Skill_icon2
+
+    - Ngự giáp: *active13*
+        + Mở khóa khi vượt qua màn 1
+        + Công dụng: Nhận thêm 100 Giáp
+        + Hiệu lực: hết màn
+        + Kích hoạt tự động
+
+    - Nhảy cao: *passive4*
+        + Mở khóa khi vượt qua màn 1
+        + Công dụng: Tăng khả năng nhảy cao - j = 500f
+        + Hiệu lực: hết màn
+        + Kích hoạt tự động
+
+    - Thần tốc: *active7*
+        + Mở khóa khi vượt qua màn 2
+        + Công dụng: Tăng tốc độ di chuyển - v = 70f, a = 7f
+        + Hiệu lực: 1 phút
+        + Kích hoạt tự động
+
+    - Cuồng nộ: *active14*
+        + Mở khóa khi vượt qua màn 3
+        + Công dụng: Làm nhân vật trở nên to hơn gấp đôi
+            * Tấn công cận chiến: Thêm 20 damage
+            * Giáp: Thêm 100 giáp
+            * Di chuyển: v = 70f, a = 3f
+            * Nhảy: j = 320f
+        + Hiệu lực: 1 phút
+        + Kích hoạt tự động
+
+    - Liên hoàn: *active4*
+        + Mở khóa khi vượt qua màn 3
+        + Công dụng: Bắn cùng lúc 2 viên đạn - vật lý và damage của đạn giữ nguyên
+        + Hiệu lực: 1 phút
+        + Kích hoạt bởi người chơi
+
+    - Xuyên dương: *active2*
+        + Mở khóa khi vượt qua màn 4
+        + Công dụng: Bắn xuyên quái vật - tốc độ đạn 40f
+        + Hiệu lực 1 phút
+        + Kích hoạt bởi người chơi
+
+    - Sư hống: *active9*
+        + Mở khóa khi vượt qua màn 4
+        + Công dụng: Nổ lớn gây một lượng sát thương tất cả quái trong màn hình - *tất cả quái trừ 3000 máu*
+        + Hiệu lực: 1 lần
+        + Kích hoạt bởi người chơi

@@ -1,0 +1,39 @@
+3. Màn Game:
+
+    - LV1: 
+        + Phần thưởng qua màn lần đầu:
+            * 2000 tiền
+            * Mở khóa Skill <Ngự giáp> <Nhảy cao>
+            * 1 Áo giáp lv1, 1 Kiếm lv1
+        + Phần thưởng những khi qua màn lần sau:
+            * 500 tiền
+
+    - LV2:
+        + Phần thưởng qua màn lần đầu:
+            * 5000 tiền
+            * Mở khóa Skill <Thần tốc>
+            * 1 Áo giáp lv2, 1 Kiếm lv2
+        + Phần thưởng những khi qua màn lần sau:
+            * 1000 tiền
+
+    - LV3:
+        + Phần thưởng qua màn lần đầu:
+            * 10000 tiền
+            * Mở khóa Skill <Cuồng nộ> <Liên hoàn>
+            * 1 Áo giáp lv3, 1 Kiếm lv3
+        + Phần thưởng những khi qua màn lần sau:
+            * 1800 tiền
+
+    - LV4:
+        + Phần thưởng qua màn lần đầu:
+            * 15000 tiền
+            * Mở khóa Skill <Xuyên dương> <Sư hống>
+            * 1 Áo giáp lv4, 1 Kiếm lv3, 1 Ngọc bất tử
+        + Phần thưởng những khi qua màn lần sau:
+            * 3000 tiền
+
+    - LV5:
+        + Phần thưởng qua màn lần đầu:
+            * 20000 tiền
+        + Phần thưởng những khi qua màn lần sau:
+            * 5000 tiền

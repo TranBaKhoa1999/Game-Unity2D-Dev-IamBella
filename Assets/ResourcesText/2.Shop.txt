@@ -1,0 +1,42 @@
+2. Cửa hàng: Skill_icon1
+
+    ~ Sử dụng trong vòng:
+        - Áo giáp lv1: *Armor_1*
+            + Thêm 100 giáp
+            + Giá: 500 tiền
+        - Áo giáp lv2: *Armor_2*
+            + Thêm 200 giáp
+            + Giá: 1000 tiền
+        - Áo giáp lv3: *Armor_3*
+            + Thêm 400 giáp
+            + Giá: 2500 tiền
+        - Áo giáp lv4: *Armor_8*
+            + Thêm 1000 giáp
+            + Giá: 7000 tiền
+
+        - Kiếm lv1: *sword_1*
+            + Thêm 10 damage cận chiến
+            + Giá: 1000 tiền
+        - Kiếm lv2: *sword_2*
+            + Thêm 30 damage cận chiến
+            + Giá: 4000 tiền
+        - Kiếm lv3: *sword_3*
+            + Thêm 50 damage cận chiến
+            + Giá: 8000 tiền
+
+        - Ngọc bất tử: *active_8*
+            + Bất tử trong 10 giây
+            + Giá: 3000 tiền
+
+        - Thẻ hồi sinh *làm sau*
+
+    ~ Sử dụng vĩnh viễn: 
+        - Nâng cấp chiêu tấn công từ xa: *Skill_icon2/passive5*
+            + Chỉ số: ~ đã ghi ở nhân vật ~
+            + Giá: 10000/25000/50000
+        - Nâng cấp Damage cận chiến: *Skill_icon1/active_7*
+            + Chỉ số: 22/24/27/30/35/40/50
+            + Giá: 1000/2000/5000/8000/13000/20000/35000
+        - Nâng cấp Máu: *Skill_icon2/passive4*
+            + Chỉ số: 200/400/700/1000/1500/2000
+            + Giá: 1000/3000/8000/15000/30000/50000
