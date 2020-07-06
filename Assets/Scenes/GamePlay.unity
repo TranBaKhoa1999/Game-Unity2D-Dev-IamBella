@@ -161,6 +161,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &650365530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 650365530, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2057886273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &654608272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,6 +335,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410599, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.14895785
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410599, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5.3474226
       objectReference: {fileID: 0}
     - target: {fileID: 8917977293728122865, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
@@ -666,14 +688,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1427865979, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1727347070, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -67.79999
-      objectReference: {fileID: 0}
     - target: {fileID: 1963346994, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
       propertyPath: player
       value: 
@@ -693,16 +707,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1337894570}
-    - target: {fileID: 6719951267450813726, guid: 7de23609097d25348897b43a5b4b684c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -24.91101
-      objectReference: {fileID: 0}
-    - target: {fileID: 6719951267450813726, guid: 7de23609097d25348897b43a5b4b684c,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 43.213
-      objectReference: {fileID: 0}
     - target: {fileID: 6719951267460011008, guid: 7de23609097d25348897b43a5b4b684c,
         type: 3}
       propertyPath: m_Camera
@@ -798,6 +802,11 @@ PrefabInstance:
       propertyPath: healthAmount
       value: 
       objectReference: {fileID: 329935212}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 650365530}
     - target: {fileID: 1249508651050205189, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_Material

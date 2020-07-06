@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1249508651050205186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.983, y: -1.15, z: 0}
-  m_LocalScale: {x: 0.639, y: 0.639, z: 1}
+  m_LocalScale: {x: 0.58, y: 0.58, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,14 +114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e27203b0ec414f4194118e21cec9432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 70
-  jumpForce: 250
-  maxVelocity: 2
   grounded: 0
-  minX: -13
+  health: 0
+  minX: -8
   maxX: 82
   player: {fileID: 1249508651050205191}
   bullet: {fileID: 0}
+  healthAmount: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!50 &1249508651050205189
 Rigidbody2D:
   serializedVersion: 4
