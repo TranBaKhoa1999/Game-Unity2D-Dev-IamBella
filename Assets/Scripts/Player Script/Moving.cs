@@ -59,6 +59,7 @@ public class Moving : MonoBehaviour
             PlayerMoveKeyboard();
         }
         healthAmount.fillAmount = health/maxHealth;
+        
     }
     void PlayerMoveKeyboard(){
         float forceX = 0f;
@@ -154,6 +155,7 @@ public class Moving : MonoBehaviour
         {
             health-=10f;
             anim.SetTrigger("isHurt");
+           myBody.velocity = myBody.velocity + Vector2.left *5;
             // Vector3 temp = transform.position;
             //     temp.x=player.position.x;
             //     temp.x-=1f;
