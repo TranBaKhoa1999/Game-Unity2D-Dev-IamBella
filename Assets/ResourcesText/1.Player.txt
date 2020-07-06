@@ -7,8 +7,8 @@
         + Tấn công cận chiến: 20 damage
         + Tấn công từ xa: 4 level
             * Level 1: 1 quả cầu tốc bay 12f - 100 damage - 10 giây hồi chiêu
-            * Level 2: 1 quả cầu tốc bay 13f - 150 damage - 8 giây hồi chiêu
-            * Level 3: 1 quả cầu tốc bay 14f - 200 damage - 5 giây hồi chiêu
-            * Level 4: 1 quả cầu tốc bay 15f - 300 damage - 3 giây hồi chiêu
+            * Level 2: 1 quả cầu tốc bay 13f - 200 damage - 8 giây hồi chiêu
+            * Level 3: 1 quả cầu tốc bay 14f - 300 damage - 5 giây hồi chiêu
+            * Level 4: 1 quả cầu tốc bay 15f - 500 damage - 3 giây hồi chiêu
         + HP: 100
         + Giáp: *máu giả*
