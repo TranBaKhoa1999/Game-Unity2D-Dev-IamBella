@@ -6,7 +6,7 @@
         + Hiệu lực: hết màn
         + Kích hoạt tự động
 
-    - Nhảy cao: *passive4*
+    - Nhảy cao: *active8*
         + Mở khóa khi vượt qua màn 1
         + Công dụng: Tăng khả năng nhảy cao - j = 500f
         + Hiệu lực: hết màn
@@ -42,6 +42,6 @@
 
     - Sư hống: *active9*
         + Mở khóa khi vượt qua màn 4
-        + Công dụng: Nổ lớn gây một lượng sát thương tất cả quái trong màn hình - *tất cả quái trừ 3000 máu*
+        + Công dụng: Nổ lớn gây một lượng sát thương tất cả quái trong màn hình - *tất cả quái trừ ... máu*
         + Hiệu lực: 1 lần
         + Kích hoạt bởi người chơi

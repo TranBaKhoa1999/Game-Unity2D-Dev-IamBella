@@ -15,25 +15,20 @@
             * Hạ gục nhận: 10 tiền
         + Orc2/Orge:
             * Máu: 70
-            * Damage: 20
+            * Damage: 15
             * Di chuyển: bình thường
             * Hạ gục nhận: 10 tiền
 
-        + Golem2/Golem2:
-            * Máu: 500
-            * Damage: 15
-            * Di chuyển: chậm
-            * Hạ gục nhận: 20 tiền
         + Golem1/Golem3:
-            * Máu: 300
-            * Damage: 30
+            * Máu: 500
+            * Damage: 5
             * Di chuyển: chậm
             * Hạ gục nhận: 20 tiền
 
-        + BOSS: FallenAngel/FallenAngel1:
-            * Máu: 3000
-            * Damage: 50
-            * Di chuyển: bình thường
+        + BOSS: Troll/1_TROLL:
+            * Máu: 2000
+            * Damage: 20
+            * Di chuyển: chậm
             * Hạ gục nhân: 100 tiền
 
 
@@ -51,31 +46,26 @@
             * Hạ gục nhận: 20 tiền
         + Orc2/Orge:
             * Máu: 150
-            * Damage: 25
+            * Damage: 20
             * Di chuyển: bình thường
             * Hạ gục nhận: 20 tiền
 
-        + Golem2/Golem2:
-            * Máu: 800
-            * Damage: 20
-            * Di chuyển: chậm
-            * Hạ gục nhận: 30 tiền
         + Golem1/Golem3:
-            * Máu: 500
-            * Damage: 35
+            * Máu: 1000
+            * Damage: 10
             * Di chuyển: chậm
             * Hạ gục nhận: 30 tiền
 
         + ReaperMan/ReaperMan1:
             * Máu: 100
-            * Damage: 40
+            * Damage: 30
             * Di chuyển: nhanh
             * Hạ gục nhận: 30 tiền
 
-        + BOSS: FallenAngel/FallenAngel2:
-            * Máu: 7000
-            * Damage: 70
-            * Di chuyển: bình thường
+        + BOSS: Troll/2_TROLL:
+            * Máu: 5000
+            * Damage: 35
+            * Di chuyển: chậm
             * Hạ gục nhân: 200 tiền
 
 
@@ -93,41 +83,41 @@
             * Hạ gục nhận: 30 tiền
         + Orc2/Orge:
             * Máu: 250
-            * Damage: 30
+            * Damage: 25
             * Di chuyển: bình thường
             * Hạ gục nhận: 30 tiền
 
-        + Golem2/Golem1:
+        + Golem1/Golem1:
             * Máu: 1500
-            * Damage: 35
+            * Damage: 20
             * Di chuyển: chậm
             * Hạ gục nhận: 40 tiền
-        + Golem2/Golem2:
+        + Golem1/Golem2:
             * Máu: 1700
-            * Damage: 30
+            * Damage: 15
             * Di chuyển: chậm
             * Hạ gục nhận: 40 tiền
         + Golem1/Golem3:
-            * Máu: 1000
-            * Damage: 45
+            * Máu: 2000
+            * Damage: 10
             * Di chuyển: chậm
             * Hạ gục nhận: 40 tiền
 
         + ReaperMan/ReaperMan1:
             * Máu: 300
-            * Damage: 60
+            * Damage: 40
             * Di chuyển: nhanh
             * Hạ gục nhận: 40 tiền
         + ReaperMan/ReaperMan2:
             * Máu: 250
-            * Damage: 70
+            * Damage: 50
             * Di chuyển: nhanh
             * Hạ gục nhận: 40 tiền
 
-        + BOSS: FallenAngel/FallenAngel3:
-            * Máu: 12000
-            * Damage: 120
-            * Di chuyển: nhanh
+        + BOSS: Troll/3_TROLL:
+            * Máu: 10000
+            * Damage: 60
+            * Di chuyển: chậm
             * Hạ gục nhân: 500 tiền
 
 
@@ -145,67 +135,47 @@
             * Hạ gục nhận: 40 tiền
         + Orc2/Orge:
             * Máu: 300
-            * Damage: 35
+            * Damage: 30
             * Di chuyển: bình thường
             * Hạ gục nhận: 40 tiền
 
-        + Golem2/Golem1:
-            * Máu: 2000
-            * Damage: 50
-            * Di chuyển: chậm
-            * Hạ gục nhận: 40 tiền
-        + Golem2/Golem2:
-            * Máu: 2200
-            * Damage: 45
-            * Di chuyển: chậm
-            * Hạ gục nhận: 40 tiền
-        + Golem2/Golem3:
-            * Máu: 2500
-            * Damage: 40
-            * Di chuyển: chậm
-            * Hạ gục nhận: 40 tiền
         + Golem1/Golem1:
-            * Máu: 1400
-            * Damage: 65
+            * Máu: 3000
+            * Damage: 30
             * Di chuyển: chậm
             * Hạ gục nhận: 40 tiền
         + Golem1/Golem2:
-            * Máu: 1500
-            * Damage: 60
+            * Máu: 3500
+            * Damage: 25
             * Di chuyển: chậm
             * Hạ gục nhận: 40 tiền
         + Golem1/Golem3:
-            * Máu: 1600
-            * Damage: 55
+            * Máu: 4000
+            * Damage: 20
             * Di chuyển: chậm
             * Hạ gục nhận: 40 tiền
 
         + ReaperMan/ReaperMan1:
             * Máu: 400
-            * Damage: 80
+            * Damage: 70
             * Di chuyển: nhanh
             * Hạ gục nhận: 40 tiền
         + ReaperMan/ReaperMan2:
             * Máu: 350
-            * Damage: 90
+            * Damage: 75
             * Di chuyển: nhanh
             * Hạ gục nhận: 40 tiền
         + ReaperMan/ReaperMan3:
             * Máu: 300
-            * Damage: 100
+            * Damage: 80
             * Di chuyển: nhanh
             * Hạ gục nhận: 40 tiền
 
-        + BOSS_1: Troll/2_TROLL:
-            * Máu: 20000
-            * Damage: 150
-            * Di chuyển: chậm
-            * Hạ gục nhân: 1000 tiền
-        + BOSS_2: Troll/3_TROLL:
-            * Máu: 25000
-            * Damage: 180
+        + BOSS_1: Elf:
+            * Máu: 15000
+            * Damage: 100
             * Di chuyển: bình thường
-            * Hạ gục nhân: 1500 tiền
+            * Hạ gục nhân: 1000 tiền
 
 
     - Quái xuất hiện ở LV5:
@@ -226,65 +196,40 @@
             * Di chuyển: bình thường
             * Hạ gục nhận: 50 tiền
 
-        + Golem2/Golem1:
-            * Máu: 2500
+        + Golem1/Golem1:
+            * Máu: 5000
             * Damage: 50
             * Di chuyển: chậm
             * Hạ gục nhận: 50 tiền
-        + Golem2/Golem2:
-            * Máu: 3000
+        + Golem1/Golem2:
+            * Máu: 6000
             * Damage: 45
             * Di chuyển: chậm
             * Hạ gục nhận: 50 tiền
-        + Golem2/Golem3:
-            * Máu: 3500
-            * Damage: 40
-            * Di chuyển: chậm
-            * Hạ gục nhận: 50 tiền
-        + Golem1/Golem1:
-            * Máu: 1800
-            * Damage: 70
-            * Di chuyển: chậm
-            * Hạ gục nhận: 50 tiền
-        + Golem1/Golem2:
-            * Máu: 1900
-            * Damage: 65
-            * Di chuyển: chậm
-            * Hạ gục nhận: 50 tiền
         + Golem1/Golem3:
-            * Máu: 2000
-            * Damage: 60
+            * Máu: 8000
+            * Damage: 40
             * Di chuyển: chậm
             * Hạ gục nhận: 50 tiền
 
         + ReaperMan/ReaperMan1:
             * Máu: 500
-            * Damage: 100
+            * Damage: 90
             * Di chuyển: nhanh
             * Hạ gục nhận: 50 tiền
         + ReaperMan/ReaperMan2:
             * Máu: 450
-            * Damage: 120
+            * Damage: 95
             * Di chuyển: nhanh
             * Hạ gục nhận: 50 tiền
         + ReaperMan/ReaperMan3:
             * Máu: 400
-            * Damage: 150
+            * Damage: 100
             * Di chuyển: nhanh
             * Hạ gục nhận: 50 tiền
 
-        + BOSS_1: Orc1/1_ORK:
-            * Máu: 25000
-            * Damage: 180
-            * Di chuyển: nhanh
-            * Hạ gục nhân: 3000 tiền
-        + BOSS_2: Orc1/2_ORK:
-            * Máu: 30000
-            * Damage: 250
+        + BOSS_1: Fairy:
+            * Máu: 20000
+            * Damage: 150
             * Di chuyển: bình thường
-            * Hạ gục nhân: 4000 tiền
-        + BOSS_3: Orc1/3_ORK:
-            * Máu: 50000
-            * Damage: 300
-            * Di chuyển: chậm
-            * Hạ gục nhân: 5000 tiền
+            * Hạ gục nhân: 3000 tiền

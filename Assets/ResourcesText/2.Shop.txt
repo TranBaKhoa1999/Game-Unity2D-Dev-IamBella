@@ -24,7 +24,7 @@
             + Thêm 50 damage cận chiến
             + Giá: 8000 tiền
 
-        - Ngọc bất tử: *active_8*
+        - Ngọc bất tử: *active_4*
             + Bất tử trong 10 giây
             + Giá: 3000 tiền
 
