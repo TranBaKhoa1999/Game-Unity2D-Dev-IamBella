@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class Moving : MonoBehaviour
 {
     private float moveForce = 70f; // tốc độ chạy
-    private float jumpForce = 250f; // độ cao nhảy
+    private float jumpForce = 300f; // độ cao nhảy
     private float maxVelocity = 2f; // vận tốc
     public static bool isPhysicAttack = false;
     public bool grounded;
-    private float maxHealth = 100f;
-    public float health=100;
+    private float maxHealth;
+    public float health;
 
+    public static int physicDmg;
+    public static int magicDmg;
     private Rigidbody2D myBody;
     private Animator anim;
     private bool shotable=true;
@@ -24,10 +26,14 @@ public class Moving : MonoBehaviour
     public GameObject bullet;
     [SerializeField]
     public Image healthAmount;
+    public Text healthText;
     void Awake(){
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-    
+        magicDmg = MainMenuController.MagicDmg;
+        physicDmg = MainMenuController.PhysicDmg;
+        maxHealth = MainMenuController.Health;
+        health= maxHealth;
     }
     // Start is called before the first frame update
     void Start()
@@ -59,6 +65,7 @@ public class Moving : MonoBehaviour
             PlayerMoveKeyboard();
         }
         healthAmount.fillAmount = health/maxHealth;
+        healthText.text = health + "/" + maxHealth;
         
     }
     void PlayerMoveKeyboard(){
@@ -79,7 +86,7 @@ public class Moving : MonoBehaviour
 
             
             Vector3 scale = transform.localScale;
-            scale.x = -0.639f;
+            scale.x = -0.58f;
             transform.localScale = scale;
 
             anim.SetBool("Walk",true);
@@ -95,7 +102,7 @@ public class Moving : MonoBehaviour
             }
             
             Vector3 scale =transform.localScale;
-            scale.x = 0.639f;
+            scale.x = 0.58f;
             transform.localScale = scale;
 
             anim.SetBool("Walk",true);
@@ -155,11 +162,16 @@ public class Moving : MonoBehaviour
         {
             health-=10f;
             anim.SetTrigger("isHurt");
-           myBody.velocity = myBody.velocity + Vector2.left *5;
-            // Vector3 temp = transform.position;
-            //     temp.x=player.position.x;
-            //     temp.x-=1f;
-            //     transform.position=temp;
+
+           Vector3 delta = target.transform.position - transform.position;
+        // check side trigger
+                if(delta.x < delta.y){
+                     myBody.velocity = myBody.velocity + Vector2.right *5;
+                }
+                else{
+                     myBody.velocity = myBody.velocity + Vector2.left *5;
+                }
+
         }
     }
 

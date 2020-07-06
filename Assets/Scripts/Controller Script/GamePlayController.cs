@@ -12,6 +12,8 @@ public class GamePlayController : MonoBehaviour
     private GameObject blurCanvas;
     [SerializeField]
     private GameObject shopPanel;
+    [SerializeField]
+    private GameObject skillShopPanel;
     public void PauseGame(){
         if(pausePanel.activeSelf==false){
             Time.timeScale = 0f;
@@ -29,6 +31,7 @@ public class GamePlayController : MonoBehaviour
     public void ResumeGame(){
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+        skillShopPanel.SetActive(false);
         blurCanvas.SetActive(false);
         shopPanel.SetActive(false);
     }

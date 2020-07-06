@@ -3,16 +3,13 @@
     ~ Sử dụng trong vòng:
         - Áo giáp lv1: *Armor_1*
             + Thêm 100 giáp
-            + Giá: 500 tiền
-        - Áo giáp lv2: *Armor_2*
-            + Thêm 200 giáp
             + Giá: 1000 tiền
+        - Áo giáp lv2: *Armor_2*
+            + Thêm 250 giáp
+            + Giá: 2000 tiền
         - Áo giáp lv3: *Armor_3*
-            + Thêm 400 giáp
-            + Giá: 2500 tiền
-        - Áo giáp lv4: *Armor_8*
-            + Thêm 1000 giáp
-            + Giá: 7000 tiền
+            + Thêm 500 giáp
+            + Giá: 5000 tiền
 
         - Kiếm lv1: *sword_1*
             + Thêm 10 damage cận chiến
@@ -24,11 +21,6 @@
             + Thêm 50 damage cận chiến
             + Giá: 8000 tiền
 
-        - Ngọc bất tử: *active_4*
-            + Bất tử trong 10 giây
-            + Giá: 3000 tiền
-
-        - Thẻ hồi sinh *làm sau*
 
     ~ Sử dụng vĩnh viễn: 
         - Nâng cấp chiêu tấn công từ xa: *Skill_icon2/passive5*
