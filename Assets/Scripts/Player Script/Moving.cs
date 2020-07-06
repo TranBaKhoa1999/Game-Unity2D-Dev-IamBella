@@ -27,6 +27,22 @@ public class Moving : MonoBehaviour
     [SerializeField]
     public Image healthAmount;
     public Text healthText;
+    
+    public Button PHYSICATTACK;
+    public Button MAGICALATTACK;
+    public Button JUMP;
+    public Button MOVELEFT;
+    public Button MOVERIGHT;
+    private Button _physicalButton;
+    private Button _magicalButton;
+    public Image _magicSkill;
+    [SerializeField]
+    private float cooldown=5;
+    bool isCooldown;
+    public Text cooldownText;
+    private Button _jumpButton;
+    private Button _moveLeftButton;
+    private Button _moveRightButton;
     void Awake(){
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -35,15 +51,65 @@ public class Moving : MonoBehaviour
         maxHealth = MainMenuController.Health;
         health= maxHealth;
     }
+    float count;
     // Start is called before the first frame update
     void Start()
     {
+        _physicalButton = PHYSICATTACK.GetComponent<Button>();
+        _magicalButton = MAGICALATTACK.GetComponent<Button>();
+        // _jumpButton = JUMP.GetComponent<Button>();
+        // _moveLeftButton = MOVELEFT.GetComponent<Button>();
+        // _moveRightButton = MOVERIGHT.GetComponent<Button>();
+
+        _physicalButton.onClick.AddListener(PhysicalButtonOnclick);
+        _magicalButton.onClick.AddListener(MagicalButtonOnclick);
+        // _moveLeftButton.onClick.AddListener(MoveLeftButtonOnclick);
+        // _jumpButton.onClick.AddListener(JumpButtonOnclick);
+        // _moveRightButton.onClick.AddListener(MoveRightButtonOnclick);
+        
         player = GameObject.Find("Player").transform;
+        count  = cooldown;
     }
+    void PhysicalButtonOnclick()
+    {
+       if(anim.GetBool("Jump")==true){
+                
+            }
+            else{
+                if(anim.GetBool("isMagicalAttack")==false && grounded){
+                     //StartCoroutine("TrueAttack");
+                    isPhysicAttack=true;
+                    anim.SetBool("isPhysicalAttack",true);
+                }
+            }
+    }
+    void MagicalButtonOnclick(){
+        if(shotable){
+            if(anim.GetBool("isPhysicalAttack")==false & grounded){
+                anim.SetBool("isMagicalAttack",true);
+                // BulletShow();
+                                            StartCoroutine("BulletShow");
+                //StartCoroutine("BulletShow2"); // item liên hoàn
+                // Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
+                shotable=false;
+                isCooldown = true;
+            }
+        }
+    }
+    // void JumpButtonOnclick(){
+    //      Debug.Log ("jump");
+    // }
+    // void MoveRightButtonOnclick(){
+    //      Debug.Log ("phai");
+    // }
+    // void MoveLeftButtonOnclick(){
+    //      Debug.Log ("trai");
+    // }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        maxHealth=MainMenuController.Health;
         MagicalAttack();
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") && // code sau khi hoàn thành đánh thường thì ko đánh lại lần nữa
             anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
@@ -66,6 +132,16 @@ public class Moving : MonoBehaviour
         }
         healthAmount.fillAmount = health/maxHealth;
         healthText.text = health + "/" + maxHealth;
+        if(isCooldown){
+            _magicSkill.fillAmount += 1/cooldown * Time.deltaTime;
+            // cooldownText.text = count.ToString();
+            // count--;
+            Debug.Log( _magicSkill.fillAmount);
+            if(_magicSkill.fillAmount>=1){
+                isCooldown=false;
+                _magicSkill.fillAmount=0;
+            }
+        }
         
     }
     void PlayerMoveKeyboard(){
@@ -127,6 +203,9 @@ public class Moving : MonoBehaviour
                 shotable=true;
  // ------------------------------------------- End test -------------------------
             }
+        }
+        else{
+
         }
         if(Input.GetKey (KeyCode.Return)){
             if(anim.GetBool("Jump")==true){

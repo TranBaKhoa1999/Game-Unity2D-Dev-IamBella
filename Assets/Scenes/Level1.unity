@@ -144,7 +144,7 @@ PrefabInstance:
     - target: {fileID: 223000012575180128, guid: 49a9eb98707a68649810f1d9d560bb2d,
         type: 3}
       propertyPath: m_TargetDisplay
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012665026564, guid: 49a9eb98707a68649810f1d9d560bb2d,
         type: 3}
@@ -1158,18 +1158,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1264937838}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1048630305 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6719951266013118849, guid: 7de23609097d25348897b43a5b4b684c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6719951267166800306}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ddcd2250f8f0d4a8531ef831257aae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1122213805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2284,30 +2272,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1549941364, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549941364, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549941364, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549941364, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1048630305}
-    - target: {fileID: 1549941364, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549941364, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1963346994, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
       propertyPath: player
       value: 

@@ -339,7 +339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -93.8, y: -63.300003}
+  m_AnchoredPosition: {x: -93.8, y: -63.299988}
   m_SizeDelta: {x: 34.91, y: 17.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &994635812
@@ -840,7 +840,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1549941365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6719951266013118849}
+        m_MethodName: UpHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1727347069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,6 +2238,7 @@ MonoBehaviour:
   ItemStore: {fileID: 6719951266286370086}
   SkillStore: {fileID: 7949597919576846503}
   healthCost: {fileID: 1457822425}
+  hecost: 0
   healthLevel: {fileID: 1843626713}
 --- !u!1 &6719951266020413782
 GameObject:
@@ -5654,7 +5666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -93.8, y: -63.300003}
+  m_AnchoredPosition: {x: -93.8, y: -63.299988}
   m_SizeDelta: {x: 34.91, y: 17.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4691935399699828939

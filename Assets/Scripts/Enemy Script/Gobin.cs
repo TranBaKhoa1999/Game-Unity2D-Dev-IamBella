@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gobin : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Gobin : MonoBehaviour
         bool x = anim.GetBool("isDie");
         if(hp<=0){
             anim.SetBool("isDie",true);
+             gameObject.layer=LayerMask.NameToLayer("notAttack");
             speed=0;
             // Destroy(gameObject);
         }

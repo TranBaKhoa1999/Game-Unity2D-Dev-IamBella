@@ -23,6 +23,7 @@ public class MoneyCounter : MonoBehaviour
     public int hecost;
     [SerializeField]
     public Text healthLevel; 
+    private int healthAmount;
 
 // giá
     private int ShieldCross = 10;
@@ -71,27 +72,38 @@ public class MoneyCounter : MonoBehaviour
         healthLevel.text="Current: lv"+he;
         if( he==0){
             hecost=1000;
+            healthAmount=200;
             healthCost.text = "1000";
         }
         else if(he==1){
             hecost=3000;
+            healthAmount=400;
             healthCost.text = "3000";
         }
         else if(he==2){
             hecost=8000;
+            healthAmount=700;
             healthCost.text = "8000";
         }
         else if(he==3){
             hecost=15000;
+            healthAmount=1000;
             healthCost.text = "15000";
         }
         else if(he==4){
             hecost=30000;
+            healthAmount=1500;
             healthCost.text = "30000";
         }
         else if (he==5){
             hecost=50000;
+            healthAmount=2000;
             healthCost.text = "50000";
+        }
+        else{
+            healthAmount=2000;
+            healthCost.text="MAX";
+            hecost=9999999;
         }
         //show level current
 
@@ -118,11 +130,13 @@ public class MoneyCounter : MonoBehaviour
     }
     // skill store
     public void UpHealth(){
-        if(MainMenuController.Money> hecost){
+        if(MainMenuController.Money> hecost && MainMenuController.HealthLevel<6){
             MainMenuController.HealthLevel+=1;
             MainMenuController.Money-=hecost;
+            MainMenuController.Health = healthAmount;
             MainMenuController.SaveData();
             Update();
+            Debug.Log(MainMenuController.Health);
         }
     }
 }
