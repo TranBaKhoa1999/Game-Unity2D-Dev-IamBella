@@ -17,7 +17,7 @@ public class Moving : MonoBehaviour
     public static int magicDmg;
     private Rigidbody2D myBody;
     private Animator anim;
-    private bool shotable=true;
+    // private bool shotable=true;
     public float minX,maxX;
     public Transform player;
 
@@ -36,8 +36,8 @@ public class Moving : MonoBehaviour
     private Button _physicalButton;
     private Button _magicalButton;
     public Image _magicSkill;
-    [SerializeField]
-    private float cooldown=5;
+    // [SerializeField]
+    private float cooldown=10;
     bool isCooldown;
     public Text cooldownText;
     private Button _jumpButton;
@@ -84,15 +84,16 @@ public class Moving : MonoBehaviour
             }
     }
     void MagicalButtonOnclick(){
-        if(shotable){
+        if(isCooldown==false){
             if(anim.GetBool("isPhysicalAttack")==false & grounded){
                 anim.SetBool("isMagicalAttack",true);
                 // BulletShow();
                                             StartCoroutine("BulletShow");
                 //StartCoroutine("BulletShow2"); // item liên hoàn
                 // Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
-                shotable=false;
                 isCooldown = true;
+                _magicSkill.fillAmount=1;
+                _magicalButton.interactable=false;
             }
         }
     }
@@ -133,13 +134,17 @@ public class Moving : MonoBehaviour
         healthAmount.fillAmount = health/maxHealth;
         healthText.text = health + "/" + maxHealth;
         if(isCooldown){
-            _magicSkill.fillAmount += 1/cooldown * Time.deltaTime;
+            _magicSkill.fillAmount -= 1/cooldown * Time.deltaTime;
+            // float seconds = (_magicSkill.fillAmount % 60);
+            // Debug.Log(seconds);
+
             // cooldownText.text = count.ToString();
             // count--;
-            Debug.Log( _magicSkill.fillAmount);
-            if(_magicSkill.fillAmount>=1){
+            //Debug.Log( _magicSkill.fillAmount);
+            if(_magicSkill.fillAmount<=0){
                 isCooldown=false;
                 _magicSkill.fillAmount=0;
+                _magicalButton.interactable=true;
             }
         }
         
@@ -200,7 +205,6 @@ public class Moving : MonoBehaviour
                 
                 MainMenuController.level2=true;
                 MainMenuController.SaveData();
-                shotable=true;
  // ------------------------------------------- End test -------------------------
             }
         }
@@ -256,14 +260,16 @@ public class Moving : MonoBehaviour
 
     void MagicalAttack(){ // bắn đạn
 
-        if(Input.GetKey (KeyCode.L) && shotable){
+        if(Input.GetKey (KeyCode.L) && isCooldown==false){
             if(anim.GetBool("isPhysicalAttack")==false & grounded){
                 anim.SetBool("isMagicalAttack",true);
+                isCooldown = true;
+                _magicSkill.fillAmount=1;
+                _magicalButton.interactable=false;
                 // BulletShow();
                                             StartCoroutine("BulletShow");
                 //StartCoroutine("BulletShow2"); // item liên hoàn
                 // Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
-                shotable=false;
             }
         }
     }
