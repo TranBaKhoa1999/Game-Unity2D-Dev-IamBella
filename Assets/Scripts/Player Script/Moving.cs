@@ -12,7 +12,6 @@ public class Moving : MonoBehaviour
     public bool grounded;
     private float maxHealth;
     public float health;
-
     public static int physicDmg;
     public static int magicDmg;
     private Rigidbody2D myBody;
@@ -20,7 +19,6 @@ public class Moving : MonoBehaviour
     // private bool shotable=true;
     public float minX,maxX;
     public Transform player;
-
 
     [SerializeField]
     public GameObject bullet;
@@ -43,6 +41,9 @@ public class Moving : MonoBehaviour
     private Button _jumpButton;
     private Button _moveLeftButton;
     private Button _moveRightButton;
+    public static bool isDie;
+
+    public GameObject floatDamge;
     void Awake(){
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -50,6 +51,7 @@ public class Moving : MonoBehaviour
         physicDmg = MainMenuController.PhysicDmg;
         maxHealth = MainMenuController.Health;
         health= maxHealth;
+        isDie = false;
     }
     float count;
     // Start is called before the first frame update
@@ -113,41 +115,54 @@ public class Moving : MonoBehaviour
         maxHealth=MainMenuController.Health;
         physicDmg =MainMenuController.PhysicDmg;
         magicDmg = MainMenuController.MagicDmg;
-        MagicalAttack();
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") && // code sau khi hoàn thành đánh thường thì ko đánh lại lần nữa
+        // if not die----------------------------------
+        if(anim.GetBool("isDie")==false){
+            MagicalAttack();
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") && // code sau khi hoàn thành đánh thường thì ko đánh lại lần nữa
+                anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+                {
+                    anim.SetBool("isPhysicalAttack", false);
+                    isPhysicAttack=false;
+                }
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("MagicalAttack") &&  // code sau khi hoàn thành vận skill thì ko vận lại lần nữa
             anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
             {
-                anim.SetBool("isPhysicalAttack", false);
                 isPhysicAttack=false;
+                anim.SetBool("isMagicalAttack", false);
             }
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("MagicalAttack") &&  // code sau khi hoàn thành vận skill thì ko vận lại lần nữa
-        anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
-        {
-            isPhysicAttack=false;
-            anim.SetBool("isMagicalAttack", false);
-        }
 
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("MagicalAttack")){ // nếu đang vận skill magic thì ko cho di chuyển
-            transform.position = transform.position;
-        }
-        else{
-            PlayerMoveKeyboard();
-        }
-        healthAmount.fillAmount = health/maxHealth;
-        healthText.text = health + "/" + maxHealth;
-        if(isCooldown){
-            _magicSkill.fillAmount -= 1/cooldown * Time.deltaTime;
-            // float seconds = (_magicSkill.fillAmount % 60);
-            // Debug.Log(seconds);
-
-            // cooldownText.text = count.ToString();
-            // count--;
-            //Debug.Log( _magicSkill.fillAmount);
-            if(_magicSkill.fillAmount<=0){
-                isCooldown=false;
-                _magicSkill.fillAmount=0;
-                _magicalButton.interactable=true;
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("MagicalAttack")){ // nếu đang vận skill magic thì ko cho di chuyển
+                transform.position = transform.position;
             }
+            else{
+                PlayerMoveKeyboard();
+            }
+            /// draw health bar
+            healthAmount.fillAmount = health/maxHealth;
+            healthText.text = health + "/" + maxHealth;
+
+            // cooldown skill
+            if(isCooldown){
+                _magicSkill.fillAmount -= 1/cooldown * Time.deltaTime;
+                // float seconds = (_magicSkill.fillAmount % 60);
+                // Debug.Log(seconds);
+
+                // cooldownText.text = count.ToString();
+                // count--;
+                //Debug.Log( _magicSkill.fillAmount);
+                if(_magicSkill.fillAmount<=0){
+                    isCooldown=false;
+                    _magicSkill.fillAmount=0;
+                    _magicalButton.interactable=true;
+                }
+            }
+        } 
+    
+        // if Die
+
+        if(health<=0){
+            anim.SetBool("isDie",true);
+            isDie = true;
         }
         
     }
@@ -218,7 +233,7 @@ public class Moving : MonoBehaviour
                 
             }
             else{
-                if(anim.GetBool("isMagicalAttack")==false && grounded){
+                if(anim.GetBool("isMagicalAttack")==false){
                      //StartCoroutine("TrueAttack");
                     isPhysicAttack=true;
                     anim.SetBool("isPhysicalAttack",true);
@@ -247,7 +262,9 @@ public class Moving : MonoBehaviour
         {
             health-=10f;
             anim.SetTrigger("isHurt");
+             Instantiate(floatDamge,transform.position, Quaternion.identity);
             isPhysicAttack=false;
+        
            Vector3 delta = target.transform.position - transform.position;
         // check side trigger
                 if(delta.x < delta.y){
@@ -268,8 +285,7 @@ public class Moving : MonoBehaviour
                 isCooldown = true;
                 _magicSkill.fillAmount=1;
                 _magicalButton.interactable=false;
-                // BulletShow();
-                                            StartCoroutine("BulletShow");
+                StartCoroutine("BulletShow");
                 //StartCoroutine("BulletShow2"); // item liên hoàn
                 // Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, 0 )));
             }

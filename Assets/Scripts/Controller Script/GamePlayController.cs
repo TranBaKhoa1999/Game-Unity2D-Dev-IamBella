@@ -2,10 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+
 public class GamePlayController : MonoBehaviour
 {
     [SerializeField]
     private GameObject pausePanel;
+    [SerializeField]
+    private GameObject losePanel;
+    [SerializeField]
+    private GameObject winPanel;
     [SerializeField]
     private Button resumeButton;
     [SerializeField]
@@ -14,6 +20,16 @@ public class GamePlayController : MonoBehaviour
     private GameObject shopPanel;
     [SerializeField]
     private GameObject skillShopPanel;
+    void FixedUpdate() {
+        if(Moving.isDie == true){
+            StartCoroutine("PlayerDie");
+        }
+    }
+    private IEnumerator PlayerDie() // hàm delay thời gian bắn đạn
+     {        
+         yield return new WaitForSeconds(2f);
+            LoseGame();
+     }
     public void PauseGame(){
         if(pausePanel.activeSelf==false){
             Time.timeScale = 0f;
@@ -44,5 +60,36 @@ public class GamePlayController : MonoBehaviour
         Time.timeScale = 0f;
         shopPanel.SetActive(true);
         blurCanvas.SetActive(true);
+    }
+    /// lose game function
+    public void LoseGame(){
+            Time.timeScale = 0f;
+            losePanel.SetActive(true);
+            blurCanvas.SetActive(true);
+    }
+    public void RePlay(){
+        Scene m_Scene;
+        m_Scene = SceneManager.GetActiveScene();
+        Time.timeScale=1f;
+        SceneManager.LoadScene(m_Scene.name);
+    }
+
+
+    //win game function
+    public void WinGame(){
+        Time.timeScale = 0f;
+        winPanel.SetActive(true);
+        blurCanvas.SetActive(true);
+    }
+    public void NextLevel(){
+        Scene m_Scene;
+        m_Scene = SceneManager.GetActiveScene();
+        Time.timeScale=1f;
+        string currentlv = m_Scene.name.Substring(5);
+        int crlv;
+        int.TryParse(m_Scene.name, out crlv);
+        if(crlv<5){
+            SceneManager.LoadScene("Level"+crlv+1);
+        }
     }
 }
