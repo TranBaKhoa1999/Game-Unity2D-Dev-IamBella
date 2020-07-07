@@ -70,7 +70,6 @@
      <Compile Include="Assets\Scripts\Save Data Script\Save.cs" />
      <Compile Include="Assets\Scripts\Shop Script\MoneyCounter.cs" />
      <Compile Include="Assets\Scripts\Skill Script\MagicalScript.cs" />
-     <Compile Include="Assets\Scripts\Train Script\Train.cs" />
      <Compile Include="Assets\Scripts\UI Script\BlinkText.cs" />
      <Compile Include="Assets\Scripts\UI Script\ScrollingTextManager.cs" />
      <Compile Include="Assets\Scripts\UI Script\SelectLevel.cs" />
@@ -111,12 +110,10 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\ResourcesText\4.Special_Item.txt" />
-     <None Include="Assets\Sprites\Enemies\readme.txt" />
      <None Include="Assets\Materials\BLUR.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\ResourcesText\5.Enemy.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Sprites\Enemies\license.txt" />
      <None Include="Assets\ResourcesText\2.Shop.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\ResourcesText\3.Level_Game.txt" />
@@ -139,21 +136,6 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
-<<<<<<< Updated upstream
- <HintPath>D:/Unity/Project/GameUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Unity/Project/GameUnity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/Unity/Project/GameUnity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Unity/Project/GameUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/Unity/Project/GameUnity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-=======
  <HintPath>D:/GameUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
@@ -167,7 +149,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>D:/GameUnity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
->>>>>>> Stashed changes
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -371,11 +352,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
-<<<<<<< Updated upstream
- <HintPath>D:/Unity/Project/GameUnity/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
-=======
  <HintPath>D:/GameUnity/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
->>>>>>> Stashed changes
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
