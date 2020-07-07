@@ -369,7 +369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' 200/ 400/ 700/ 1000/ 1500/ 2000'
+  m_Text: ' 100/200/ 400/ 700/ 1000/ 1500/ 2000'
 --- !u!1 &403296169
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce82bcf8b9d8c9e438657badadd57f1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a40d5aca8f51f149b2fa964a35a061a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -970,7 +970,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6719951266013118849}
-        m_MethodName: UpHealth
+        m_MethodName: UpMagicDmg
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1456,7 +1456,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6719951266013118849}
-        m_MethodName: UpHealth
+        m_MethodName: UpPhysicDmg
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1536,13 +1536,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Increase your Max HP '
+  m_Text: Increase your Magical Dmg
 --- !u!1 &1341119443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' 200/ 400/ 700/ 1000/ 1500/ 2000'
+  m_Text: 20/ 23/ 26/ 30/ 40/ 55/ 75/ 100
 --- !u!1 &1422251057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce82bcf8b9d8c9e438657badadd57f1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5a05d2f27d0e68458d3450b4934f1e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2384,7 +2384,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' 200/ 400/ 700/ 1000/ 1500/ 2000'
+  m_Text: 'dmg: 100/ 200/ 300/ 500
+
+    cooldown: 10s/ 8s/ 5s/ 3s'
 --- !u!1 &1727347069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,13 +2531,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Increase your Max HP '
+  m_Text: Increase your Physical Dmg
 --- !u!1 &1795616382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4003,8 +4005,11 @@ MonoBehaviour:
   ItemStore: {fileID: 6719951266286370086}
   SkillStore: {fileID: 7949597919576846503}
   healthCost: {fileID: 1457822425}
-  hecost: 0
   healthLevel: {fileID: 1843626713}
+  physicCost: {fileID: 1422509573}
+  physicLevel: {fileID: 661919763}
+  magicCost: {fileID: 604193802}
+  magicLevel: {fileID: 2089254579}
 --- !u!1 &6719951266020413782
 GameObject:
   m_ObjectHideFlags: 0
@@ -7539,7 +7544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6632058630291351542
 RectTransform:
   m_ObjectHideFlags: 0

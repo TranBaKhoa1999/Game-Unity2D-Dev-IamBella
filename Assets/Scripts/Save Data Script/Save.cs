@@ -8,12 +8,15 @@ public class Save
     public bool Level4;
     public bool Level5;
     public int money;
-    public int magicDmg;
-    public int physicDmg;
-    public int health;
     /// skill store
     public int healthLevel;
-    public int armorLevel;
+    public int health;
+
+    public int magicLevel;
+    public int magicDmg;
+
+    public int physicLevel;
+    public int physicDmg;
     
     //item store
     public int shield;

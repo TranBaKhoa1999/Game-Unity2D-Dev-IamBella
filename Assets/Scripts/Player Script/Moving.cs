@@ -111,6 +111,8 @@ public class Moving : MonoBehaviour
     void FixedUpdate()
     {
         maxHealth=MainMenuController.Health;
+        physicDmg =MainMenuController.PhysicDmg;
+        magicDmg = MainMenuController.MagicDmg;
         MagicalAttack();
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack") && // code sau khi hoàn thành đánh thường thì ko đánh lại lần nữa
             anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
@@ -245,7 +247,7 @@ public class Moving : MonoBehaviour
         {
             health-=10f;
             anim.SetTrigger("isHurt");
-
+            isPhysicAttack=false;
            Vector3 delta = target.transform.position - transform.position;
         // check side trigger
                 if(delta.x < delta.y){
