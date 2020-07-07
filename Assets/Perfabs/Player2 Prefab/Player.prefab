@@ -122,6 +122,14 @@ MonoBehaviour:
   bullet: {fileID: 0}
   healthAmount: {fileID: 0}
   healthText: {fileID: 0}
+  PHYSICATTACK: {fileID: 0}
+  MAGICALATTACK: {fileID: 0}
+  JUMP: {fileID: 0}
+  MOVELEFT: {fileID: 0}
+  MOVERIGHT: {fileID: 0}
+  _magicSkill: {fileID: 0}
+  cooldownText: {fileID: 0}
+  floatDamge: {fileID: 0}
 --- !u!50 &1249508651050205189
 Rigidbody2D:
   serializedVersion: 4

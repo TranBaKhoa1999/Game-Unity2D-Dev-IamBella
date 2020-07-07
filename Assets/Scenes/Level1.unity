@@ -395,6 +395,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &266714871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 594184693771418021, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &266714873
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266714871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1aa6c3fa821b9d94b85f5a5dfdb4a0c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &273681514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1622688506, guid: 7de23609097d25348897b43a5b4b684c,
@@ -1155,14 +1180,19 @@ PrefabInstance:
       objectReference: {fileID: 273681514}
     - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
+      propertyPath: _magicSkill
+      value: 
+      objectReference: {fileID: 676038733}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
       propertyPath: cooldownText
       value: 
       objectReference: {fileID: 834191814}
     - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
-      propertyPath: _magicSkill
+      propertyPath: floatDamge
       value: 
-      objectReference: {fileID: 676038733}
+      objectReference: {fileID: 266714871}
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2340,10 +2370,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 221609046, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 221609047, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
+      propertyPath: m_CharacterSize
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1963346994, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 686297357}
+    - target: {fileID: 980629683095495099, guid: 7de23609097d25348897b43a5b4b684c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6719951266321947653, guid: 7de23609097d25348897b43a5b4b684c,
         type: 3}
       propertyPath: m_Camera
