@@ -1,5 +1,11 @@
 4. Item đặc biệt: Skill_icon2
 
+    - Trị dũ: *Heal10*
+        + Mở khóa từ đầu
+        + Công dụng: Hồi phục 10% máu
+        + Hiệu lực: 1 lần
+        + Kích hoạt: tự động
+
     - Ngự giáp: *active13*
         + Mở khóa khi vượt qua màn 1
         + Công dụng: Nhận thêm 100 Giáp
@@ -18,15 +24,9 @@
         + Hiệu lực: 1 phút
         + Kích hoạt tự động
 
-    - Cuồng nộ: *active14*
+    - Cam vũ: *Heal30*
         + Mở khóa khi vượt qua màn 3
-        + Công dụng: Làm nhân vật trở nên to hơn gấp đôi
-            * Tấn công cận chiến: Thêm 20 damage
-            * Giáp: Thêm 100 giáp
-            * Di chuyển: v = 70f, a = 3f
-            * Nhảy: j = 320f
-        + Hiệu lực: 1 phút
-        + Kích hoạt tự động
+        + Công dụng: Hồi phục 30% máu
 
     - Liên hoàn: *active4*
         + Mở khóa khi vượt qua màn 3
