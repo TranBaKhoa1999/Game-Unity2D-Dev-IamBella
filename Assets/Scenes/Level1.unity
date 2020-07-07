@@ -144,7 +144,7 @@ PrefabInstance:
     - target: {fileID: 223000012575180128, guid: 49a9eb98707a68649810f1d9d560bb2d,
         type: 3}
       propertyPath: m_TargetDisplay
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224000012665026564, guid: 49a9eb98707a68649810f1d9d560bb2d,
         type: 3}
@@ -395,6 +395,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &273681514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1622688506, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &292139779 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 650365530, guid: 7de23609097d25348897b43a5b4b684c,
@@ -751,6 +763,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &629413579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1125358832, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &650165027 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1427865979, guid: 7de23609097d25348897b43a5b4b684c,
@@ -869,6 +893,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &676038733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 148720952, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &686297357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
@@ -1062,6 +1098,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+--- !u!114 &834191814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 229277891, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &838277723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
@@ -1095,6 +1143,26 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 292139779}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: PHYSICATTACK
+      value: 
+      objectReference: {fileID: 629413579}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: MAGICALATTACK
+      value: 
+      objectReference: {fileID: 273681514}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: cooldownText
+      value: 
+      objectReference: {fileID: 834191814}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: _magicSkill
+      value: 
+      objectReference: {fileID: 676038733}
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_LocalPosition.x

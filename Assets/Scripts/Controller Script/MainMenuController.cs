@@ -15,11 +15,15 @@ public class MainMenuController : MonoBehaviour
     public static bool level5{ get ; set ; }=false;
     public static int Shield=3;
     public static int Money=5000;
+
     public static int MagicDmg=100;
+    public static int MagicLevel=0;
+
     public static int PhysicDmg=20;
+    public static int PhysicLevel=0;
+
     public static int Health=100;
     public static int HealthLevel=0;
-    public static int ArmorLevel =0;
 
      public static void SaveData() {
          string savePath = Application.persistentDataPath + "/gamesave.dat";
@@ -27,11 +31,12 @@ public class MainMenuController : MonoBehaviour
            Level2 = level2,
            Level3 = level3,
            money = Money,
-           magicDmg = MagicDmg,
-           physicDmg = PhysicDmg,
            health = Health,
            healthLevel=HealthLevel,
-           armorLevel=ArmorLevel,
+           magicLevel  = MagicLevel,
+           magicDmg = MagicDmg,
+           physicLevel = PhysicLevel,
+           physicDmg = PhysicDmg,
            shield = Shield
         };
 
@@ -59,11 +64,16 @@ public class MainMenuController : MonoBehaviour
             level3= save.Level3;
             Money = save.money;
             Shield = save.shield;
+
             MagicDmg = save.magicDmg;
+            MagicLevel = save.magicLevel;
+
             PhysicDmg = save.physicDmg;
+            PhysicLevel = save.physicLevel;
+
             Health = save.health;
             HealthLevel = save.healthLevel;
-            ArmorLevel = save.armorLevel;
+
             Debug.Log("Loaded");
         }
         else{
@@ -74,7 +84,8 @@ public class MainMenuController : MonoBehaviour
             Health = 100;
             PhysicDmg = 20;
             HealthLevel = 0;
-            ArmorLevel=0;
+            PhysicLevel = 0;
+            MagicLevel = 0;
         }
     }
      private void Awake() {
