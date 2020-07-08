@@ -7,6 +7,20 @@ TagManager:
   - Ground
   - Bullet
   - Enemy
+  - Gobin
+  - Orc
+  - Orge
+  - Golem1
+  - Golem2
+  - Golem3
+  - ReaperMan1
+  - ReaperMan2
+  - ReaperMan3
+  - 1_TROLL
+  - 2_TROLL
+  - 3_TROLL
+  - Elf
+  - Fairy
   layers:
   - Default
   - TransparentFX

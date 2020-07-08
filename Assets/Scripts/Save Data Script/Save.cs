@@ -18,6 +18,7 @@ public class Save
     public int physicLevel;
     public int physicDmg;
     
+    
     //item store
     public int shield;
 }

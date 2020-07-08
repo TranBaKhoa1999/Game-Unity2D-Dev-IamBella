@@ -14,6 +14,8 @@ public class Gobin : MonoBehaviour
     [SerializeField]
     private float hp;
     public GameObject healthBar;
+    public GameObject floatDamgePhysic;
+    public GameObject floatDamgeMagic;
     // Start is called before the first frame update
     void Awake() {
         myBody = GetComponent<Rigidbody2D>();
@@ -26,6 +28,7 @@ public class Gobin : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         bool x = anim.GetBool("isDie");
         if(hp<=0){
             anim.SetBool("isDie",true);
@@ -78,6 +81,12 @@ public class Gobin : MonoBehaviour
                 anim.SetTrigger("hurt");
                 gameObject.layer=LayerMask.NameToLayer("notAttack");
                 hp-=Moving.physicDmg;
+
+                // floating physic dmage
+                GameObject damgeShow = Instantiate(floatDamgePhysic,transform.position, Quaternion.identity) as GameObject;
+                damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + Moving.physicDmg.ToString();
+                 Destroy(damgeShow, 1f);
+
                 healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
             //anim.SetBool("Attack",true);
@@ -88,6 +97,12 @@ public class Gobin : MonoBehaviour
         else{
             if(target.tag=="Bullet"){ // bị bắn
                 hp -=Moving.magicDmg;
+
+                //float ting magic damge
+                GameObject damgeShow = Instantiate(floatDamgeMagic,transform.position, Quaternion.identity) as GameObject;
+                damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "-"+ Moving.magicDmg.ToString();
+                Destroy(damgeShow, 1f);
+    
                 anim.SetTrigger("hurt");
                 gameObject.layer=LayerMask.NameToLayer("notAttack");
                 anim.SetBool("Attack",false);
