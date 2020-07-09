@@ -259,7 +259,7 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
-        if((target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc") && target.gameObject.layer==11)
+        if((target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc") && target.gameObject.layer==10)
         {
             anim.SetTrigger("isHurt");
              GameObject damgeShow = Instantiate(floatDamge,transform.position, Quaternion.identity) as GameObject;

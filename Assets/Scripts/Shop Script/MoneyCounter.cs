@@ -155,12 +155,35 @@ public class MoneyCounter : MonoBehaviour
             physicCost.text = "35000";
         }
         else{
-            healthCost.text="MAX";
+            physicCost.text="MAX";
             phycost=9999999;
         }
         //end physic damge up
         
         //magic damge up
+        ma = MainMenuController.MagicLevel;
+        macost=0;
+        magicLevel.text="Current: lv"+ma;
+        if( ma==0){
+            macost=1000;
+            magicCost.text = "10000";
+        }
+        else if(ma==1){
+            macost=2000;
+            magicCost.text = "25000";
+        }
+        else if(ma==2){
+            macost=5000;
+            magicCost.text = "50000";
+        }
+        else if(ma==3){
+            magicCost.text="MAX";
+            macost=9999999;
+        }
+        else{
+            magicCost.text="MAX";
+            macost=9999999;
+        }
 
         //end magic damgeup
     }
@@ -261,7 +284,7 @@ public class MoneyCounter : MonoBehaviour
         }
         else{
             physicAmount=100;
-            healthCost.text="MAX";
+            physicCost.text="MAX";
             phycost=9999999;
         }
         //end physic damge up
@@ -271,29 +294,27 @@ public class MoneyCounter : MonoBehaviour
         macost=0;
         magicLevel.text="Current: lv"+ma;
         if( ma==0){
-            macost=1000;
-            magicAmount=23;
-            magicCost.text = "1000";
+            macost=10000;
+            magicAmount=200;
+            magicCost.text = "10000";
         }
         else if(ma==1){
-            macost=2000;
-            magicAmount=26;
-            magicCost.text = "2000";
+            macost=25000;
+            magicAmount=300;
+            magicCost.text = "25000";
         }
         else if(ma==2){
-            macost=5000;
-            magicAmount=30;
-            magicCost.text = "5000";
+            macost=50000;
+            magicAmount=500;
+            magicCost.text = "50000";
         }
         else if(ma==3){
-            macost=8000;
-            magicAmount=40;
-            magicCost.text = "8000";
-        }
-        else{
             magicAmount=100;
             magicCost.text="MAX";
             macost=9999999;
+        }
+        else{
+
         }
         //end magic damgeup
 
@@ -407,7 +428,7 @@ public class MoneyCounter : MonoBehaviour
         }
     }
     public void UpMagicDmg(){
-        if(MainMenuController.Money> macost && MainMenuController.MagicLevel<3){
+        if(MainMenuController.Money> macost && MainMenuController.MagicLevel<4){
             MainMenuController.MagicLevel+=1;
             MainMenuController.Money-=macost;
             MainMenuController.MagicDmg = magicAmount;

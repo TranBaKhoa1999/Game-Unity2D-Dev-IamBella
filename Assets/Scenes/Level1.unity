@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 195776528}
   - component: {fileID: 195776530}
   - component: {fileID: 195776529}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: ground (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 667099210}
   - component: {fileID: 667099212}
   - component: {fileID: 667099211}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: ground (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 706694212}
   - component: {fileID: 706694214}
   - component: {fileID: 706694213}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: ground (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1701,7 +1701,7 @@ GameObject:
   - component: {fileID: 1264764172}
   - component: {fileID: 1264764174}
   - component: {fileID: 1264764173}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: ground (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2155,7 +2155,7 @@ SpriteRenderer:
   m_Size: {x: 100, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1823901841
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 1917427949}
   - component: {fileID: 1917427951}
   - component: {fileID: 1917427950}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: ground (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2288,7 +2288,7 @@ GameObject:
   - component: {fileID: 1939740440}
   - component: {fileID: 1939740442}
   - component: {fileID: 1939740441}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
