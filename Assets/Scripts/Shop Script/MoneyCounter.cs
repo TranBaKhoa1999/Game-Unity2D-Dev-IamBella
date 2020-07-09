@@ -12,8 +12,6 @@ public class MoneyCounter : MonoBehaviour
     [SerializeField]
     public Text MoneyTxt3; // money skill shop
     [SerializeField]
-    public Text Shieldtxt;
-    [SerializeField]
     public GameObject ItemStore;
     [SerializeField]
     public GameObject SkillStore;
@@ -45,14 +43,50 @@ public class MoneyCounter : MonoBehaviour
     [SerializeField]
     public Text magicLevel; 
     private int magicAmount;
+    // txt item Store;
+    [SerializeField]
+    public Text armorLv1_txt;
+    [SerializeField]
+    public Text armorLv2_txt;
+    [SerializeField]
+    public Text armorLv3_txt;
+    [SerializeField]
+    public Text swordLv1_txt;
+    [SerializeField]
+    public Text swordLv2_txt;
+    [SerializeField]
+    public Text swordLv3_txt;
+    [SerializeField]
+    public Text hpRestoreLv1_txt;
+    [SerializeField]
+    public Text hpRestoreLv2_txt;
+    
+    
+    
 
 
-// giá
-    private int ShieldCross = 10;
+// item Cost
+    private int Armor1_Cost = 1000;
+    private int Armor2_Cost = 2000;
+    private int Armor3_Cost = 5000;
+    private int Sword1_Cost = 1000;
+    private int Sword2_Cost = 4000;
+    private int Sword3_Cost = 8000;
+    private int HpRestore1_Cost = 2000;
+    private int HpRestore2_Cost = 5000;
+
 
      void Start() {
         MoneyTxt.text= MainMenuController.Money.ToString();
-        Shieldtxt.text = MainMenuController.Shield.ToString();
+        //Shieldtxt.text = MainMenuController.Shield.ToString();
+        armorLv1_txt.text = "You Have: "+ MainMenuController.ArmorLv1.ToString();
+        armorLv2_txt.text = "You Have: "+ MainMenuController.ArmorLv2.ToString();
+        armorLv3_txt.text = "You Have: "+ MainMenuController.ArmorLv3.ToString();
+        swordLv1_txt.text = "You Have: "+ MainMenuController.SwordLv1.ToString();
+        swordLv2_txt.text = "You Have: "+ MainMenuController.SwordLv2.ToString();
+        swordLv3_txt.text = "You Have: "+ MainMenuController.SwordLv3.ToString();
+        hpRestoreLv1_txt.text = "You Have: "+ MainMenuController.HpRestoreLv1.ToString();
+        hpRestoreLv2_txt.text = "You Have: "+ MainMenuController.HpRestoreLv2.ToString();
 
         // health up
         he = MainMenuController.HealthLevel;
@@ -136,7 +170,15 @@ public class MoneyCounter : MonoBehaviour
         MoneyTxt.text=MainMenuController.Money.ToString();
         MoneyTxt2.text= MainMenuController.Money.ToString();
         MoneyTxt3.text = MainMenuController.Money.ToString();
-        Shieldtxt.text = MainMenuController.Shield.ToString();
+//        Shieldtxt.text = MainMenuController.Shield.ToString();
+        armorLv1_txt.text = "You Have: "+ MainMenuController.ArmorLv1.ToString();
+        armorLv2_txt.text = "You Have: "+ MainMenuController.ArmorLv2.ToString();
+        armorLv3_txt.text = "You Have: "+ MainMenuController.ArmorLv3.ToString();
+        swordLv1_txt.text = "You Have: "+ MainMenuController.SwordLv1.ToString();
+        swordLv2_txt.text = "You Have: "+ MainMenuController.SwordLv2.ToString();
+        swordLv3_txt.text = "You Have: "+ MainMenuController.SwordLv3.ToString();
+        hpRestoreLv1_txt.text = "You Have: "+ MainMenuController.HpRestoreLv1.ToString();
+        hpRestoreLv2_txt.text = "You Have: "+ MainMenuController.HpRestoreLv2.ToString();
         //show health level current + cost
         he = MainMenuController.HealthLevel;
         hecost=0;
@@ -257,10 +299,73 @@ public class MoneyCounter : MonoBehaviour
 
     }
     // item store
-    public void BuyShield(){
-        if(MainMenuController.Money >= ShieldCross){
-            MainMenuController.Shield+=1;
-            MainMenuController.Money -= ShieldCross;
+    public void BuyArmor1(){
+        if(MainMenuController.Money >= Armor1_Cost){
+            MainMenuController.ArmorLv1+=1;
+            MainMenuController.Money -= Armor1_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuyArmor2(){
+        if(MainMenuController.Money >= Armor2_Cost){
+            MainMenuController.ArmorLv2+=1;
+            MainMenuController.Money -= Armor2_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuyArmor3(){
+        if(MainMenuController.Money >= Armor3_Cost){
+            MainMenuController.ArmorLv3+=1;
+            MainMenuController.Money -= Armor3_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuySword1(){
+        if(MainMenuController.Money >= Sword1_Cost){
+            MainMenuController.SwordLv1+=1;
+            MainMenuController.Money -= Sword1_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuySword2(){
+        if(MainMenuController.Money >= Sword2_Cost){
+            MainMenuController.SwordLv2+=1;
+            MainMenuController.Money -= Sword2_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuySword3(){
+        if(MainMenuController.Money >= Sword3_Cost){
+            MainMenuController.SwordLv3+=1;
+            MainMenuController.Money -= Sword3_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuyHp1(){
+        if(MainMenuController.Money >= HpRestore1_Cost){
+            MainMenuController.HpRestoreLv1+=1;
+            MainMenuController.Money -= HpRestore1_Cost;
+            MainMenuController.SaveData();
+            Update();
+            Debug.Log(MainMenuController.Money);
+        }
+    }
+    public void BuyHp2(){
+        if(MainMenuController.Money >= HpRestore2_Cost){
+            MainMenuController.HpRestoreLv2+=1;
+            MainMenuController.Money -= HpRestore2_Cost;
             MainMenuController.SaveData();
             Update();
             Debug.Log(MainMenuController.Money);

@@ -18,6 +18,16 @@ public class Save
     public int physicLevel;
     public int physicDmg;
     
+    
     //item store
-    public int shield;
+    public int armorLv1;
+    public int armorLv2;
+    public int armorLv3;
+    public int swordLv1;
+    public int swordLv2;
+    public int swordLv3;
+    public int hpRestoreLv1;
+    public int hpRestoreLv2;
+    
+
 }

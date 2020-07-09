@@ -411,25 +411,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6719951267166800306}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &266714873
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266714871}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1aa6c3fa821b9d94b85f5a5dfdb4a0c4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &273681514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1622688506, guid: 7de23609097d25348897b43a5b4b684c,
@@ -461,10 +442,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240264954}
     m_Modifications:
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamge
+      value: 
+      objectReference: {fileID: 954908096}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgeMagic
+      value: 
+      objectReference: {fileID: 1289350487}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgePhysic
+      value: 
+      objectReference: {fileID: 954908096}
     - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
       propertyPath: m_Name
       value: Gobin (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gobin
       objectReference: {fileID: 0}
     - target: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
@@ -615,10 +613,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240264954}
     m_Modifications:
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamge
+      value: 
+      objectReference: {fileID: 954908096}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgeMagic
+      value: 
+      objectReference: {fileID: 1289350487}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgePhysic
+      value: 
+      objectReference: {fileID: 954908096}
     - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
       propertyPath: m_Name
       value: Gobin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gobin
       objectReference: {fileID: 0}
     - target: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
@@ -1071,10 +1086,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240264954}
     m_Modifications:
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamge
+      value: 
+      objectReference: {fileID: 954908096}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgeMagic
+      value: 
+      objectReference: {fileID: 1289350487}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgePhysic
+      value: 
+      objectReference: {fileID: 954908096}
     - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
       propertyPath: m_Name
       value: Gobin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gobin
       objectReference: {fileID: 0}
     - target: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
@@ -1266,6 +1298,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1264937838}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &954908096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 954908096, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1122213805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1273,9 +1311,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240264954}
     m_Modifications:
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamge
+      value: 
+      objectReference: {fileID: 954908096}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgeMagic
+      value: 
+      objectReference: {fileID: 1289350487}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgePhysic
+      value: 
+      objectReference: {fileID: 954908096}
     - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
       propertyPath: m_Name
+      value: Gobin
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_TagString
       value: Gobin
       objectReference: {fileID: 0}
     - target: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
@@ -1348,10 +1403,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240264954}
     m_Modifications:
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamge
+      value: 
+      objectReference: {fileID: 954908096}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgeMagic
+      value: 
+      objectReference: {fileID: 1289350487}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgePhysic
+      value: 
+      objectReference: {fileID: 954908096}
     - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
       propertyPath: m_Name
       value: Gobin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gobin
       objectReference: {fileID: 0}
     - target: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
@@ -1731,10 +1803,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240264954}
     m_Modifications:
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamge
+      value: 
+      objectReference: {fileID: 954908096}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgeMagic
+      value: 
+      objectReference: {fileID: 1289350487}
+    - target: {fileID: 238263367, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+      propertyPath: floatDamgePhysic
+      value: 
+      objectReference: {fileID: 954908096}
     - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
       propertyPath: m_Name
       value: Gobin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 578986114422410595, guid: ceb29330ceb940942a7fba324ded8601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gobin
       objectReference: {fileID: 0}
     - target: {fileID: 578986114422410598, guid: ceb29330ceb940942a7fba324ded8601,
         type: 3}
@@ -1793,6 +1882,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceb29330ceb940942a7fba324ded8601, type: 3}
+--- !u!1 &1289350487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1289350487, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1509161916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2380,23 +2475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 221609046, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 221609047, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
-      propertyPath: m_CharacterSize
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 1963346994, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 686297357}
-    - target: {fileID: 980629683095495099, guid: 7de23609097d25348897b43a5b4b684c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 6719951266321947653, guid: 7de23609097d25348897b43a5b4b684c,
         type: 3}
       propertyPath: m_Camera

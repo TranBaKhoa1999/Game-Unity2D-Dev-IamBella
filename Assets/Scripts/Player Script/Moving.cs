@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour
 {
@@ -258,11 +259,162 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
-        if(target.gameObject.tag=="Enemy" && target.gameObject.layer==11)
+        if((target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc") && target.gameObject.layer==11)
         {
-            health-=10f;
             anim.SetTrigger("isHurt");
-             Instantiate(floatDamge,transform.position, Quaternion.identity);
+             GameObject damgeShow = Instantiate(floatDamge,transform.position, Quaternion.identity) as GameObject;
+
+             //check level curent và get Enemy damge
+            Scene m_Scene;
+            m_Scene = SceneManager.GetActiveScene();
+            string currentlv = m_Scene.name.Substring(5);
+            float enemyDmg=0;
+            string enemyDmgTxt="";
+            if(currentlv=="1"){
+                if(target.gameObject.tag=="Gobin"){
+                    enemyDmg=10f;
+                }
+                else if(target.gameObject.tag=="Orc"){
+                    enemyDmg=8f;
+                }
+                else if(target.gameObject.tag=="Orge"){
+                    enemyDmg=15f;
+                }
+                else if(target.gameObject.tag=="Golem3"){
+                    enemyDmg=5f;
+                }
+                else if(target.gameObject.tag=="1_TROLL"){
+                    enemyDmg=20f;
+                }
+            }
+            else if(currentlv =="2"){
+                if(target.gameObject.tag=="Gobin"){
+                    enemyDmg=12f;
+                }
+                else if(target.gameObject.tag=="Orc"){
+                    enemyDmg=10f;
+                }
+                else if(target.gameObject.tag=="Orge"){
+                    enemyDmg=20f;
+                }
+                else if(target.gameObject.tag=="Golem3"){
+                    enemyDmg=10f;
+                }
+                else if(target.gameObject.tag=="2_TROLL"){
+                    enemyDmg=35f;
+                }
+                else if(target.gameObject.tag=="ReaperMan1"){
+                    enemyDmg=30f;
+                }
+                
+            }
+            else if(currentlv == "3"){
+
+                if(target.gameObject.tag=="Gobin"){
+                    enemyDmg=20f;
+                }
+                else if(target.gameObject.tag=="Orc"){
+                    enemyDmg=15f;
+                }
+                else if(target.gameObject.tag=="Orge"){
+                    enemyDmg=25f;
+                }
+                else if(target.gameObject.tag=="Golem1"){
+                    enemyDmg=20f;
+                }
+                else if(target.gameObject.tag=="Golem2"){
+                    enemyDmg=15f;
+                }
+                else if(target.gameObject.tag=="Golem3"){
+                    enemyDmg=10f;
+                }
+                else if(target.gameObject.tag=="3_TROLL"){
+                    enemyDmg=60f;
+                }
+                else if(target.gameObject.tag=="ReaperMan1"){
+                    enemyDmg=40f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=50f;
+                }
+
+            }
+            else if(currentlv == "4"){
+
+                
+                if(target.gameObject.tag=="Gobin"){
+                    enemyDmg=25f;
+                }
+                else if(target.gameObject.tag=="Orc"){
+                    enemyDmg=20f;
+                }
+                else if(target.gameObject.tag=="Orge"){
+                    enemyDmg=30f;
+                }
+                else if(target.gameObject.tag=="Golem1"){
+                    enemyDmg=20f;
+                }
+                else if(target.gameObject.tag=="Golem2"){
+                    enemyDmg=25f;
+                }
+                else if(target.gameObject.tag=="Golem3"){
+                    enemyDmg=20f;
+                }
+                else if(target.gameObject.tag=="ReaperMan1"){
+                    enemyDmg=70f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=75f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=80f;
+                }
+                else if(target.gameObject.tag=="Elf"){
+                    enemyDmg=100f;
+                }
+
+            }
+            else {
+
+                 if(target.gameObject.tag=="Gobin"){
+                    enemyDmg=30f;
+                }
+                else if(target.gameObject.tag=="Orc"){
+                    enemyDmg=25f;
+                }
+                else if(target.gameObject.tag=="Orge"){
+                    enemyDmg=40f;
+                }
+                else if(target.gameObject.tag=="Golem1"){
+                    enemyDmg=50f;
+                }
+                else if(target.gameObject.tag=="Golem2"){
+                    enemyDmg=45f;
+                }
+                else if(target.gameObject.tag=="Golem3"){
+                    enemyDmg=40f;
+                }
+                else if(target.gameObject.tag=="ReaperMan1"){
+                    enemyDmg=90f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=95f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=100f;
+                }
+                else if(target.gameObject.tag=="Fairy"){
+                    enemyDmg=150f;
+                }
+
+            }
+
+            Debug.Log(currentlv);
+            health-=enemyDmg;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + enemyDmg.ToString();
+            Destroy(damgeShow, 1f);
+
+             // xử lý bị đánh ko đánh lại và bị văng ra
             isPhysicAttack=false;
         
            Vector3 delta = target.transform.position - transform.position;

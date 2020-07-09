@@ -7,7 +7,24 @@ TagManager:
   - Ground
   - Bullet
   - Enemy
+<<<<<<< HEAD
   - Death_Area
+=======
+  - Gobin
+  - Orc
+  - Orge
+  - Golem1
+  - Golem2
+  - Golem3
+  - ReaperMan1
+  - ReaperMan2
+  - ReaperMan3
+  - 1_TROLL
+  - 2_TROLL
+  - 3_TROLL
+  - Elf
+  - Fairy
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
