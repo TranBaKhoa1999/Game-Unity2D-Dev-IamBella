@@ -4,13 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
-<<<<<<< Updated upstream
   - Ground
   - Enemy
   - Gobin
-=======
->>>>>>> Stashed changes
+  - Bullet
+  - Death_Area
+  - Orc
+  - Golem1
+  - Golem2
+  - Golem3
+  - ReaperMan1
+  - ReaperMan2
+  - ReaperMan3
+  - 1_TROLL
+  - 2_TROLL
+  - 3_TROLL
+  - Elf
+  - Fairy
   layers:
   - Default
   - TransparentFX
@@ -20,17 +30,10 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< Updated upstream
   - EnemyMoveRange
   - 
   - Attack
   - notAttack
-=======
-  - 
-  - 
-  - 
-  - 
->>>>>>> Stashed changes
   - 
   - 
   - 
