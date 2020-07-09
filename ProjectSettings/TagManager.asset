@@ -5,9 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+<<<<<<< Updated upstream
   - Ground
   - Enemy
   - Gobin
+=======
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -17,10 +20,17 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< Updated upstream
   - EnemyMoveRange
   - 
   - Attack
   - notAttack
+=======
+  - 
+  - 
+  - 
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
