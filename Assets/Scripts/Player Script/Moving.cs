@@ -15,6 +15,7 @@ public class Moving : MonoBehaviour
     public float health;
     public static int physicDmg;
     public static int magicDmg;
+    public static int magicLevel;
     private Rigidbody2D myBody;
     private Animator anim;
     // private bool shotable=true;
@@ -116,6 +117,7 @@ public class Moving : MonoBehaviour
         maxHealth=MainMenuController.Health;
         physicDmg =MainMenuController.PhysicDmg;
         magicDmg = MainMenuController.MagicDmg;
+        magicLevel = MainMenuController.MagicLevel;
         // if not die----------------------------------
         if(anim.GetBool("isDie")==false){
             MagicalAttack();
@@ -447,10 +449,31 @@ public class Moving : MonoBehaviour
      {        
          yield return new WaitForSeconds(0.75f);
          if(transform.localScale.x < 0){
-            Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
+            GameObject clone =Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 ))) as GameObject;
+            Vector3 scale = bullet.transform.localScale;
+             if(magicLevel == 0 || magicLevel== 1){
+                scale.x = 2;
+                scale.y= 2;
+             }
+             else{
+                scale.x=1;
+                scale.y = 1;
+             }
+             clone.transform.localScale = scale;
          }
          else{
-            Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 )));
+            GameObject clone =Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 ))) as GameObject;
+            Vector3 scale = bullet.transform.localScale;
+             Debug.Log(magicLevel);
+             if(magicLevel == 0 || magicLevel == 1){
+                scale.x = -2;
+                scale.y= 2;
+             }
+             else{
+                scale.x=-1;
+                scale.y = 1;
+             }
+             clone.transform.localScale = scale;
          }
 
      }

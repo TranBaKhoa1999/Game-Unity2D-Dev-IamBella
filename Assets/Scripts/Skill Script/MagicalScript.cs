@@ -9,7 +9,9 @@ public class MagicalScript : MonoBehaviour
     public Transform player;
     private float side;
     private float startPoint;
+    private Animator anim;
     void Awake(){
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -20,9 +22,26 @@ public class MagicalScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move();
-        if(transform.position.x - startPoint> 6.8){  // hủy đạn sau khi bay 1 khoảng cách so với điểm xuất phát ( thiếu hàm || )
-            Destroy(gameObject);
+        
+        if (gameObject.name.Contains("(Clone)"))
+        {
+            if(Moving.magicLevel == 0){
+                anim.SetInteger("Level",0);
+            }
+            else if (Moving.magicLevel==1){
+                anim.SetInteger("Level",1);
+            }
+            else if(Moving.magicLevel ==2){
+                anim.SetInteger("Level",2);
+            }
+            else if(Moving.magicLevel == 3){
+                anim.SetInteger("Level",3);
+            }
+            Move();
+            if(Mathf.Abs(transform.position.x - startPoint)> 6.8){  // hủy đạn sau khi bay 1 khoảng cách so với điểm xuất phát ( thiếu hàm || )
+            Destroy(gameObject,1f);
+            }
+
         }
     }
 
