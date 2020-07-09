@@ -13,9 +13,20 @@ public class MainMenuController : MonoBehaviour
     public static bool level2{ get ; set ; }=false;
     public static bool level4{ get ; set ; }=false;
     public static bool level5{ get ; set ; }=false;
-    public static int Shield=3;
-    public static int Money=5000;
+    public static int Money=500000;
 
+    //item
+    public static int ArmorLv1=0;
+    public static int ArmorLv2=0;
+    public static int ArmorLv3=0;
+    public static int SwordLv1=0;
+    public static int SwordLv2=0;
+    public static int SwordLv3=0;
+    public static int HpRestoreLv1=0;
+    public static int HpRestoreLv2=0;
+
+
+    //skill - detail
     public static int MagicDmg=100;
     public static int MagicLevel=0;
 
@@ -37,7 +48,15 @@ public class MainMenuController : MonoBehaviour
            magicDmg = MagicDmg,
            physicLevel = PhysicLevel,
            physicDmg = PhysicDmg,
-           shield = Shield
+           //item
+           armorLv1 = ArmorLv1,
+           armorLv2 = ArmorLv2,
+           armorLv3 = ArmorLv3,
+           swordLv1 = SwordLv1,
+           swordLv2 = SwordLv2,
+           swordLv3 = SwordLv3,
+           hpRestoreLv1 = HpRestoreLv1,
+           hpRestoreLv2 = HpRestoreLv2
         };
 
         var binaryFormatter = new BinaryFormatter();
@@ -63,7 +82,6 @@ public class MainMenuController : MonoBehaviour
             level2 = save.Level2;
             level3= save.Level3;
             Money = save.money;
-            Shield = save.shield;
 
             MagicDmg = save.magicDmg;
             MagicLevel = save.magicLevel;
@@ -73,25 +91,40 @@ public class MainMenuController : MonoBehaviour
 
             Health = save.health;
             HealthLevel = save.healthLevel;
-
+            // item
+            ArmorLv1 = save.armorLv1;
+            ArmorLv2 = save.armorLv2;
+            ArmorLv3 = save.armorLv3;
+            SwordLv1 = save.swordLv1;
+            SwordLv2 = save.swordLv2;
+            SwordLv3 = save.swordLv3;
+            HpRestoreLv1 = save.hpRestoreLv1;
+            HpRestoreLv2 = save.hpRestoreLv2;
             Debug.Log("Loaded");
         }
         else{
             Debug.Log("Load Fail");
             Money = 5000;
-            Shield = 3;
             MagicDmg = 100;
             Health = 100;
             PhysicDmg = 20;
             HealthLevel = 0;
             PhysicLevel = 0;
             MagicLevel = 0;
+            ArmorLv1 = 0 ;
+            ArmorLv2 = 0;
+            ArmorLv3 = 0;
+            SwordLv1 = 0;
+            SwordLv2 = 0;
+            SwordLv3 =0;
+            HpRestoreLv1 = 0;
+            HpRestoreLv2 = 0;
         }
     }
      private void Awake() {
          LoadData();
-         Debug.Log(HealthLevel);
-         Debug.Log(Money);
+        //  Debug.Log(HealthLevel);
+        //  Debug.Log(Money);
     }
     private void Start() {
     }
