@@ -21,6 +21,13 @@
             + Thêm 50 damage cận chiến
             + Giá: 8000 tiền
 
+        - Bình máu Lv1: 
+            + Hồi 20% máu
+            + Giá: 2000 tiền
+        - Bình máu Lv2: 
+            + Hồi 50% máu
+            + Giá: 5000 tiền
+
 
     ~ Sử dụng vĩnh viễn: 
         - Nâng cấp chiêu tấn công từ xa: *Skill_icon2/passive5*

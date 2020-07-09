@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Bullet
   - Enemy
+  - Death_Area
   layers:
   - Default
   - TransparentFX
