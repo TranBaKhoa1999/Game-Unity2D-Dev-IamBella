@@ -36350,7 +36350,7 @@ PrefabInstance:
     - target: {fileID: 5436199312924467793, guid: 978a884f05484204090d8f79c0c632bd,
         type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 5436199312924467795, guid: 978a884f05484204090d8f79c0c632bd,
         type: 3}
@@ -36370,7 +36370,7 @@ PrefabInstance:
     - target: {fileID: 5436199312924467822, guid: 978a884f05484204090d8f79c0c632bd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 5436199312924467822, guid: 978a884f05484204090d8f79c0c632bd,
         type: 3}
