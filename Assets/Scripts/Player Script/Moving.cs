@@ -451,10 +451,15 @@ public class Moving : MonoBehaviour
          if(transform.localScale.x < 0){
             GameObject clone =Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 ))) as GameObject;
             Vector3 scale = bullet.transform.localScale;
-             if(magicLevel == 0 || magicLevel== 1){
+             if(magicLevel == 0 || magicLevel== 1 || magicLevel ==2){
                 scale.x = 2;
                 scale.y= 2;
              }
+            // else if(magicLevel == 2){
+            //     scale.x=3;
+            //     scale.y = 3;
+
+            //  }
              else{
                 scale.x=1;
                 scale.y = 1;
@@ -465,10 +470,15 @@ public class Moving : MonoBehaviour
             GameObject clone =Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 ))) as GameObject;
             Vector3 scale = bullet.transform.localScale;
              Debug.Log(magicLevel);
-             if(magicLevel == 0 || magicLevel == 1){
+             if(magicLevel == 0 || magicLevel == 1 || magicLevel==2){
                 scale.x = -2;
                 scale.y= 2;
              }
+            //  else if(magicLevel == 2){
+            //     scale.x=-2;
+            //     scale.y = 3;
+
+            //  }
              else{
                 scale.x=-1;
                 scale.y = 1;
