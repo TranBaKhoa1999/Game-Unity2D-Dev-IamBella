@@ -20,6 +20,16 @@ public class GamePlayController : MonoBehaviour
     private GameObject shopPanel;
     [SerializeField]
     private GameObject skillShopPanel;
+
+    //using Item 
+    [SerializeField]
+    private GameObject armorItemPanel;
+    [SerializeField]
+    private GameObject swordItemPanel;
+    [SerializeField]
+    private GameObject hpItemPanel;
+    [SerializeField]
+    //end
     void FixedUpdate() {
         if(Moving.isDie == true){
             StartCoroutine("PlayerDie");
@@ -91,5 +101,47 @@ public class GamePlayController : MonoBehaviour
         if(crlv<5){
             SceneManager.LoadScene("Level"+crlv+1);
         }
+    }
+
+    // show item using _ Panel
+    public void ArmorPanelOpen(){
+        if(armorItemPanel.activeSelf == false){
+            armorItemPanel.SetActive(true);
+            hpItemPanel.SetActive(false);
+            swordItemPanel.SetActive(false);
+
+        }
+        else{
+            armorItemPanel.SetActive(false);
+        }
+    }
+    public void SwordPanelOpen(){
+        if(swordItemPanel.activeSelf == false){
+            armorItemPanel.SetActive(false);
+            hpItemPanel.SetActive(false);
+            swordItemPanel.SetActive(true);
+
+        }
+        else{
+            swordItemPanel.SetActive(false);
+        }
+
+    }
+    public void HpPanelOpen(){
+        if(hpItemPanel.activeSelf == false){
+            armorItemPanel.SetActive(false);
+            hpItemPanel.SetActive(true);
+            swordItemPanel.SetActive(false);
+
+        }
+        else{
+            hpItemPanel.SetActive(false);
+        }
+
+    }
+    public void CloseItemPanel(){
+        hpItemPanel.SetActive(false);
+        armorItemPanel.SetActive(false);
+        swordItemPanel.SetActive(false);
     }
 }
