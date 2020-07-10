@@ -34,6 +34,7 @@ public class GamePlayController : MonoBehaviour
 
     [SerializeField]
     private GameObject hpItemPanel;
+
     
     //end
     

@@ -117,6 +117,15 @@ public class MoneyCounter : MonoBehaviour
     public static int tmpPhysicDmg;
     public static int tmpArmor;
     //
+    public GameObject floatDamge; // physicdmg effect
+    public GameObject floatDamgeHp;
+    public GameObject floatDamgeDefend;
+    private Transform player;
+     void Awake() {
+         if(GameObject.Find("Player") !=null){
+                player = GameObject.Find("Player").transform;
+         }
+    }
 
     //end
      void Start() {
@@ -640,6 +649,9 @@ public class MoneyCounter : MonoBehaviour
             }
             MainMenuController.HpRestoreLv1--;
             MainMenuController.SaveData();
+            GameObject damgeShow = Instantiate(floatDamgeHp,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "Restore 20%HP";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Hp2Use(){
@@ -653,6 +665,9 @@ public class MoneyCounter : MonoBehaviour
             }
             MainMenuController.HpRestoreLv2--;
             MainMenuController.SaveData();
+            GameObject damgeShow = Instantiate(floatDamgeHp,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "Restore 50%HP";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Armor1Use(){
@@ -660,7 +675,9 @@ public class MoneyCounter : MonoBehaviour
             tmpArmor+=10;
             MainMenuController.ArmorLv1--;
             MainMenuController.SaveData();
-            Debug.Log("used");
+            GameObject damgeShow = Instantiate(floatDamgeDefend,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "Defend +10";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Armor2Use(){
@@ -668,7 +685,9 @@ public class MoneyCounter : MonoBehaviour
             tmpArmor+=30;
             MainMenuController.ArmorLv2--;
             MainMenuController.SaveData();
-            Debug.Log("used");
+            GameObject damgeShow = Instantiate(floatDamgeDefend,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "Defend +30";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Armor3Use(){
@@ -676,7 +695,9 @@ public class MoneyCounter : MonoBehaviour
             tmpArmor+=50;
             MainMenuController.ArmorLv3--;
             MainMenuController.SaveData();
-            Debug.Log("used");
+            GameObject damgeShow = Instantiate(floatDamgeDefend,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "Defend +50";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Sword1Use(){
@@ -684,7 +705,10 @@ public class MoneyCounter : MonoBehaviour
             tmpPhysicDmg+=10;
             MainMenuController.SwordLv1--;
             MainMenuController.SaveData();
-            Debug.Log("used");
+
+            GameObject damgeShow = Instantiate(floatDamge,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "PhysicDmg +10";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Sword2Use(){
@@ -692,7 +716,9 @@ public class MoneyCounter : MonoBehaviour
             tmpPhysicDmg+=30;
             MainMenuController.SwordLv2--;
             MainMenuController.SaveData();
-            Debug.Log("used");
+            GameObject damgeShow = Instantiate(floatDamge,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "PhysicDmg +30";
+            Destroy(damgeShow, 1f);
         }
     }
     public void Sword3Use(){
@@ -700,7 +726,9 @@ public class MoneyCounter : MonoBehaviour
             tmpPhysicDmg+=50;
             MainMenuController.SwordLv3--;
             MainMenuController.SaveData();
-            Debug.Log("used");
+            GameObject damgeShow = Instantiate(floatDamge,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "PhysicDmg +50";
+            Destroy(damgeShow, 1f);
         }
     }
     //end

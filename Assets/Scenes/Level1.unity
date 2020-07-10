@@ -417,7 +417,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6719951267166800306}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1632642430}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -1195,11 +1195,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1249508651050205186, guid: 0eae12c79dc3eee4d8f8c088a0608786,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: bullet
@@ -1240,6 +1235,16 @@ PrefabInstance:
       propertyPath: floatDamge
       value: 
       objectReference: {fileID: 266714871}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: MagicButton
+      value: 
+      objectReference: {fileID: 1632642430}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: MagicCooldown
+      value: 
+      objectReference: {fileID: 676038733}
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1997,6 +2002,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2411093549926511506, guid: 88097660c18eb1d41b9f1c7b31089471,
     type: 3}
   m_PrefabInstance: {fileID: 1509161916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1632642430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1622688504, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719951267166800306}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1680343071 stripped
 Transform:

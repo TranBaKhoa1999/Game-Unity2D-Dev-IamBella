@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
-  health: 0
   minX: -400
   maxX: 400
   player: {fileID: 1249508651050205191}
@@ -130,6 +129,12 @@ MonoBehaviour:
   _magicSkill: {fileID: 0}
   cooldownText: {fileID: 0}
   floatDamge: {fileID: 0}
+  MagicButton: {fileID: 0}
+  MagicCooldown: {fileID: 0}
+  lv1Imgskill: {fileID: 21300000, guid: 25f252fb3c862d54d8bd758dbd02a4f7, type: 3}
+  lv2Imgskill: {fileID: 21300000, guid: c2e12f70e8696854a89bf904fada5ac9, type: 3}
+  lv3Imgskill: {fileID: 21300000, guid: 718e41cc389c83440aabaf2ba3a99153, type: 3}
+  lv4Imgskill: {fileID: 21300000, guid: f1bf796d5776a4e44a7a73463e655233, type: 3}
 --- !u!50 &1249508651050205189
 Rigidbody2D:
   serializedVersion: 4

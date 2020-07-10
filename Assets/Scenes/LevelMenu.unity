@@ -532,7 +532,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 3
+  m_Text: Prtoect own jugle 3
 --- !u!222 &161205153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ RectTransform:
   m_GameObject: {fileID: 169681336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1573283233}
   - {fileID: 1841255972}
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 29fd512159471b248a89dbf4aefc20b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9bac0994254deae4794dba494735e223, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300012, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
+  m_Sprite: {fileID: 21300018, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300012, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
+  m_Sprite: {fileID: 21300026, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1510,7 +1510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 3
+  m_Text: Evil Fairy's Jugle
 --- !u!222 &615929060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1763,7 +1763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 3
+  m_Text: Elfs Attack
 --- !u!222 &957483252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1840,7 +1840,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 1
+  m_Text: Prtoect own jugle 1
 --- !u!222 &1026588193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2176,7 +2176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300012, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
+  m_Sprite: {fileID: 21300030, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300006, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
+  m_Sprite: {fileID: 21300014, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2716,7 +2716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
+  m_Sprite: {fileID: 21300020, guid: aa05cebd8a3b1c64686d8bcf012a581e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2878,7 +2878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 2
+  m_Text: Prtoect own jugle 2
 --- !u!222 &2099484413
 CanvasRenderer:
   m_ObjectHideFlags: 0

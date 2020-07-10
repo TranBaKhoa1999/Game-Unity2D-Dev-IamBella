@@ -47,6 +47,10 @@ public class Moving : MonoBehaviour
     public static bool isDie;
 
     public GameObject floatDamge;
+    public Sprite lv1Imgskill;
+    public Sprite lv2Imgskill;
+    public Sprite lv3Imgskill;
+    public Sprite lv4Imgskill;
 
     // item 
     //
@@ -63,7 +67,7 @@ public class Moving : MonoBehaviour
     float count;
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         _physicalButton = PHYSICATTACK.GetComponent<Button>();
         _magicalButton = MAGICALATTACK.GetComponent<Button>();
         // _jumpButton = JUMP.GetComponent<Button>();
@@ -78,19 +82,34 @@ public class Moving : MonoBehaviour
         
         player = GameObject.Find("Player").transform;
         count  = cooldown;
+        if(magicLevel == 0){
+            _magicalButton.GetComponent<Image>().sprite = lv1Imgskill;
+            _magicSkill.GetComponent<Image>().sprite = lv1Imgskill;
+            cooldown = 10;
+        }
+        else if(magicLevel == 1){
+            _magicalButton.GetComponent<Image>().sprite = lv2Imgskill;
+            _magicSkill.GetComponent<Image>().sprite = lv2Imgskill;
+            cooldown = 8;
+        }
+        else if(magicLevel == 2){
+           _magicalButton.GetComponent<Image>().sprite = lv3Imgskill;
+            _magicSkill.GetComponent<Image>().sprite = lv3Imgskill;
+            cooldown = 5;
+        }
+        else{
+            _magicalButton.GetComponent<Image>().sprite = lv4Imgskill;
+            _magicSkill.GetComponent<Image>().sprite = lv4Imgskill;
+            cooldown = 3;
+        }
     }
     void PhysicalButtonOnclick()
     {
-       if(anim.GetBool("Jump")==true){
-                
-            }
-            else{
-                if(anim.GetBool("isMagicalAttack")==false && grounded){
-                     //StartCoroutine("TrueAttack");
-                    isPhysicAttack=true;
-                    anim.SetBool("isPhysicalAttack",true);
-                }
-            }
+        if(anim.GetBool("isMagicalAttack")==false){
+                //StartCoroutine("TrueAttack");
+            isPhysicAttack=true;
+            anim.SetBool("isPhysicalAttack",true);
+        }
     }
     void MagicalButtonOnclick(){
         if(isCooldown==false){

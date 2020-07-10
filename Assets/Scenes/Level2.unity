@@ -16393,6 +16393,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1182023577}
+    - target: {fileID: 6719951266321947653, guid: 7de23609097d25348897b43a5b4b684c,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1457161606}
+    - target: {fileID: 6719951266451843276, guid: 7de23609097d25348897b43a5b4b684c,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1457161606}
+    - target: {fileID: 6719951267061427226, guid: 7de23609097d25348897b43a5b4b684c,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1457161606}
+    - target: {fileID: 6719951267460011008, guid: 7de23609097d25348897b43a5b4b684c,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1457161606}
     - target: {fileID: 6719951267735004610, guid: 7de23609097d25348897b43a5b4b684c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16455,6 +16475,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de23609097d25348897b43a5b4b684c, type: 3}
+--- !u!1 &1267568509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1622688504, guid: 7de23609097d25348897b43a5b4b684c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267568508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1267725681
 GameObject:
   m_ObjectHideFlags: 0
@@ -18559,6 +18585,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978a884f05484204090d8f79c0c632bd, type: 3}
+--- !u!20 &1457161606 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5436199312924467793, guid: 978a884f05484204090d8f79c0c632bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457161605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1473136612
 GameObject:
   m_ObjectHideFlags: 0
@@ -19703,7 +19735,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1267568508}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1267568509}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -24025,6 +24057,40 @@ PrefabInstance:
       propertyPath: floatDamge
       value: 
       objectReference: {fileID: 1187511740}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: lv1Imgskill
+      value: 
+      objectReference: {fileID: 21300000, guid: 25f252fb3c862d54d8bd758dbd02a4f7,
+        type: 3}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: lv2Imgskill
+      value: 
+      objectReference: {fileID: 21300000, guid: c2e12f70e8696854a89bf904fada5ac9,
+        type: 3}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: lv3Imgskill
+      value: 
+      objectReference: {fileID: 21300000, guid: 718e41cc389c83440aabaf2ba3a99153,
+        type: 3}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: lv4Imgskill
+      value: 
+      objectReference: {fileID: 21300000, guid: f1bf796d5776a4e44a7a73463e655233,
+        type: 3}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: MagicCooldown
+      value: 
+      objectReference: {fileID: 63817445}
+    - target: {fileID: 1249508651050205188, guid: 0eae12c79dc3eee4d8f8c088a0608786,
+        type: 3}
+      propertyPath: MagicButton
+      value: 
+      objectReference: {fileID: 1267568509}
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_LocalPosition.x
