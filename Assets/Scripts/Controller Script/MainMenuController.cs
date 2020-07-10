@@ -36,11 +36,16 @@ public class MainMenuController : MonoBehaviour
     public static int Health=100;
     public static int HealthLevel=0;
 
+    public static int Armor=10;
+    public static int ArmorLevel=0;
+
      public static void SaveData() {
          string savePath = Application.persistentDataPath + "/gamesave.dat";
          var save = new Save(){
            Level2 = level2,
            Level3 = level3,
+           Level4 = level4,
+           Level5 = level5,
            money = Money,
            health = Health,
            healthLevel=HealthLevel,
@@ -48,6 +53,8 @@ public class MainMenuController : MonoBehaviour
            magicDmg = MagicDmg,
            physicLevel = PhysicLevel,
            physicDmg = PhysicDmg,
+           armorLevel = ArmorLevel,
+           armor = Armor,
            //item
            armorLv1 = ArmorLv1,
            armorLv2 = ArmorLv2,
@@ -81,6 +88,8 @@ public class MainMenuController : MonoBehaviour
             }
             level2 = save.Level2;
             level3= save.Level3;
+            level4 = save.Level4;
+            level5 = save.Level5;
             Money = save.money;
 
             MagicDmg = save.magicDmg;
@@ -91,6 +100,9 @@ public class MainMenuController : MonoBehaviour
 
             Health = save.health;
             HealthLevel = save.healthLevel;
+
+            Armor = save.armor;
+            ArmorLevel = save.armorLevel;
             // item
             ArmorLv1 = save.armorLv1;
             ArmorLv2 = save.armorLv2;
@@ -111,6 +123,8 @@ public class MainMenuController : MonoBehaviour
             HealthLevel = 0;
             PhysicLevel = 0;
             MagicLevel = 0;
+            Armor=10;
+            ArmorLevel=0;
             ArmorLv1 = 0 ;
             ArmorLv2 = 0;
             ArmorLv3 = 0;

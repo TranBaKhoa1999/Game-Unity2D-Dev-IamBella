@@ -34,7 +34,9 @@ public class GamePlayController : MonoBehaviour
 
     [SerializeField]
     private GameObject hpItemPanel;
+    
     //end
+    
     void FixedUpdate() {
         if(Moving.isDie == true){
             StartCoroutine("PlayerDie");
@@ -150,4 +152,5 @@ public class GamePlayController : MonoBehaviour
         armorItemPanel.SetActive(false);
         swordItemPanel.SetActive(false);
     }
+
 }

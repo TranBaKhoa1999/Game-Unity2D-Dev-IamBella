@@ -17,6 +17,9 @@ public class Save
 
     public int physicLevel;
     public int physicDmg;
+
+    public int armorLevel;
+    public int armor;
     
     
     //item store
