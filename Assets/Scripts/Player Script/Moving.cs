@@ -11,9 +11,10 @@ public class Moving : MonoBehaviour
     private float maxVelocity = 2f; // vận tốc
     public static bool isPhysicAttack = false;
     public bool grounded;
-    private float maxHealth;
-    public float health;
+    public static float maxHealth;
+    public static float health;
     public static int physicDmg;
+    public static int armor;
     public static int magicDmg;
     public static int magicLevel;
     private Rigidbody2D myBody;
@@ -46,10 +47,14 @@ public class Moving : MonoBehaviour
     public static bool isDie;
 
     public GameObject floatDamge;
+
+    // item 
+    //
     void Awake(){
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         magicDmg = MainMenuController.MagicDmg;
+        magicLevel = MainMenuController.MagicLevel;
         physicDmg = MainMenuController.PhysicDmg;
         maxHealth = MainMenuController.Health;
         health= maxHealth;
@@ -114,10 +119,9 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        maxHealth=MainMenuController.Health;
-        physicDmg =MainMenuController.PhysicDmg;
-        magicDmg = MainMenuController.MagicDmg;
-        magicLevel = MainMenuController.MagicLevel;
+        // maxHealth=MainMenuController.Health;
+        physicDmg =MoneyCounter.tmpPhysicDmg;
+        armor = MoneyCounter.tmpArmor;
         // if not die----------------------------------
         if(anim.GetBool("isDie")==false){
             MagicalAttack();
@@ -412,8 +416,13 @@ public class Moving : MonoBehaviour
             }
 
             Debug.Log(currentlv);
-            health-=enemyDmg;
-            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + enemyDmg.ToString();
+
+            float subtractDmg=0;
+            subtractDmg =  enemyDmg - (enemyDmg*armor/10)/100<0?0:enemyDmg - (enemyDmg*armor/10)/100;
+
+
+            health=health - subtractDmg;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + subtractDmg.ToString();
             Destroy(damgeShow, 1f);
 
              // xử lý bị đánh ko đánh lại và bị văng ra
