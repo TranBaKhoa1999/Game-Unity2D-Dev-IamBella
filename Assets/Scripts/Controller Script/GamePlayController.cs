@@ -12,28 +12,34 @@ public class GamePlayController : MonoBehaviour
     private GameObject losePanel;
     [SerializeField]
     private GameObject winPanel;
+    
     [SerializeField]
     private Button resumeButton;
+
     [SerializeField]
     private GameObject blurCanvas;
+
     [SerializeField]
     private GameObject shopPanel;
+
     [SerializeField]
     private GameObject skillShopPanel;
 
     //using Item 
     [SerializeField]
     private GameObject armorItemPanel;
+
     [SerializeField]
     private GameObject swordItemPanel;
+
     [SerializeField]
     private GameObject hpItemPanel;
-    [SerializeField]
     //end
     void FixedUpdate() {
         if(Moving.isDie == true){
             StartCoroutine("PlayerDie");
         }
+
     }
     private IEnumerator PlayerDie() // hàm delay thời gian bắn đạn
      {        

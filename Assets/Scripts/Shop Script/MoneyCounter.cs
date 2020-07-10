@@ -74,8 +74,26 @@ public class MoneyCounter : MonoBehaviour
     private int Sword3_Cost = 8000;
     private int HpRestore1_Cost = 2000;
     private int HpRestore2_Cost = 5000;
+//end
+    // show store item in gameplay
+    [SerializeField]
+    private Text hpLv1ItemTxt;
+    [SerializeField]
+    private Text hpLv2ItemTxt;
+    [SerializeField]
+    private Text armorLv1ItemTxt;
+    [SerializeField]
+    private Text armorLv2ItemTxt;
+    [SerializeField]
+    private Text armorLv3ItemTxt;
+    [SerializeField]
+    private Text swordLv1ItemTxt;
+    [SerializeField]
+    private Text swordLv2ItemTxt;
+    [SerializeField]
+    private Text swordLv3ItemTxt;
 
-
+    //end
      void Start() {
         MoneyTxt.text= MainMenuController.Money.ToString();
         //Shieldtxt.text = MainMenuController.Shield.ToString();
@@ -317,6 +335,16 @@ public class MoneyCounter : MonoBehaviour
 
         }
         //end magic damgeup
+        //number item store in game play
+        hpLv1ItemTxt.text = "X "+MainMenuController.HpRestoreLv1.ToString();
+        hpLv2ItemTxt.text = "X "+MainMenuController.HpRestoreLv2.ToString();
+        armorLv1ItemTxt.text = "X "+MainMenuController.ArmorLv1.ToString();
+        armorLv2ItemTxt.text = "X "+MainMenuController.ArmorLv2.ToString();
+        armorLv3ItemTxt.text = "X "+MainMenuController.ArmorLv3.ToString();
+        swordLv1ItemTxt.text = "X "+MainMenuController.SwordLv1.ToString();
+        swordLv2ItemTxt.text = "X "+MainMenuController.SwordLv2.ToString();
+        swordLv3ItemTxt.text = "X "+MainMenuController.SwordLv3.ToString();
+        //end
 
     }
     // item store
