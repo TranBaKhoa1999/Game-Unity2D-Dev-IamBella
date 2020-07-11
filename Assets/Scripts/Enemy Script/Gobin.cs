@@ -271,6 +271,14 @@ public class Gobin : MonoBehaviour
                 maxHp =500;
                 speed =2f;
             }
+            if(gameObject.tag=="Golem2"){
+                maxHp =500;
+                speed =2f;
+            }
+            if(gameObject.tag=="Golem1"){
+                maxHp =500;
+                speed =2f;
+            }
             if(gameObject.tag=="1_TROLL"){
                 maxHp =2000;
                 speed = 2f;
@@ -419,12 +427,7 @@ public class Gobin : MonoBehaviour
         collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("EnemyMoveRange"));
         if(!collision){
             Vector3 temp = transform.localScale;
-            if(temp.x == 0.25f){
-                temp.x = -0.25f;
-            }
-            else{
-                temp.x=0.25f;
-            }
+            temp.x = temp.x*-1;
             transform.localScale = temp;
         }
     }
