@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gobin : MonoBehaviour
 {
     [SerializeField]
     private Transform starPos,endPos;
     private bool collision; // bắt va chạm
-    public float speed = 1f;
+    private float speed;
     private Rigidbody2D myBody;
     private Animator anim;
-    [SerializeField]
     private float hp;
+    //[SerializeField]
+    private float maxHp;
+    private int cost = 0;
+
     public GameObject healthBar;
     public GameObject floatDamgePhysic;
     public GameObject floatDamgeMagic;
@@ -23,6 +27,250 @@ public class Gobin : MonoBehaviour
     }
     void Start()
     {
+        Scene m_Scene;
+        m_Scene = SceneManager.GetActiveScene();
+        Time.timeScale=1f;
+        string currentlv = m_Scene.name.Substring(5);
+        int crlv;
+        int.TryParse(m_Scene.name, out crlv);
+        if(crlv ==1){
+            if(gameObject.tag=="Gobin"){
+                maxHp = 100;
+                speed= 3f;
+                cost = 10;
+            }
+            else if(gameObject.tag=="Orc"){
+                maxHp = 150;
+                speed= 3f;
+                cost = 10;
+            }
+            else if(gameObject.tag=="Orge"){
+                maxHp =70;
+                speed= 3f;
+                cost = 10;
+            }
+            if(gameObject.tag=="Golem3"){
+                maxHp =500;
+                speed =2f;
+                cost = 20;
+            }
+            if(gameObject.tag=="1_TROLL"){
+                maxHp =2000;
+                speed = 2f;
+                cost = 100;
+            }
+
+        }
+        else if(crlv ==2){
+            if(gameObject.tag=="Gobin"){
+                maxHp = 200;
+                speed= 3f;
+                cost = 20;
+            }
+            else if(gameObject.tag=="Orc"){
+                maxHp = 300;
+                speed= 3f;
+                cost = 20;
+            }
+            else if(gameObject.tag=="Orge"){
+                maxHp =150;
+                speed= 3f;
+                cost = 20;
+            }
+            if(gameObject.tag=="Golem3"){
+                maxHp =1000;
+                speed =2f;
+                cost = 30;
+            }
+            if(gameObject.tag=="ReaperMan1"){
+                maxHp =100;
+                speed =5f;
+                cost = 30;
+            }
+            if(gameObject.tag=="2_TROLL"){
+                maxHp =5000;
+                speed = 2f;
+                cost = 200;
+            }
+            
+        }
+        else if(crlv ==3){
+            if(gameObject.tag=="Gobin"){
+                maxHp = 400;
+                speed= 3f;
+                cost = 30;
+            }
+            else if(gameObject.tag=="Orc"){
+                maxHp = 800;
+                speed= 3f;
+                cost = 30;
+            }
+            else if(gameObject.tag=="Orge"){
+                maxHp =250;
+                speed= 3f;
+                cost = 30;
+            }
+            if(gameObject.tag=="Golem1"){
+                maxHp =1500;
+                speed =2f;
+                cost = 40;
+            }
+            if(gameObject.tag=="Golem2"){
+                maxHp =1700;
+                speed =2f;
+                cost = 40;
+            }
+            if(gameObject.tag=="Golem3"){
+                maxHp =2000;
+                speed =2f;
+                cost = 40;
+            }
+            if(gameObject.tag=="ReaperMan1"){
+                maxHp =300;
+                speed =5f;
+                cost = 40;
+            }
+            if(gameObject.tag=="ReaperMan1"){
+                maxHp =250;
+                speed =5f;
+                cost = 40;
+            }
+            if(gameObject.tag=="3_TROLL"){
+                maxHp =10000;
+                speed = 2f;
+                cost = 500;
+            }
+            
+        }
+        else if(crlv ==4){
+            if(gameObject.tag=="Gobin"){
+                maxHp = 500;
+                speed= 3f;
+                cost = 40;
+            }
+            else if(gameObject.tag=="Orc"){
+                maxHp = 1000;
+                speed= 3f;
+                cost = 40;
+            }
+            else if(gameObject.tag=="Orge"){
+                maxHp =300;
+                speed= 3f;
+                cost = 40;
+            }
+            if(gameObject.tag=="Golem1"){
+                maxHp =3000;
+                speed =2f;
+                cost = 50;
+            }
+            if(gameObject.tag=="Golem2"){
+                maxHp =3500;
+                speed =2f;
+                cost = 50;
+            }
+            if(gameObject.tag=="Golem3"){
+                maxHp =4000;
+                speed =2f;
+                cost = 50;
+            }
+            if(gameObject.tag=="ReaperMan1"){
+                maxHp =400;
+                speed =5f;
+                cost = 50;
+            }
+            if(gameObject.tag=="ReaperMan2"){
+                maxHp =350;
+                speed =5f;
+                cost = 50;
+            }
+            if(gameObject.tag=="ReaperMan3"){
+                maxHp =300;
+                speed =5f;
+                cost = 50;
+            }
+            if(gameObject.tag=="Elf"){
+                maxHp =15000;
+                speed = 2f;
+                cost = 1000;
+            }
+            
+        }
+        else if(crlv ==5){
+            if(gameObject.tag=="Gobin"){
+                maxHp = 600;
+                speed= 3f;
+                cost = 50;
+            }
+            else if(gameObject.tag=="Orc"){
+                maxHp = 1000;
+                speed= 3f;
+                cost = 50;
+            }
+            else if(gameObject.tag=="Orge"){
+                maxHp =400;
+                speed= 3f;
+                cost = 50;
+            }
+            if(gameObject.tag=="Golem1"){
+                maxHp =5000;
+                speed =2f;
+                cost = 60;
+            }
+            if(gameObject.tag=="Golem2"){
+                maxHp =6000;
+                speed =2f;
+                cost = 60;
+            }
+            if(gameObject.tag=="Golem3"){
+                maxHp =8000;
+                speed =2f;
+                cost = 60;
+            }
+            if(gameObject.tag=="ReaperMan1"){
+                maxHp =500;
+                speed =5f;
+                cost = 60;
+            }
+            if(gameObject.tag=="ReaperMan2"){
+                maxHp =450;
+                speed =5f;
+                cost = 60;
+            }
+            if(gameObject.tag=="ReaperMan3"){
+                maxHp =400;
+                speed =5f;
+                cost = 60;
+            }
+            if(gameObject.tag=="Fairy"){
+                maxHp =20000;
+                speed = 2f;
+                cost = 3000;
+            }
+        }
+        else { // for level test
+            if(gameObject.tag=="Gobin"){
+                maxHp = 100;
+                speed= 3f;
+            }
+            else if(gameObject.tag=="Orc"){
+                maxHp = 150;
+                speed= 3f;
+            }
+            else if(gameObject.tag=="Orge"){
+                maxHp =70;
+                speed= 3f;
+            }
+            if(gameObject.tag=="Golem3"){
+                maxHp =500;
+                speed =2f;
+            }
+            if(gameObject.tag=="1_TROLL"){
+                maxHp =2000;
+                speed = 2f;
+            }
+        }
+        hp = maxHp;
+            
     }
 
     // Update is called once per frame
@@ -34,6 +282,8 @@ public class Gobin : MonoBehaviour
             anim.SetBool("isDie",true);
              gameObject.layer=LayerMask.NameToLayer("notAttack");
             speed=0;
+                MainMenuController.Money+=cost;   
+                MainMenuController.SaveData();
             // Destroy(gameObject);
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f){
@@ -87,7 +337,7 @@ public class Gobin : MonoBehaviour
                 damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + Moving.physicDmg.ToString();
                  Destroy(damgeShow, 1f);
 
-                healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+                healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
             //anim.SetBool("Attack",true);
             // Debug.Log(delta);
@@ -107,7 +357,7 @@ public class Gobin : MonoBehaviour
                 gameObject.layer=LayerMask.NameToLayer("notAttack");
                 anim.SetBool("Attack",false);
                 Destroy(target.gameObject);
-                healthBar.transform.localScale = new Vector3(hp>0?hp/100:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+                healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
             anim.SetBool("Attack",false);
         }

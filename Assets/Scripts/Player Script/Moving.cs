@@ -187,6 +187,7 @@ public class Moving : MonoBehaviour
         // if Die
 
         if(health<=0){
+            health = 0;
             anim.SetBool("isDie",true);
             isDie = true;
         }
@@ -244,10 +245,10 @@ public class Moving : MonoBehaviour
                 forceY= jumpForce;
                 FindObjectOfType<AudioManager>().Play("jump");
   //-------------------------------------------  Test Save + money counter -----------------------
-                MainMenuController.Money+=10;
+                // MainMenuController.Money+=10;
                 
-                MainMenuController.level2=true;
-                MainMenuController.SaveData();
+                // MainMenuController.level2=true;
+                // MainMenuController.SaveData();
  // ------------------------------------------- End test -------------------------
             }
         }
@@ -284,7 +285,7 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
-        if((target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc") && target.gameObject.layer==10)
+        if((target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc" || target.gameObject.tag=="Orge") && target.gameObject.layer==10)
         {
             anim.SetTrigger("isHurt");
              GameObject damgeShow = Instantiate(floatDamge,transform.position, Quaternion.identity) as GameObject;
@@ -440,7 +441,7 @@ public class Moving : MonoBehaviour
             subtractDmg =  enemyDmg - (enemyDmg*armor/10)/100<0?0:enemyDmg - (enemyDmg*armor/10)/100;
 
 
-            health=health - subtractDmg;
+            health=(health - subtractDmg)<0? 0 : (health - subtractDmg);
             damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + subtractDmg.ToString();
             Destroy(damgeShow, 1f);
 

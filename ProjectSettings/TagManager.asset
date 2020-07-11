@@ -21,6 +21,7 @@ TagManager:
   - 3_TROLL
   - Elf
   - Fairy
+  - Orge
   layers:
   - Default
   - TransparentFX
