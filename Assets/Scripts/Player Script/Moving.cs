@@ -400,7 +400,7 @@ public class Moving : MonoBehaviour
                 }
 
             }
-            else {
+            else if(currentlv=="5"){
 
                  if(target.gameObject.tag=="Gobin"){
                     enemyDmg=30f;
@@ -433,6 +433,38 @@ public class Moving : MonoBehaviour
                     enemyDmg=150f;
                 }
 
+            }
+            else{ // for level test
+                if(target.gameObject.tag=="Gobin"){
+                    enemyDmg=1f;
+                }
+                else if(target.gameObject.tag=="Orc"){
+                    enemyDmg=1f;
+                }
+                else if(target.gameObject.tag=="Orge"){
+                    enemyDmg=1f;
+                }
+                else if(target.gameObject.tag=="Golem1"){
+                    enemyDmg=1f;
+                }
+                else if(target.gameObject.tag=="Golem2"){
+                    enemyDmg=1f;
+                }
+                else if(target.gameObject.tag=="Golem3"){
+                    enemyDmg=1f;
+                }
+                else if(target.gameObject.tag=="ReaperMan1"){
+                    enemyDmg=90f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=95f;
+                }
+                else if(target.gameObject.tag=="ReaperMan2"){
+                    enemyDmg=100f;
+                }
+                else if(target.gameObject.tag=="Fairy"){
+                    enemyDmg=150f;
+                }
             }
 
             Debug.Log(currentlv);

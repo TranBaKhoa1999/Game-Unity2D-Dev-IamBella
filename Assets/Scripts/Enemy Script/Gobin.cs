@@ -8,6 +8,8 @@ public class Gobin : MonoBehaviour
 {
     [SerializeField]
     private Transform starPos,endPos;
+     [SerializeField]
+    private Transform playerpos;
     private bool collision; // bắt va chạm
     private float speed;
     private Rigidbody2D myBody;
@@ -20,10 +22,15 @@ public class Gobin : MonoBehaviour
     public GameObject healthBar;
     public GameObject floatDamgePhysic;
     public GameObject floatDamgeMagic;
+    private Transform player;
+
+    private Vector2 movement;
+    private float speedFollow;
     // Start is called before the first frame update
     void Awake() {
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        player = GameObject.Find("Player").transform;
     }
     void Start()
     {
@@ -268,6 +275,7 @@ public class Gobin : MonoBehaviour
                 maxHp =2000;
                 speed = 2f;
             }
+            speedFollow = 2;
         }
         hp = maxHp;
             
@@ -276,26 +284,68 @@ public class Gobin : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        bool x = anim.GetBool("isDie");
         if(hp<=0){
             anim.SetBool("isDie",true);
              gameObject.layer=LayerMask.NameToLayer("notAttack");
-            speed=0;
+                speed=0;
+                speedFollow = 0;
                 MainMenuController.Money+=cost;   
                 MainMenuController.SaveData();
             // Destroy(gameObject);
         }
+        collision = Physics2D.Linecast(starPos.position , endPos.position , 1 << LayerMask.NameToLayer("EnemyMoveRange"));
+        bool colplayer;
+        colplayer = Physics2D.Linecast(player.position, playerpos.position, 1 << LayerMask.NameToLayer("EnemyMoveRange"));
+        if(collision && colplayer){  
+            if(!collision || hp<=0){
+                speedFollow=0;
+            }
+            else{
+                speedFollow =2;
+            }
+            Vector3 dir = player.position - transform.position;
+            dir.Normalize();
+            movement = dir;
+            AutoMove(movement);
+            if(transform.localScale.x < 0){ // quái đi qua trái
+
+                if(dir.x < dir.y){ // cùng side
+                }
+                else{ // khác side -> quay mặt
+                    Vector3 temp = transform.localScale;
+                    temp.x = temp.x * -1;
+                    transform.localScale = temp;
+                }
+            }
+            else{ // quái đi qua phải
+                if(dir.x>dir.y){ // cùng side
+                }
+                else{// khác side -> quay mặt
+                    Vector3 temp = transform.localScale;
+                    temp.x = temp.x * -1;
+                    transform.localScale = temp;
+                }
+            }
+        }
+            Move();
+            Changedirection();
+
+        bool x = anim.GetBool("isDie");
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f){
             Destroy(gameObject);
         }
          //Debug.Log(anim.GetBool("isDie"));
-            Changedirection();
-            Move();
+            //Move();
             
     }
     void Move(){
             myBody.velocity = new Vector2(transform.localScale.x, 0) * speed;
+
+    }
+    void AutoMove(Vector2 dir){
+
+        myBody.MovePosition( (Vector2)transform.position + (new Vector2(dir.x,0) * speedFollow * Time.deltaTime));
+        
     }
     // void OnTriggerStay2D(Collider2D target) {
     //     if(target.tag=="Player"){
@@ -339,10 +389,6 @@ public class Gobin : MonoBehaviour
 
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
-            //anim.SetBool("Attack",true);
-            // Debug.Log(delta);
-
-            //Destroy(target.gameObject);
         }
         else{
             if(target.tag=="Bullet"){ // bị bắn

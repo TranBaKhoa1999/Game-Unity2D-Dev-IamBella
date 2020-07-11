@@ -22,6 +22,7 @@ TagManager:
   - Elf
   - Fairy
   - Orge
+  - EnemyMoveRange
   layers:
   - Default
   - TransparentFX
