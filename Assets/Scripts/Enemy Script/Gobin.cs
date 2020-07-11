@@ -304,63 +304,81 @@ public class Gobin : MonoBehaviour
         collision = Physics2D.Linecast(starPos.position , endPos.position , 1 << LayerMask.NameToLayer("EnemyMoveRange"));
         bool colplayer;
         colplayer = Physics2D.Linecast(player.position, playerpos.position, 1 << LayerMask.NameToLayer("EnemyMoveRange"));
-        if(collision && colplayer){  
-            if(!collision || hp<=0){
+
+        // quái dí
+        if(collision && colplayer)
+        {  
+            if(!collision || hp<=0)
+            {
                 speedFollow=0;
             }
-            else{
+            else
+            {
                 speedFollow =2;
             }
             Vector3 dir = player.position - transform.position;
             dir.Normalize();
             movement = dir;
             AutoMove(movement);
-            if(transform.localScale.x < 0){ // quái đi qua trái
-
-                if(dir.x < dir.y){ // cùng side
+            if(transform.localScale.x < 0)
+            { 
+                // quái đi qua trái
+                if(dir.x < dir.y)
+                { 
+                    // cùng side
                 }
-                else{ // khác side -> quay mặt
+                else
+                { 
+                    // khác side -> quay mặt
                     Vector3 temp = transform.localScale;
                     temp.x = temp.x * -1;
                     transform.localScale = temp;
                 }
             }
-            else{ // quái đi qua phải
-                if(dir.x>dir.y){ // cùng side
+            else
+            { 
+                // quái đi qua phải
+                if(dir.x>dir.y)
+                { 
+                    // cùng side
                 }
-                else{// khác side -> quay mặt
+                else
+                {
+                    // khác side -> quay mặt
                     Vector3 temp = transform.localScale;
                     temp.x = temp.x * -1;
                     transform.localScale = temp;
                 }
             }
         }
-            Move();
-            Changedirection();
+        
+        Move();
+        Changedirection();
 
         bool x = anim.GetBool("isDie");
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f){
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+        {
             Destroy(gameObject);
         }
          //Debug.Log(anim.GetBool("isDie"));
             //Move();
             
     }
-    void Move(){
+    void Move()
+    {
             myBody.velocity = new Vector2(transform.localScale.x, 0) * speed;
-
     }
-    void AutoMove(Vector2 dir){
-
-        myBody.MovePosition( (Vector2)transform.position + (new Vector2(dir.x,0) * speedFollow * Time.deltaTime));
-        
+    void AutoMove(Vector2 dir)
+    {
+        myBody.MovePosition( (Vector2)transform.position + (new Vector2(dir.x,0) * speedFollow * Time.deltaTime));   
     }
     // void OnTriggerStay2D(Collider2D target) {
     //     if(target.tag=="Player"){
     //         OnTriggerEnter2D(target);
     //     }
     // }
-     void OnTriggerEnter2D(Collider2D target) {
+     void OnTriggerEnter2D(Collider2D target)
+     {
         if(target.tag == "Player"){
             Debug.Log("cham");
             Vector3 delta = target.transform.position - transform.position;
@@ -417,8 +435,10 @@ public class Gobin : MonoBehaviour
         }
 
     }
-    void OnTriggerExit2D(Collider2D target){
-        if(target.tag=="Player"){
+    void OnTriggerExit2D(Collider2D target)
+    {
+        if(target.tag=="Player")
+        {
             anim.SetBool("Attack",false);
             gameObject.layer=LayerMask.NameToLayer("notAttack");
         }
@@ -427,7 +447,7 @@ public class Gobin : MonoBehaviour
         collision = Physics2D.Linecast(starPos.position, endPos.position, 1 << LayerMask.NameToLayer("EnemyMoveRange"));
         if(!collision){
             Vector3 temp = transform.localScale;
-            temp.x = temp.x*-1;
+            temp.x = temp.x*(-1);
             transform.localScale = temp;
         }
     }
