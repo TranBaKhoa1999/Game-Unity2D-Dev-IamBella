@@ -6,9 +6,6 @@ using System.IO;
 using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
-    public void PlayGame(){
-         SceneManager.LoadScene("LevelMenu");
-    }
     public static bool level3 { get ; set ; }=false;
     public static bool level2{ get ; set ; }=false;
     public static bool level4{ get ; set ; }=false;
@@ -39,6 +36,14 @@ public class MainMenuController : MonoBehaviour
     public static int Armor=10;
     public static int ArmorLevel=0;
 
+    public void PlayGame(){
+            // Open all level for demo
+            level2=true;
+            level3=true;
+            level4=true;
+            level5=true;
+         SceneManager.LoadScene("LevelMenu");
+    }
      public static void SaveData() {
          string savePath = Application.persistentDataPath + "/gamesave.dat";
          var save = new Save(){
