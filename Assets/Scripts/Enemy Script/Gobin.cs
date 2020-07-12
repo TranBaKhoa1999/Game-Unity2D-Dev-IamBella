@@ -318,17 +318,23 @@ public class Gobin : MonoBehaviour
             speed = 5f;
         }
         else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
-            speed=2;
+            speed=4f;
         }
         else{
-            speed =10f;
+            speed =12f;
         }
         //toc do di
         if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3" ){
             speedFollow = 6;
         }
+        else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
+            speedFollow =3;
+        }
+        else if(gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
+            speedFollow=2.5f;
+        }
         else{
-            speedFollow=3;
+            speedFollow=4;
         }
         basicSpeedFollow = speedFollow;
         hp = maxHp;
@@ -338,6 +344,14 @@ public class Gobin : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+        if(hp<=0){
+            anim.SetBool("isDie",true);
+             gameObject.layer=LayerMask.NameToLayer("notAttack");
+            speed=0;
+            speedFollow = 0;
+            // Destroy(gameObject);
+        }
         Vector3 tp = transform.localScale;
         collision = Physics2D.Linecast(starPos.position , endPos.position - new Vector3(1,0,0) , 1 << LayerMask.NameToLayer("EnemyFollowRange"));
 
@@ -395,35 +409,32 @@ public class Gobin : MonoBehaviour
             Changedirection();
 
         bool x = anim.GetBool("isDie");
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.01f)
+        {
+            GameObject damgeShow = Instantiate(floatDamgePhysic,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "+"+cost+" Coin";
+        }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
-            MainMenuController.Money+=cost;   
+            MainMenuController.Money+=cost;
             MainMenuController.SaveData();
             Destroy(gameObject);
         }
          //Debug.Log(anim.GetBool("isDie"));
             //Move();
 
-        if(hp<=0){
-            anim.SetBool("isDie",true);
-             gameObject.layer=LayerMask.NameToLayer("notAttack");
-            speed=0;
-            speedFollow = 0;
-            // Destroy(gameObject);
-        }
-
-        if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
-            speed = 20f;
-        }
-        else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
-            speed = 5f;
-        }
-        else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
-            speed=2f;
-        }
-        else{
-            speed =10f;
-        }
+        // if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
+        //     speed = 20f;
+        // }
+        // else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
+        //     speed = 5f;
+        // }
+        // else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
+        //     speed=2f;
+        // }
+        // else{
+        //     speed =10f;
+        // }
         
     }
     void Move()
