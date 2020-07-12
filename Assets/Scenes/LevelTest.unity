@@ -8750,6 +8750,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Creep_ReaperMan3
       objectReference: {fileID: 0}
+    - target: {fileID: 3960000741157735904, guid: 3e82fc87cec43e54a8778cc2a7d46af2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3960000741157735913, guid: 3e82fc87cec43e54a8778cc2a7d46af2,
         type: 3}
       propertyPath: playerpos

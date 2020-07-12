@@ -403,38 +403,28 @@ public class Gobin : MonoBehaviour
         }
          //Debug.Log(anim.GetBool("isDie"));
             //Move();
-<<<<<<< HEAD
-                    if(hp<=0){
+
+        if(hp<=0){
             anim.SetBool("isDie",true);
              gameObject.layer=LayerMask.NameToLayer("notAttack");
             speed=0;
             speedFollow = 0;
             // Destroy(gameObject);
         }
-        else{
-            if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
-=======
+
         if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
->>>>>>> master
             speed = 20f;
         }
         else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
             speed = 5f;
         }
         else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
-<<<<<<< HEAD
-            speed=2;
-=======
             speed=2f;
->>>>>>> master
         }
         else{
             speed =10f;
         }
-<<<<<<< HEAD
-        }
-=======
->>>>>>> master
+        
     }
     void Move()
     {
@@ -506,21 +496,13 @@ public class Gobin : MonoBehaviour
     ||  target.gameObject.tag=="Golem3" ||  target.gameObject.tag=="ReaperMan1" ||  target.gameObject.tag=="ReaperMan2" ||  target.gameObject.tag=="ReaperMan3" ||
      target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy"){
 
-            Vector3 delta = target.transform.position - transform.position;
-<<<<<<< HEAD
-            if(transform.localScale.x <= 0){ // quái đi qua trái
-                if(delta.x <= delta.y){
-                    Vector3 temp = transform.localScale;
-                    temp.x = temp.x*(-1);
-                    transform.localScale = temp;
-=======
+        Vector3 delta = target.transform.position - transform.position;
             if(transform.localScale.x < 0){ // quái đi qua trái
                 if(delta.x < delta.y){
                     
                 Vector3 temp = transform.localScale;
                 temp.x = temp.x*(-1);
                 transform.localScale = temp;
->>>>>>> master
                 }
             }
             else{ // quái đi qua phải
@@ -536,8 +518,6 @@ public class Gobin : MonoBehaviour
                 // transform.localScale = temp;
             }
         //     anim.SetBool("Attack",false);
-        // }
-
     }
     void OnTriggerExit2D(Collider2D target)
     {
