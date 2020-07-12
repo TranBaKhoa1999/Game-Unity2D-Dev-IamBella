@@ -338,13 +338,6 @@ public class Gobin : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(hp<=0){
-            anim.SetBool("isDie",true);
-             gameObject.layer=LayerMask.NameToLayer("notAttack");
-            speed=0;
-            speedFollow = 0;
-            // Destroy(gameObject);
-        }
         Vector3 tp = transform.localScale;
         collision = Physics2D.Linecast(starPos.position , endPos.position - new Vector3(1,0,0) , 1 << LayerMask.NameToLayer("EnemyFollowRange"));
 
@@ -410,7 +403,27 @@ public class Gobin : MonoBehaviour
         }
          //Debug.Log(anim.GetBool("isDie"));
             //Move();
-            
+                    if(hp<=0){
+            anim.SetBool("isDie",true);
+             gameObject.layer=LayerMask.NameToLayer("notAttack");
+            speed=0;
+            speedFollow = 0;
+            // Destroy(gameObject);
+        }
+        else{
+            if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
+            speed = 20f;
+        }
+        else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
+            speed = 5f;
+        }
+        else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
+            speed=2;
+        }
+        else{
+            speed =10f;
+        }
+        }
     }
     void Move()
     {
@@ -483,15 +496,15 @@ public class Gobin : MonoBehaviour
      target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy"){
 
             Vector3 delta = target.transform.position - transform.position;
-            if(transform.localScale.x < 0){ // quái đi qua trái
-                if(delta.x < delta.y){
+            if(transform.localScale.x <= 0){ // quái đi qua trái
+                if(delta.x <= delta.y){
                     Vector3 temp = transform.localScale;
                     temp.x = temp.x*(-1);
                     transform.localScale = temp;
                 }
             }
             else{ // quái đi qua phải
-                if(delta.x>delta.y){   
+                if(delta.x > delta.y){   
                     Vector3 temp = transform.localScale;
                     temp.x = temp.x*(-1);
                     transform.localScale = temp;
