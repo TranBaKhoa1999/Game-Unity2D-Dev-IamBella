@@ -410,7 +410,18 @@ public class Gobin : MonoBehaviour
         }
          //Debug.Log(anim.GetBool("isDie"));
             //Move();
-            
+        if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
+            speed = 20f;
+        }
+        else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
+            speed = 5f;
+        }
+        else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
+            speed=2f;
+        }
+        else{
+            speed =10f;
+        }
     }
     void Move()
     {
@@ -485,9 +496,10 @@ public class Gobin : MonoBehaviour
             Vector3 delta = target.transform.position - transform.position;
             if(transform.localScale.x < 0){ // quái đi qua trái
                 if(delta.x < delta.y){
-                    Vector3 temp = transform.localScale;
-                    temp.x = temp.x*(-1);
-                    transform.localScale = temp;
+                    
+                Vector3 temp = transform.localScale;
+                temp.x = temp.x*(-1);
+                transform.localScale = temp;
                 }
             }
             else{ // quái đi qua phải
