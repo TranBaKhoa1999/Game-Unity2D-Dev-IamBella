@@ -27,6 +27,7 @@ public class Gobin : MonoBehaviour
 
     private Vector2 movement;
     private float speedFollow;
+    private float basicSpeedFollow;
     // Start is called before the first frame update
     void Awake() {
         myBody = GetComponent<Rigidbody2D>();
@@ -44,53 +45,58 @@ public class Gobin : MonoBehaviour
                 maxHp = 100;
                 speed= 3f;
                 cost = 10;
+                speedFollow = 2;
             }
             else if(gameObject.tag=="Orc"){
                 maxHp = 150;
                 speed= 3f;
                 cost = 10;
+                speedFollow = 2;
             }
             else if(gameObject.tag=="Orge"){
                 maxHp =70;
                 speed= 3f;
                 cost = 10;
+                speedFollow = 2;
             }
             if(gameObject.tag=="Golem3"){
                 maxHp =500;
                 speed =2f;
                 cost = 20;
+                speedFollow = 2;
             }
             if(gameObject.tag=="1_TROLL"){
                 maxHp =2000;
                 speed = 2f;
                 cost = 100;
+                speedFollow = 1;
             }
 
         }
         else if(currentlv=="2"){
             if(gameObject.tag=="Gobin"){
                 maxHp = 200;
-                speed= 3f;
+                speed= 10f;
                 cost = 20;
             }
             else if(gameObject.tag=="Orc"){
                 maxHp = 300;
-                speed= 3f;
+                speed= 10f;
                 cost = 20;
             }
             else if(gameObject.tag=="Orge"){
                 maxHp =150;
-                speed= 3f;
+                speed= 10f;
                 cost = 20;
             }
             if(gameObject.tag=="Golem3"){
                 maxHp =1000;
-                speed =2f;
+                speed= 7f;
                 cost = 30;
             }
             if(gameObject.tag=="ReaperMan1"){
                 maxHp =100;
-                speed =5f;
+                speed =20f;
                 cost = 30;
             }
             if(gameObject.tag=="2_TROLL"){
@@ -133,12 +139,12 @@ public class Gobin : MonoBehaviour
             }
             if(gameObject.tag=="ReaperMan1"){
                 maxHp =300;
-                speed =5f;
+                speed =10f;
                 cost = 40;
             }
             if(gameObject.tag=="ReaperMan1"){
                 maxHp =250;
-                speed =5f;
+                speed =10f;
                 cost = 40;
             }
             if(gameObject.tag=="3_TROLL"){
@@ -181,17 +187,17 @@ public class Gobin : MonoBehaviour
             }
             if(gameObject.tag=="ReaperMan1"){
                 maxHp =400;
-                speed =5f;
+                speed =10f;
                 cost = 50;
             }
             if(gameObject.tag=="ReaperMan2"){
                 maxHp =350;
-                speed =5f;
+                speed =10f;
                 cost = 50;
             }
             if(gameObject.tag=="ReaperMan3"){
                 maxHp =300;
-                speed =5f;
+                speed =10f;
                 cost = 50;
             }
             if(gameObject.tag=="Elf"){
@@ -234,17 +240,17 @@ public class Gobin : MonoBehaviour
             }
             if(gameObject.tag=="ReaperMan1"){
                 maxHp =500;
-                speed =5f;
+                speed =10f;
                 cost = 60;
             }
             if(gameObject.tag=="ReaperMan2"){
                 maxHp =450;
-                speed =5f;
+                speed =10f;
                 cost = 60;
             }
             if(gameObject.tag=="ReaperMan3"){
                 maxHp =400;
-                speed =5f;
+                speed =10f;
                 cost = 60;
             }
             if(gameObject.tag=="Fairy"){
@@ -282,8 +288,46 @@ public class Gobin : MonoBehaviour
                 maxHp =2000;
                 speed = 2f;
             }
-            speedFollow = 2;
+            if(gameObject.tag=="ReaperMan1"){
+                maxHp =500;
+                speed =10f;
+                cost = 60;
+                speedFollow = 5;
+            }
+            if(gameObject.tag=="ReaperMan2"){
+                maxHp =200;
+                speed =10f;
+                cost = 60;
+            }
+            if(gameObject.tag=="ReaperMan3"){
+                maxHp =200;
+                speed =10f;
+                cost = 60;
+            }
+            if(gameObject.tag=="Fairy"){
+                maxHp =20000;
+                speed = 2f;
+                cost = 3000;
+            }
         }
+        //toc do
+        if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3"){
+            speed = 20f;
+        }
+        else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
+            speed = 7f;
+        }
+        else{
+            speed =10f;
+        }
+        //toc do di
+        if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3" ){
+            speedFollow = 7;
+        }
+        else{
+            speedFollow=4;
+        }
+        basicSpeedFollow = speedFollow;
         hp = maxHp;
             
     }
@@ -308,22 +352,12 @@ public class Gobin : MonoBehaviour
             speedFollow=0;
         }
         else{
-            speedFollow =2;
+            speedFollow = basicSpeedFollow;
         }
 
         // quái dí
         if(collision && colplayer)
         {  
-            // if(Vector3.Distance(player.position, transform.position) <= 8){
-
-                        // if(!collision || hp<=0)
-            // {
-            //     speedFollow=0;
-            // }
-            // else
-            // {
-            //     speedFollow =2;
-            // }
             Vector3 dir = player.position - transform.position;
             dir.Normalize();
             movement = dir;
@@ -426,8 +460,8 @@ public class Gobin : MonoBehaviour
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
         }
-        else{
-            if(target.tag=="Bullet"){ // bị bắn
+        // else{
+           else if(target.tag=="Bullet"){ // bị bắn
                 hp -=Moving.magicDmg;
 
                 //float ting magic damge
@@ -441,8 +475,15 @@ public class Gobin : MonoBehaviour
                 Destroy(target.gameObject);
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
-            anim.SetBool("Attack",false);
-        }
+            else if(target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc" || target.gameObject.tag=="Orge" ||  target.gameObject.tag=="Golem1" || target.gameObject.tag== "Golem2"
+    ||  target.gameObject.tag=="Golem3" ||  target.gameObject.tag=="ReaperMan1" ||  target.gameObject.tag=="ReaperMan2" ||  target.gameObject.tag=="ReaperMan3" ||
+     target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy"){
+                Vector3 temp = transform.localScale;
+                temp.x = temp.x*(-1);
+                transform.localScale = temp;
+            }
+        //     anim.SetBool("Attack",false);
+        // }
 
     }
     void OnTriggerExit2D(Collider2D target)
