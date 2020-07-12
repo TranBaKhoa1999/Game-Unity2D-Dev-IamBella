@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428043941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -6.2, z: 0}
+  m_LocalPosition: {x: 1, y: -15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 578986114422410598}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 238263367}
   m_Layer: 0
   m_Name: Gobin
-  m_TagString: Enemy
+  m_TagString: Gobin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 578986114422410595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -0.909, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: -0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 1428043942}
   - {fileID: 8824542765186954800}
@@ -364,9 +364,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starPos: {fileID: 578986114422410598}
   endPos: {fileID: 1428043942}
-  speed: 3
-  hp: 100
+  playerpos: {fileID: 0}
   healthBar: {fileID: 955124787}
+  floatDamgePhysic: {fileID: 0}
+  floatDamgeMagic: {fileID: 0}
 --- !u!1 &8917977293728122865
 GameObject:
   m_ObjectHideFlags: 0

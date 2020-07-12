@@ -290,8 +290,6 @@ public class Moving : MonoBehaviour
      target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy") && target.gameObject.layer==10)
         {
             anim.SetTrigger("isHurt");
-             GameObject damgeShow = Instantiate(floatDamge,transform.position, Quaternion.identity) as GameObject;
-
              //check level curent và get Enemy damge
             Scene m_Scene;
             m_Scene = SceneManager.GetActiveScene();
@@ -476,6 +474,7 @@ public class Moving : MonoBehaviour
 
 
             health=(health - subtractDmg)<0? 0 : (health - subtractDmg);
+            GameObject damgeShow = Instantiate(floatDamge,transform.position, Quaternion.identity) as GameObject;
             damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + subtractDmg.ToString();
             Destroy(damgeShow, 1f);
 

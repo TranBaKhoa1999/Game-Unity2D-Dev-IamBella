@@ -105,8 +105,7 @@ public class GamePlayController : MonoBehaviour
         m_Scene = SceneManager.GetActiveScene();
         Time.timeScale=1f;
         string currentlv = m_Scene.name.Substring(5);
-        int crlv;
-        int.TryParse(m_Scene.name, out crlv);
+        int crlv =int.Parse(currentlv);
         if(crlv<5){
             SceneManager.LoadScene("Level"+crlv+1);
         }
