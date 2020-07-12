@@ -391,7 +391,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -411,9 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starPos: {fileID: 2219138847550258303}
   endPos: {fileID: 2219138847159315005}
-  speed: 3
-  hp: 70
-  maxHp: 70
+  playerpos: {fileID: 0}
   healthBar: {fileID: 2219138847280210542}
   floatDamgePhysic: {fileID: 0}
   floatDamgeMagic: {fileID: 0}
