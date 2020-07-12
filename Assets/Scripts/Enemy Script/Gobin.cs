@@ -315,17 +315,20 @@ public class Gobin : MonoBehaviour
             speed = 20f;
         }
         else if(gameObject.tag =="Golem1" ||gameObject.tag =="Golem2" ||gameObject.tag =="Golem3"){
-            speed = 7f;
+            speed = 5f;
+        }
+        else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
+            speed=2;
         }
         else{
             speed =10f;
         }
         //toc do di
         if(gameObject.tag =="ReaperMan1" ||gameObject.tag =="ReaperMan2" ||gameObject.tag =="ReaperMan3" ){
-            speedFollow = 7;
+            speedFollow = 6;
         }
         else{
-            speedFollow=4;
+            speedFollow=3;
         }
         basicSpeedFollow = speedFollow;
         hp = maxHp;
@@ -478,9 +481,26 @@ public class Gobin : MonoBehaviour
             else if(target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc" || target.gameObject.tag=="Orge" ||  target.gameObject.tag=="Golem1" || target.gameObject.tag== "Golem2"
     ||  target.gameObject.tag=="Golem3" ||  target.gameObject.tag=="ReaperMan1" ||  target.gameObject.tag=="ReaperMan2" ||  target.gameObject.tag=="ReaperMan3" ||
      target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy"){
-                Vector3 temp = transform.localScale;
-                temp.x = temp.x*(-1);
-                transform.localScale = temp;
+
+            Vector3 delta = target.transform.position - transform.position;
+            if(transform.localScale.x < 0){ // quái đi qua trái
+                if(delta.x < delta.y){
+                    Vector3 temp = transform.localScale;
+                    temp.x = temp.x*(-1);
+                    transform.localScale = temp;
+                }
+            }
+            else{ // quái đi qua phải
+                if(delta.x>delta.y){   
+                    Vector3 temp = transform.localScale;
+                    temp.x = temp.x*(-1);
+                    transform.localScale = temp;
+                }
+            }
+
+                // Vector3 temp = transform.localScale;
+                // temp.x = temp.x*(-1);
+                // transform.localScale = temp;
             }
         //     anim.SetBool("Attack",false);
         // }
