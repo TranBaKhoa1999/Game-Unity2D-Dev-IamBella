@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Gobin : MonoBehaviour
+public class TrollBoss : MonoBehaviour
 {
     [SerializeField]
     private Transform starPos,endPos;
@@ -318,7 +318,7 @@ public class Gobin : MonoBehaviour
             speed = 5f;
         }
         else if (gameObject.tag=="1_TROLL"||gameObject.tag=="2_TROLL"||gameObject.tag=="3_TROLL"){
-            speed=4f;
+            speed=3.5f;
         }
         else{
             speed =12f;
@@ -409,14 +409,9 @@ public class Gobin : MonoBehaviour
             Changedirection();
 
         bool x = anim.GetBool("isDie");
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.01f)
-        {
-            GameObject damgeShow = Instantiate(floatDamgePhysic,player.transform.position, Quaternion.identity) as GameObject;
-            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "+"+cost+" Coin";
-        }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
-            MainMenuController.Money+=cost;
+            MainMenuController.Money+=cost;   
             MainMenuController.SaveData();
             Destroy(gameObject);
         }
