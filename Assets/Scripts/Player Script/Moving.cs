@@ -285,6 +285,9 @@ public class Moving : MonoBehaviour
         if(target.gameObject.tag =="Ground"){
             grounded = true;
         }
+        if(target.gameObject.tag=="Death_Area"){
+            health=0;
+        }
         if((target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc" || target.gameObject.tag=="Orge" ||  target.gameObject.tag=="Golem1" || target.gameObject.tag== "Golem2"
     ||  target.gameObject.tag=="Golem3" ||  target.gameObject.tag=="ReaperMan1" ||  target.gameObject.tag=="ReaperMan2" ||  target.gameObject.tag=="ReaperMan3" ||
      target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy") && target.gameObject.layer==10)
@@ -465,9 +468,11 @@ public class Moving : MonoBehaviour
                 else if(target.gameObject.tag=="Fairy"){
                     enemyDmg=150f;
                 }
+                else{
+                    enemyDmg = 10f;
+                }
+            
             }
-
-            Debug.Log(currentlv);
 
             float subtractDmg=0;
             subtractDmg =  enemyDmg - (enemyDmg*armor/10)/100<0?0:enemyDmg - (enemyDmg*armor/10)/100;
