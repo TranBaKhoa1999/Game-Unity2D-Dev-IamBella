@@ -34,13 +34,19 @@ public class GamePlayController : MonoBehaviour
 
     [SerializeField]
     private GameObject hpItemPanel;
+    public static bool isWin;
 
     
     //end
     
     void FixedUpdate() {
         if(Moving.isDie == true){
+            FindObjectOfType<AudioManager>().Play("gameOverAudio");
             StartCoroutine("PlayerDie");
+        }
+        if(isWin==true){
+            StartCoroutine("PlayerWin");
+            Debug.Log("win");
         }
 
     }
@@ -49,14 +55,21 @@ public class GamePlayController : MonoBehaviour
          yield return new WaitForSeconds(2f);
             LoseGame();
      }
+     private IEnumerator PlayerWin() // hàm delay thời gian bắn đạn
+     {        
+         yield return new WaitForSeconds(2f);
+            WinGame();
+     }
     public void PauseGame(){
         if(pausePanel.activeSelf==false){
+            FindObjectOfType<AudioManager>().Play("clickAudio");
             Time.timeScale = 0f;
             pausePanel.SetActive(true);
             blurCanvas.SetActive(true);
         }
         else{
             Time.timeScale = 1f;
+            FindObjectOfType<AudioManager>().Play("clickAudio");
             pausePanel.SetActive(false);
             blurCanvas.SetActive(false);
         }
@@ -64,6 +77,7 @@ public class GamePlayController : MonoBehaviour
     }
 
     public void ResumeGame(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
         skillShopPanel.SetActive(false);
@@ -73,9 +87,11 @@ public class GamePlayController : MonoBehaviour
 
     public void BackToMenu(){
         Time.timeScale = 1f;
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("LevelMenu");
     }
     public void Shop(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
         Time.timeScale = 0f;
         shopPanel.SetActive(true);
         blurCanvas.SetActive(true);
@@ -87,6 +103,7 @@ public class GamePlayController : MonoBehaviour
             blurCanvas.SetActive(true);
     }
     public void RePlay(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
         Scene m_Scene;
         m_Scene = SceneManager.GetActiveScene();
         Time.timeScale=1f;
@@ -101,13 +118,17 @@ public class GamePlayController : MonoBehaviour
         blurCanvas.SetActive(true);
     }
     public void NextLevel(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
         Scene m_Scene;
         m_Scene = SceneManager.GetActiveScene();
         Time.timeScale=1f;
         string currentlv = m_Scene.name.Substring(5);
         int crlv =int.Parse(currentlv);
         if(crlv<5){
-            SceneManager.LoadScene("Level"+crlv+1);
+            int nex = crlv+1;
+            string a = "Level"+nex;
+            Debug.Log(a);
+            SceneManager.LoadScene(a);
         }
     }
 
@@ -148,6 +169,7 @@ public class GamePlayController : MonoBehaviour
 
     }
     public void CloseItemPanel(){
+        
         hpItemPanel.SetActive(false);
         armorItemPanel.SetActive(false);
         swordItemPanel.SetActive(false);

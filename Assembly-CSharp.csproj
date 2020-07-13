@@ -59,6 +59,7 @@
      <Compile Include="Assets\HighwalkerStudios\2DDN\Script\Shadows2DDN.cs" />
      <Compile Include="Assets\Scripts\Audio Script\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Audio Script\Sound.cs" />
+     <Compile Include="Assets\Scripts\BallScript.cs" />
      <Compile Include="Assets\Scripts\Camera Script\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Camera Script\ParallaxBackground.cs" />
      <Compile Include="Assets\Scripts\Controller Script\GamePlayController.cs" />

@@ -68,6 +68,7 @@ public class Moving : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+        GamePlayController.isWin=false;
         _physicalButton = PHYSICATTACK.GetComponent<Button>();
         _magicalButton = MAGICALATTACK.GetComponent<Button>();
         // _jumpButton = JUMP.GetComponent<Button>();
@@ -260,7 +261,9 @@ public class Moving : MonoBehaviour
                 
             }
             else{
-                if(anim.GetBool("isMagicalAttack")==false){
+                if(anim.GetBool("isMagicalAttack")==false ){
+                    if(!anim.GetCurrentAnimatorStateInfo(0).IsName("PhysicalAttack")){
+                    }
                      //StartCoroutine("TrueAttack");
                     isPhysicAttack=true;
                     anim.SetBool("isPhysicalAttack",true);
@@ -293,6 +296,7 @@ public class Moving : MonoBehaviour
      target.gameObject.tag=="1_TROLL" ||  target.gameObject.tag=="2_TROLL" || target.gameObject.tag=="3_TROLL" ||  target.gameObject.tag=="Elf" ||  target.gameObject.tag=="Fairy") && target.gameObject.layer==10)
         {
             anim.SetTrigger("isHurt");
+            FindObjectOfType<AudioManager>().Play("hurt");
              //check level curent và get Enemy damge
             Scene m_Scene;
             m_Scene = SceneManager.GetActiveScene();
@@ -313,6 +317,7 @@ public class Moving : MonoBehaviour
                     enemyDmg=5f;
                 }
                 else if(target.gameObject.tag=="1_TROLL"){
+                    FindObjectOfType<AudioManager>().Play("trollBossAttack");
                     enemyDmg=20f;
                 }
             }
@@ -330,6 +335,7 @@ public class Moving : MonoBehaviour
                     enemyDmg=10f;
                 }
                 else if(target.gameObject.tag=="2_TROLL"){
+                    FindObjectOfType<AudioManager>().Play("trollBossAttack");
                     enemyDmg=35f;
                 }
                 else if(target.gameObject.tag=="ReaperMan1"){
@@ -358,6 +364,7 @@ public class Moving : MonoBehaviour
                     enemyDmg=10f;
                 }
                 else if(target.gameObject.tag=="3_TROLL"){
+                    FindObjectOfType<AudioManager>().Play("trollBossAttack");
                     enemyDmg=60f;
                 }
                 else if(target.gameObject.tag=="ReaperMan1"){

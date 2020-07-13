@@ -38,8 +38,8 @@ public class MagicalScript : MonoBehaviour
                 anim.SetInteger("Level",3);
             }
             Move();
-            if(Mathf.Abs(transform.position.x - startPoint)> 6.8){  // hủy đạn sau khi bay 1 khoảng cách so với điểm xuất phát ( thiếu hàm || )
-            Destroy(gameObject,1f);
+            if(Mathf.Abs(transform.position.x - startPoint)> 8){  // hủy đạn sau khi bay 1 khoảng cách so với điểm xuất phát ( thiếu hàm || )
+            Destroy(gameObject);
             }
 
         }

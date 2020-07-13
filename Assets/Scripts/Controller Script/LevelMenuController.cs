@@ -61,21 +61,27 @@ public class LevelMenuController : MonoBehaviour
         }
     }
     public void BackButtonOnClick(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("MainMenu");
     }
     public void PlayLevel1Onlick(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("Level1");
     }
     public void PlayLevel2Onlick(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("Level2");
     }
     public void PlayLevel3Onlick(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("Level3");
     }
     public void PlayLevel4Onlick(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("Level4");
     }
     public void PlayLevel5Onlick(){
+        FindObjectOfType<AudioManager>().Play("clickAudio");
          SceneManager.LoadScene("Level5");
     }
     

@@ -249,8 +249,18 @@ public class TrollBoss : MonoBehaviour
             Changedirection();
 
         bool x = anim.GetBool("isDie");
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.01f)
+        {
+            FindObjectOfType<AudioManager>().Play("trollBossDead");
+            GameObject damgeShow = Instantiate(floatDamgePhysic,player.transform.position, Quaternion.identity) as GameObject;
+            damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "+"+cost+" Coin";
+        }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
+            if (gameObject.tag=="1_TROLL" ||  gameObject.tag=="2_TROLL" || gameObject.tag=="3_TROLL" ||  gameObject.tag=="Elf" ||  gameObject.tag=="Fairy"){
+                GamePlayController.isWin=true;
+                Debug.Log("win");
+            }
             MainMenuController.Money+=cost;   
             MainMenuController.SaveData();
             Destroy(gameObject);
@@ -292,6 +302,7 @@ public class TrollBoss : MonoBehaviour
             //Debug.Log(Moving.isAttack);
             if(Moving.isPhysicAttack==true){ // bị đánh thường
                 anim.SetTrigger("hurt");
+                FindObjectOfType<AudioManager>().Play("trollBossHurtAudio");
                 gameObject.layer=LayerMask.NameToLayer("notAttack");
                 hp-=Moving.physicDmg;
 
@@ -305,6 +316,7 @@ public class TrollBoss : MonoBehaviour
         }
         // else{
            else if(target.gameObject.tag=="Bullet"){ // bị bắn
+                FindObjectOfType<AudioManager>().Play("magichurt");
                 Destroy(target.gameObject);
                 hp -=Moving.magicDmg;
                 Debug.Log(hp);

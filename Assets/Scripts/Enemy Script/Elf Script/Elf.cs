@@ -99,6 +99,10 @@ public class Elf : MonoBehaviour
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
+            if (gameObject.tag=="1_TROLL" ||  gameObject.tag=="2_TROLL" || gameObject.tag=="3_TROLL" ||  gameObject.tag=="Elf" ||  gameObject.tag=="Fairy"){
+                GamePlayController.isWin=true;
+                Debug.Log("win");
+            }
             MainMenuController.Money+=cost;
             MainMenuController.SaveData();
             Destroy(gameObject);

@@ -411,13 +411,15 @@ public class Gobin : MonoBehaviour
         bool x = anim.GetBool("isDie");
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.01f)
         {
+            FindObjectOfType<AudioManager>().Play("gobinDead");
             GameObject damgeShow = Instantiate(floatDamgePhysic,player.transform.position, Quaternion.identity) as GameObject;
             damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "+"+cost+" Coin";
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
             if (gameObject.tag=="1_TROLL" ||  gameObject.tag=="2_TROLL" || gameObject.tag=="3_TROLL" ||  gameObject.tag=="Elf" ||  gameObject.tag=="Fairy"){
-                //GamePlayController.PlayerWin();
+                GamePlayController.isWin=true;
+                Debug.Log("win");
             }
             MainMenuController.Money+=cost;
             MainMenuController.SaveData();
@@ -480,6 +482,7 @@ public class Gobin : MonoBehaviour
             //Debug.Log(Moving.isAttack);
             if(Moving.isPhysicAttack==true){ // bị đánh thường
                 anim.SetTrigger("hurt");
+                FindObjectOfType<AudioManager>().Play("physicAttack");
                 gameObject.layer=LayerMask.NameToLayer("notAttack");
                 hp-=Moving.physicDmg;
 
@@ -494,6 +497,7 @@ public class Gobin : MonoBehaviour
         // else{
            else if(target.tag=="Bullet"){ // bị bắn
                 hp -=Moving.magicDmg;
+                FindObjectOfType<AudioManager>().Play("magichurt");
                 Destroy(target.gameObject);
                 //float ting magic damge
                 GameObject damgeShow = Instantiate(floatDamgeMagic,transform.position, Quaternion.identity) as GameObject;
