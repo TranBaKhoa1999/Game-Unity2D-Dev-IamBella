@@ -23,6 +23,7 @@ TagManager:
   - Fairy
   - Orge
   - EnemyMoveRange
+  - arrow
   layers:
   - Default
   - TransparentFX
