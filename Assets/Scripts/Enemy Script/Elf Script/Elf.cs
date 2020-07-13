@@ -18,8 +18,6 @@ public class Elf : MonoBehaviour
     private float maxHp;
     private int cost;
     public static float dmg;
-    private bool shotable = false;
-    
 
      void Awake() {
         myBody = GetComponent<Rigidbody2D>();
@@ -34,6 +32,7 @@ public class Elf : MonoBehaviour
     {
         maxHp = 200;
         hp= 200;
+        coolDown = 1.4f;
     }
 
     // Update is called once per frame
@@ -42,17 +41,52 @@ public class Elf : MonoBehaviour
         if(hp<=0){
             anim.SetBool("isDie",true);
         }
-        // auto shot
-        if(Vector3.Distance(transform.position,player.position) <=9){
-            shotable = true;
-            anim.SetBool("Attack",true);
-            if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.01f)
-            {
-                GameObject damgeShow = Instantiate(floatDamgePhysic,player.transform.position, Quaternion.identity) as GameObject;
-                damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "+"+cost+" Coin";
+        Vector3 dir = player.position - transform.position;
+            if(transform.localScale.x < 0)
+            { 
+                // quái đi qua trái
+                if(dir.x < dir.y)
+                { 
+                    // cùng side
+                }
+                else
+                { 
+                    // khác side -> quay mặt
+                    Vector3 temp = transform.localScale;
+                    temp.x = temp.x * -1;
+                    transform.localScale = temp;
+                }
             }
-            GameObject clone =Instantiate(bullet, new Vector2(transform.position.x,transform.position.y),bullet.transform.rotation) as GameObject;
-            nextFire = Time.time+coolDown;
+            else
+            { 
+                // quái đi qua phải
+                if(dir.x>dir.y)
+                { 
+                    // cùng side
+                }
+                else
+                {
+                    // khác side -> quay mặt
+                    Vector3 temp = transform.localScale;
+                    temp.x = temp.x * -1;
+                    transform.localScale = temp;
+                }
+            }
+        // auto shot
+        if(Vector3.Distance(transform.position,player.position) <=12){
+            anim.SetBool("Attack",true);
+            if(Time.time>nextFire)
+            {
+                GameObject clone;
+                    if(transform.localScale.x<0){
+                        clone =Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y),bullet.transform.rotation) as GameObject;
+                    }
+                    else{
+                        clone =Instantiate(bullet, new Vector2(transform.position.x+1f,transform.position.y),bullet.transform.rotation) as GameObject;
+                    }
+                    nextFire = Time.time+coolDown;
+                    Destroy(clone,2f);
+            }
         }
         else{
             anim.SetBool("Attack",false);
@@ -82,6 +116,19 @@ public class Elf : MonoBehaviour
                 anim.SetBool("Attack",false);
                 Destroy(target.gameObject);
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+        }
+        if(target.tag=="Player"){
+            if(Moving.isPhysicAttack==true){ // bị đánh thường
+                anim.SetTrigger("hurt");
+                hp-=Moving.physicDmg;
+
+                // floating physic dmage
+                GameObject damgeShow = Instantiate(floatDamgePhysic,transform.position, Quaternion.identity) as GameObject;
+                damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + Moving.physicDmg.ToString();
+                 Destroy(damgeShow, 1f);
+
+                healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
+        }
     }
 }

@@ -534,7 +534,7 @@ public class Moving : MonoBehaviour
              clone.transform.localScale = scale;
          }
          else{
-            GameObject clone =Instantiate(bullet, new Vector2(transform.position.x-1f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 ))) as GameObject;
+            GameObject clone =Instantiate(bullet, new Vector2(transform.position.x-2.2f,transform.position.y), Quaternion.Euler(new Vector3(0, 0, 0 ))) as GameObject;
             Vector3 scale = bullet.transform.localScale;
              Debug.Log(magicLevel);
              if(magicLevel == 0 || magicLevel == 1 || magicLevel==2){

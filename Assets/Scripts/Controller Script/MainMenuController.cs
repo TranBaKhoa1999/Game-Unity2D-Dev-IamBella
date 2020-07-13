@@ -77,7 +77,6 @@ public class MainMenuController : MonoBehaviour
 
             binaryFormatter.Serialize(fileSteam,save);
         }
-        Debug.Log("Saved");
     }
     public static void LoadData(){
         string savePath = Application.persistentDataPath + "/gamesave.dat";
@@ -117,10 +116,8 @@ public class MainMenuController : MonoBehaviour
             SwordLv3 = save.swordLv3;
             HpRestoreLv1 = save.hpRestoreLv1;
             HpRestoreLv2 = save.hpRestoreLv2;
-            Debug.Log("Loaded");
         }
         else{
-            Debug.Log("Load Fail");
             Money = 5000;
             MagicDmg = 100;
             Health = 100;
