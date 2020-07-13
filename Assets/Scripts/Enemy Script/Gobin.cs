@@ -416,6 +416,9 @@ public class Gobin : MonoBehaviour
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Die") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
+            if (gameObject.tag=="1_TROLL" ||  gameObject.tag=="2_TROLL" || gameObject.tag=="3_TROLL" ||  gameObject.tag=="Elf" ||  gameObject.tag=="Fairy"){
+                //GamePlayController.PlayerWin();
+            }
             MainMenuController.Money+=cost;
             MainMenuController.SaveData();
             Destroy(gameObject);
@@ -483,7 +486,7 @@ public class Gobin : MonoBehaviour
                 // floating physic dmage
                 GameObject damgeShow = Instantiate(floatDamgePhysic,transform.position, Quaternion.identity) as GameObject;
                 damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text =  "-" + Moving.physicDmg.ToString();
-                 Destroy(damgeShow, 1f);
+                Destroy(damgeShow, 1f);
 
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
@@ -491,7 +494,7 @@ public class Gobin : MonoBehaviour
         // else{
            else if(target.tag=="Bullet"){ // bị bắn
                 hp -=Moving.magicDmg;
-
+                Destroy(target.gameObject);
                 //float ting magic damge
                 GameObject damgeShow = Instantiate(floatDamgeMagic,transform.position, Quaternion.identity) as GameObject;
                 damgeShow.transform.GetChild(0).GetComponent<TextMesh>().text = "-"+ Moving.magicDmg.ToString();
@@ -500,7 +503,6 @@ public class Gobin : MonoBehaviour
                 anim.SetTrigger("hurt");
                 gameObject.layer=LayerMask.NameToLayer("notAttack");
                 anim.SetBool("Attack",false);
-                Destroy(target.gameObject);
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
             else if(target.gameObject.tag=="Gobin" || target.gameObject.tag=="Orc" || target.gameObject.tag=="Orge" ||  target.gameObject.tag=="Golem1" || target.gameObject.tag== "Golem2"
