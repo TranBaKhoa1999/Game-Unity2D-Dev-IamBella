@@ -11836,6 +11836,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &333289775
 GameObject:
   m_ObjectHideFlags: 0
@@ -12228,6 +12229,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 343051872}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> master
 --- !u!1 &351469841
 GameObject:
   m_ObjectHideFlags: 0
@@ -12416,6 +12419,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &359457524
 GameObject:
   m_ObjectHideFlags: 0
@@ -12446,6 +12450,8 @@ Transform:
   m_Father: {fileID: 1552769108}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> master
 --- !u!1 &367420243
 GameObject:
   m_ObjectHideFlags: 0
@@ -45032,11 +45038,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3855715510289700224, guid: c378facd0c0841840bc84858dc8209b3,
         type: 3}
+<<<<<<< HEAD
       propertyPath: spot.Array.size
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3855715510289700224, guid: c378facd0c0841840bc84858dc8209b3,
         type: 3}
+=======
+>>>>>>> master
       propertyPath: floatDamgePhysic
       value: 
       objectReference: {fileID: 1072988029}
@@ -45045,6 +45054,7 @@ PrefabInstance:
       propertyPath: floatDamgeMagic
       value: 
       objectReference: {fileID: 625772689}
+<<<<<<< HEAD
     - target: {fileID: 3855715510289700224, guid: c378facd0c0841840bc84858dc8209b3,
         type: 3}
       propertyPath: spot.Array.data[0]
@@ -45105,6 +45115,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.52
       objectReference: {fileID: 0}
+=======
+>>>>>>> master
     - target: {fileID: 3855715510884894637, guid: c378facd0c0841840bc84858dc8209b3,
         type: 3}
       propertyPath: floatDamge
@@ -45170,8 +45182,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3855715510289700227, guid: c378facd0c0841840bc84858dc8209b3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c378facd0c0841840bc84858dc8209b3, type: 3}
 --- !u!1 &1136367230
 GameObject:
@@ -56414,6 +56425,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1365908058
 GameObject:
   m_ObjectHideFlags: 0
@@ -56534,6 +56546,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1366456616}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> master
 --- !u!1 &1366709140
 GameObject:
   m_ObjectHideFlags: 0
@@ -60700,6 +60714,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1504581514
 GameObject:
   m_ObjectHideFlags: 0
@@ -60730,6 +60745,8 @@ Transform:
   m_Father: {fileID: 1552769108}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> master
 --- !u!1 &1509390637
 GameObject:
   m_ObjectHideFlags: 0
@@ -63020,6 +63037,7 @@ Transform:
   m_Father: {fileID: 172334557}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1552769107
 GameObject:
   m_ObjectHideFlags: 0
@@ -63062,6 +63080,8 @@ Transform:
   m_Father: {fileID: 14301520}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> master
 --- !u!1 &1564169375
 GameObject:
   m_ObjectHideFlags: 0
@@ -65862,6 +65882,7 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &1641656798
 GameObject:
   m_ObjectHideFlags: 0
@@ -65982,6 +66003,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1641913330}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> master
 --- !u!1 &1646073762
 GameObject:
   m_ObjectHideFlags: 0
@@ -69957,6 +69980,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1737689108
 GameObject:
   m_ObjectHideFlags: 0
@@ -69987,6 +70011,8 @@ Transform:
   m_Father: {fileID: 1552769108}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> master
 --- !u!1 &1745526049
 GameObject:
   m_ObjectHideFlags: 0
