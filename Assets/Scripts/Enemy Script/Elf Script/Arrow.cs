@@ -32,6 +32,7 @@ public class Arrow : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.gameObject.tag == "Player"){
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("hurt");
             float subtractDmg=0;
             subtractDmg =  Elf.dmg - (Elf.dmg*Moving.armor/10)/100<0?0:Elf.dmg - (Elf.dmg*Moving.armor/10)/100;
 

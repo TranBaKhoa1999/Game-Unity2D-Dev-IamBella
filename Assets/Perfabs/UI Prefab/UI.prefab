@@ -15623,9 +15623,9 @@ MonoBehaviour:
     pitch: 0.79
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b353687d96d8ea84b921594cbf07e948, type: 3}
-    name: monsterHurtAudio
-    volume: 0.615
-    pitch: 0.79
+    name: trollBossHurtAudio
+    volume: 0.51
+    pitch: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 0767b9b0fc482814f8e3ad72fbcbabdb, type: 3}
     name: ElfDie
@@ -15661,6 +15661,16 @@ MonoBehaviour:
     name: magichurt
     volume: 0.191
     pitch: 1.91
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 2de0928629e86c545ab6c5dc9734de8d, type: 3}
+    name: trollBossDead
+    volume: 0.258
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 5d92f75a21378764b8470275f53567e5, type: 3}
+    name: trollBossAttack
+    volume: 0.258
+    pitch: 1
     source: {fileID: 0}
 --- !u!1 &6719951267618885715
 GameObject:
@@ -15748,6 +15758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6719951267735004610}
+  - component: {fileID: 210505917}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -15779,6 +15790,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &210505917
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719951267735004637}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2da82c6555aec5441bf3850c779d9566, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.164
+  m_Pitch: 2
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 104
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6864439510888362063
 GameObject:
   m_ObjectHideFlags: 0

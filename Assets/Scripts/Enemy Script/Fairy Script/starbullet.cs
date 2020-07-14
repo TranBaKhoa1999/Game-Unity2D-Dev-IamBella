@@ -31,6 +31,7 @@ public class starbullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.gameObject.tag == "Player"){
+            FindObjectOfType<AudioManager>().Play("hurt");
             Destroy(gameObject);
             float subtractDmg=0;
             subtractDmg =  Fairy.dmg - (Fairy.dmg*Moving.armor/10)/100<0?0:Fairy.dmg - (Fairy.dmg*Moving.armor/10)/100;

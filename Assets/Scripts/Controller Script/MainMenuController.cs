@@ -35,6 +35,8 @@ public class MainMenuController : MonoBehaviour
 
     public static int Armor=10;
     public static int ArmorLevel=0;
+    // panel
+    public GameObject howToPlayPanel;
 
     public void PlayGame(){
             // Open all level for demo
@@ -143,6 +145,12 @@ public class MainMenuController : MonoBehaviour
         //  Debug.Log(Money);
     }
     private void Start() {
+    }
+    public void HowToPlay(){
+        howToPlayPanel.SetActive(true);
+    }
+    public void CloseHowToPlayPanel(){
+        howToPlayPanel.SetActive(false);
     }
 
 }
