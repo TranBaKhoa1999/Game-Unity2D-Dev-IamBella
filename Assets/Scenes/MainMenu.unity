@@ -253,7 +253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase your defend 50.
+  m_Text: Increase your defend 30.
 --- !u!222 &13451723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -834,7 +834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase your defend 50.
+  m_Text: Increase your defend 30.
 --- !u!222 &214932750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2710,7 +2710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1206909738}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -2797,7 +2797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: 154}
+  m_AnchoredPosition: {x: 80, y: 55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079512513
@@ -2976,7 +2976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase your defend 50.
+  m_Text: Increase your Attack 10.
 --- !u!222 &1118428100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3219,7 +3219,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: asdasdasdas
+  m_Text: Attack Items
 --- !u!222 &1207620232
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3549,7 +3549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restory Items
+  m_Text: Recovery Items
 --- !u!222 &1435629453
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4027,7 +4027,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase your defend 50.
+  m_Text: Recovery Hp 50%.
 --- !u!222 &1637547365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4104,7 +4104,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase your defend 50.
+  m_Text: Recovery Hp 20%.
 --- !u!222 &1676656693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4586,7 +4586,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase your defend 50.
+  m_Text: Increase your defend 10.
 --- !u!222 &1821418097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4858,8 +4858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -450}
-  m_SizeDelta: {x: 1725.9, y: 582.7}
+  m_AnchoredPosition: {x: 0, y: -369.97}
+  m_SizeDelta: {x: 1725.9, y: 422.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045936680
 MonoBehaviour:
