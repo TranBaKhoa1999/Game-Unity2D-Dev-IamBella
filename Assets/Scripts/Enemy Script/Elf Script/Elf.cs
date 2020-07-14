@@ -23,7 +23,7 @@ public class Elf : MonoBehaviour
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
-        maxHp = 3000;
+        maxHp = 15000;
         cost = 1000;
         dmg=100f;
     }

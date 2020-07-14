@@ -68,6 +68,8 @@
      <Compile Include="Assets\Scripts\DetectLayer.cs" />
      <Compile Include="Assets\Scripts\Enemy Script\Elf Script\Arrow.cs" />
      <Compile Include="Assets\Scripts\Enemy Script\Elf Script\Elf.cs" />
+     <Compile Include="Assets\Scripts\Enemy Script\Fairy Script\Fairy.cs" />
+     <Compile Include="Assets\Scripts\Enemy Script\Fairy Script\starbullet.cs" />
      <Compile Include="Assets\Scripts\Enemy Script\Gobin.cs" />
      <Compile Include="Assets\Scripts\Enemy Script\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Enemy Script\TrollBoss.cs" />
