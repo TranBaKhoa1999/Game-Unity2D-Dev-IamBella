@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour
 {
-    private float moveForce = 70f; // tốc độ chạy
+    private float moveForce = 30f; // tốc độ chạy
     private float jumpForce = 300f; // độ cao nhảy
-    private float maxVelocity = 2f; // vận tốc
+    private float maxVelocity = 3f; // vận tốc
     public static bool isPhysicAttack = false;
     public bool grounded;
     public static float maxHealth;
@@ -71,11 +71,16 @@ public class Moving : MonoBehaviour
          Scene m_Scene;
         m_Scene = SceneManager.GetActiveScene();
         string currentlv = m_Scene.name.Substring(5);
-        if(currentlv=="4" || currentlv =="5"){
-            moveForce=120f;
-            jumpForce=350f;
-            maxVelocity = 3f;
+        if(currentlv=="4"){
+            moveForce=30f;
+            jumpForce=400f;
+            maxVelocity = 5f;
 
+        }
+        else if(currentlv =="5"){
+            moveForce=40f;
+            jumpForce=500f;
+            maxVelocity = 6f;
         }
 
         GamePlayController.isWin=false;
