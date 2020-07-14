@@ -25,7 +25,7 @@ public class Elf : MonoBehaviour
         player = GameObject.Find("Player").transform;
         maxHp = 3000;
         cost = 1000;
-        dmg=10f;
+        dmg=100f;
     }
     // Start is called before the first frame update
     void Start()
