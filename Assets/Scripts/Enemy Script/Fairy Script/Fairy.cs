@@ -18,6 +18,11 @@ public class Fairy : MonoBehaviour
     private float maxHp;
     private int cost;
     public static float dmg;
+    public Transform[] spot;
+    private int xSpot;
+    private float startWaitTime;
+    public float waitTime = 2;
+    private float speed=3f;
 
      void Awake() {
         // myBody = GetComponent<Rigidbody2D>();
@@ -32,6 +37,9 @@ public class Fairy : MonoBehaviour
     {
         hp= maxHp;
         coolDown = 1.4f;
+        xSpot = Random.Range(0,spot.Length);
+        startWaitTime = waitTime;
+        
     }
 
     // Update is called once per frame
@@ -39,6 +47,7 @@ public class Fairy : MonoBehaviour
     {
         if(hp<=0){
             anim.SetBool("isDie",true);
+            speed=0;
         }
         Vector3 dir = player.position - transform.position;
             if(transform.localScale.x < 0)
@@ -106,6 +115,18 @@ public class Fairy : MonoBehaviour
             MainMenuController.SaveData();
             Destroy(gameObject);
         }
+        if( Vector2.Distance(transform.position,spot[xSpot].position)< 0.2f){
+            if(startWaitTime<=0){
+                xSpot = Random.Range(0,spot.Length);
+                startWaitTime = waitTime;
+            }
+            else{
+                startWaitTime-= Time.deltaTime;
+            }
+        }
+        else{
+            Fly();
+        }
     }
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.tag=="Bullet"){ // bị bắn
@@ -133,5 +154,8 @@ public class Fairy : MonoBehaviour
                 healthBar.transform.localScale = new Vector3(hp>0?hp/maxHp:0,healthBar.transform.localScale.y,healthBar.transform.localScale.z);
             }
         }
+    }
+    void Fly(){
+        transform.position = Vector2.MoveTowards(transform.position,spot[xSpot].position,speed * Time.deltaTime);
     }
 }

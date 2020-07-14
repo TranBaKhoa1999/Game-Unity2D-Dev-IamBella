@@ -15619,7 +15619,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 220bf6ddaecdf2c409953aa27e21e20d, type: 3}
     name: gameOverAudio
-    volume: 0.615
+    volume: 1
     pitch: 0.79
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b353687d96d8ea84b921594cbf07e948, type: 3}
@@ -17668,17 +17668,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300004, guid: 2555a6c1d572f834b81d1a9400bf35d7,
+      objectReference: {fileID: 21300004, guid: 0d5ad54136f21da4cb48ea94171a104e,
         type: 3}
     - target: {fileID: 7407436138585305449, guid: 664875682e0418e43b60f57f70c5e788,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.74
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 7407436138585305449, guid: 664875682e0418e43b60f57f70c5e788,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.31
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407436138585305449, guid: 664875682e0418e43b60f57f70c5e788,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.010951638
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407436138585305449, guid: 664875682e0418e43b60f57f70c5e788,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8534105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407436138585305449, guid: 664875682e0418e43b60f57f70c5e788,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.38077164
       objectReference: {fileID: 0}
     - target: {fileID: 7407436138585305450, guid: 664875682e0418e43b60f57f70c5e788,
         type: 3}
