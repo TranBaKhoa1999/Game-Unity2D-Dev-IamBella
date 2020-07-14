@@ -40,10 +40,10 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame(){
             // Open all level for demo
-            level2=true;
-            level3=true;
-            level4=true;
-            level5=true;
+            // level2=true;
+            // level3=true;
+            // level4=true;
+            // level5=true;
          SceneManager.LoadScene("LevelMenu");
     }
      public static void SaveData() {
@@ -151,6 +151,9 @@ public class MainMenuController : MonoBehaviour
     }
     public void CloseHowToPlayPanel(){
         howToPlayPanel.SetActive(false);
+    }
+    public void ExitGame(){
+        Application.Quit();
     }
 
 }

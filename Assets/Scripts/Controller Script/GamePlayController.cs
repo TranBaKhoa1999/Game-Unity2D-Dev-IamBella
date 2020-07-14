@@ -57,6 +57,56 @@ public class GamePlayController : MonoBehaviour
      }
      private IEnumerator PlayerWin() // hàm delay thời gian bắn đạn
      {        
+        Scene m_Scene;
+        m_Scene = SceneManager.GetActiveScene();
+        Time.timeScale=1f;
+        string currentlv = m_Scene.name.Substring(5);
+        int crlv =int.Parse(currentlv);
+        if(crlv==1){
+            if(MainMenuController.level2==false){
+                MainMenuController.level2 = true;
+                MainMenuController.Money+=2000;
+            }
+            else{
+                MainMenuController.Money+=500;
+            }
+            MainMenuController.SaveData();
+        }
+        else if(crlv ==2){
+            if(MainMenuController.level3==false){
+                MainMenuController.level3 = true;
+                MainMenuController.Money+=5000;
+            }
+            else{
+                MainMenuController.Money+=1000;
+            }
+            MainMenuController.SaveData();
+        }
+        else if(crlv ==3){
+            if(MainMenuController.level4==false){
+                MainMenuController.level4 = true;
+                MainMenuController.Money+=10000;
+            }
+            else{
+                MainMenuController.Money+=1800;
+            }
+            MainMenuController.SaveData();
+        }
+        else if(crlv ==4){
+            if(MainMenuController.level5==false){
+                MainMenuController.level5 = true;
+                MainMenuController.Money+=15000;
+            }
+            else{
+                MainMenuController.Money+=3000;
+            }
+            MainMenuController.SaveData();
+        }
+        else if(crlv ==5){
+            MainMenuController.Money+=20000;
+            MainMenuController.SaveData();
+        }
+
          yield return new WaitForSeconds(2f);
             WinGame();
      }
