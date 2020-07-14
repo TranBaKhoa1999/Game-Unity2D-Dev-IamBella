@@ -520,7 +520,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 82
+    m_FontSize: 69
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -531,7 +531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prtoect own jugle 3
+  m_Text: The hidden power of bella
 --- !u!222 &161205153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1462,7 +1462,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 82
+    m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1473,7 +1473,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Evil Fairy's Jugle
+  m_Text: final chapter - decisive battle
 --- !u!222 &615929060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1812,7 +1812,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 82
+    m_FontSize: 67
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1823,7 +1823,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Elfs Attack
+  m_Text: Elf Attack
 --- !u!222 &957483252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1889,7 +1889,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 82
+    m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1900,7 +1900,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prtoect own jugle 1
+  m_Text: The Beginning
 --- !u!222 &1026588193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3006,7 +3006,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 82
+    m_FontSize: 66
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3017,7 +3017,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prtoect own jugle 2
+  m_Text: Preventing reinforecements
 --- !u!222 &2099484413
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -130,6 +130,7 @@ public class Fairy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.tag=="Bullet"){ // bị bắn
+        FindObjectOfType<AudioManager>().Play("magichurt");
                 hp -=Moving.magicDmg;
                 //float ting magic damge
                 GameObject damgeShow = Instantiate(floatDamgeMagic,transform.position, Quaternion.identity) as GameObject;
@@ -143,6 +144,7 @@ public class Fairy : MonoBehaviour
         }
         if(target.tag=="Player"){
             if(Moving.isPhysicAttack==true){ // bị đánh thường
+            FindObjectOfType<AudioManager>().Play("physicAttack");
                 anim.SetTrigger("hurt");
                 hp-=Moving.physicDmg;
 

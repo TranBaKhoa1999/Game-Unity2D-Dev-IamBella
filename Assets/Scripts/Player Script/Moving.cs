@@ -31,9 +31,9 @@ public class Moving : MonoBehaviour
     
     public Button PHYSICATTACK;
     public Button MAGICALATTACK;
-    public Button JUMP;
-    public Button MOVELEFT;
-    public Button MOVERIGHT;
+    // public Button JUMP;
+    // public Button MOVELEFT;
+    // public Button MOVERIGHT;
     private Button _physicalButton;
     private Button _magicalButton;
     public Image _magicSkill;
@@ -41,9 +41,9 @@ public class Moving : MonoBehaviour
     private float cooldown=10;
     bool isCooldown;
     public Text cooldownText;
-    private Button _jumpButton;
-    private Button _moveLeftButton;
-    private Button _moveRightButton;
+    // private Button _jumpButton;
+    // private Button _moveLeftButton;
+    // private Button _moveRightButton;
     public static bool isDie;
 
     public GameObject floatDamge;
@@ -81,6 +81,9 @@ public class Moving : MonoBehaviour
             moveForce=40f;
             jumpForce=500f;
             maxVelocity = 6f;
+        }
+        else if(currentlv=="Test"){
+            armor =100000;
         }
 
         GamePlayController.isWin=false;
