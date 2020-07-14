@@ -68,6 +68,16 @@ public class Moving : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+         Scene m_Scene;
+        m_Scene = SceneManager.GetActiveScene();
+        string currentlv = m_Scene.name.Substring(5);
+        if(currentlv=="4" || currentlv =="5"){
+            moveForce=120f;
+            jumpForce=350f;
+            maxVelocity = 3f;
+
+        }
+
         GamePlayController.isWin=false;
         _physicalButton = PHYSICATTACK.GetComponent<Button>();
         _magicalButton = MAGICALATTACK.GetComponent<Button>();

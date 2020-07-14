@@ -30,8 +30,7 @@ public class Elf : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHp = 200;
-        hp= 200;
+        hp= maxHp;
         coolDown = 1.4f;
     }
 
