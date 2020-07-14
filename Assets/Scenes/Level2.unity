@@ -1598,6 +1598,7 @@ GameObject:
   - component: {fileID: 87663891}
   - component: {fileID: 87663890}
   - component: {fileID: 87663889}
+  - component: {fileID: 87663894}
   m_Layer: 0
   m_Name: snow_ball_1 (1)
   m_TagString: Death_Area
@@ -1613,7 +1614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87663887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -316.3, y: 6.7, z: 0.14136215}
+  m_LocalPosition: {x: -316.3, y: 4.64, z: 0.14136215}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 172334557}
@@ -1698,7 +1699,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87663887}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1847,6 +1848,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &87663894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87663887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6efcbd47ca70394b96629801130c4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &91494469
 GameObject:
   m_ObjectHideFlags: 0
@@ -17253,8 +17266,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!60 &1207413056
-PolygonCollider2D:
+--- !u!61 &1207413056
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17266,7 +17279,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000015616417, y: 0.22421077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17276,86 +17289,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.63, y: -0.53999996}
-      - {x: 0.79999995, y: -0.52}
-      - {x: 1, y: -0.58}
-      - {x: 1.2099999, y: -0.56}
-      - {x: 1.29, y: -0.45999998}
-      - {x: 1.38, y: -0.39999998}
-      - {x: 1.55, y: -0.35}
-      - {x: 1.68, y: -0.26999998}
-      - {x: 1.7099999, y: -0.13}
-      - {x: 1.8, y: -0.07}
-      - {x: 1.91, y: 0.03}
-      - {x: 1.93, y: 0.089999996}
-      - {x: 1.93, y: 0.37}
-      - {x: 1.8399999, y: 0.42}
-      - {x: 1.78, y: 0.48}
-      - {x: 1.75, y: 0.52}
-      - {x: 1.6999999, y: 0.61}
-      - {x: 1.63, y: 0.65999997}
-      - {x: 1.56, y: 0.63}
-      - {x: 1.5, y: 0.65}
-      - {x: 1.4499999, y: 0.63}
-      - {x: 1.3299999, y: 0.56}
-      - {x: 1.03, y: 0.57}
-      - {x: 0.8175659, y: 0.63784575}
-      - {x: 0.69, y: 0.63}
-      - {x: 0.67026776, y: 0.6321541}
-      - {x: 0.62, y: 0.61}
-      - {x: 0.59999996, y: 0.68}
-      - {x: 0.5399984, y: 0.6851386}
-      - {x: 0.44, y: 0.69}
-      - {x: 0.44, y: 0.58}
-      - {x: 0.37, y: 0.65}
-      - {x: 0.29, y: 0.66999996}
-      - {x: 0.22999999, y: 0.65999997}
-      - {x: 0.19999999, y: 0.59999996}
-      - {x: 0.02, y: 0.59}
-      - {x: 0.03, y: 0.63}
-      - {x: 0.2335612, y: 0.64298385}
-      - {x: -0.08, y: 0.77}
-      - {x: -0.26, y: 0.77}
-      - {x: -0.37, y: 0.71999997}
-      - {x: -0.39, y: 0.69}
-      - {x: -0.45999998, y: 0.59}
-      - {x: -0.71, y: 0.58}
-      - {x: -0.76, y: 0.65999997}
-      - {x: -0.78999996, y: 0.68}
-      - {x: -0.94, y: 0.61}
-      - {x: -0.93, y: 0.57}
-      - {x: -1.17, y: 0.59}
-      - {x: -1.23, y: 0.64}
-      - {x: -1.2502645, y: 0.585415}
-      - {x: -1.3151245, y: 0.5505535}
-      - {x: -1.41, y: 0.51}
-      - {x: -1.52, y: 0.55}
-      - {x: -1.63, y: 0.58}
-      - {x: -1.7199999, y: 0.58}
-      - {x: -1.81, y: 0.51}
-      - {x: -1.8299999, y: 0.45}
-      - {x: -1.93, y: 0.35999998}
-      - {x: -1.93, y: 0.07}
-      - {x: -1.88, y: 0.01}
-      - {x: -1.77, y: -0.099999994}
-      - {x: -1.61, y: -0.22999999}
-      - {x: -1.5999999, y: -0.31}
-      - {x: -1.48, y: -0.51}
-      - {x: -1.43, y: -0.57}
-      - {x: -1.27, y: -0.65}
-      - {x: -1.16, y: -0.64}
-      - {x: -1.05, y: -0.57}
-      - {x: -0.94, y: -0.57}
-      - {x: -0.82, y: -0.59}
-      - {x: -0.45999998, y: -0.71999997}
-      - {x: -0.35999998, y: -0.75}
-      - {x: -0.25, y: -0.77}
-      - {x: 0.26999998, y: -0.77}
-      - {x: 0.31, y: -0.76}
-      - {x: 0.37, y: -0.75}
-      - {x: 0.48999998, y: -0.66999996}
+  serializedVersion: 2
+  m_Size: {x: 3.4905393, y: 0.5112696}
+  m_EdgeRadius: 0
 --- !u!212 &1207413057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17392,7 +17328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 618227a6d71b9d04d98e712296da827d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27962,7 +27898,7 @@ PrefabInstance:
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -393
+      value: -392.39
       objectReference: {fileID: 0}
     - target: {fileID: 1249508651050205191, guid: 0eae12c79dc3eee4d8f8c088a0608786,
         type: 3}
@@ -30025,6 +29961,7 @@ GameObject:
   - component: {fileID: 2062861856}
   - component: {fileID: 2062861855}
   - component: {fileID: 2062861854}
+  - component: {fileID: 2062861857}
   m_Layer: 0
   m_Name: snow_ball_1
   m_TagString: Death_Area
@@ -30107,7 +30044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062861850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -146.46788, y: 7.4, z: 0.14136215}
+  m_LocalPosition: {x: -146.46788, y: 4.64, z: 0.14136215}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 172334557}
@@ -30192,7 +30129,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062861850}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -30274,6 +30211,18 @@ PolygonCollider2D:
       - {x: 0.35, y: -1.4699999}
       - {x: 0.48, y: -1.4499999}
       - {x: 0.62, y: -1.4}
+--- !u!114 &2062861857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062861850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6efcbd47ca70394b96629801130c4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2110334752
 GameObject:
   m_ObjectHideFlags: 0
