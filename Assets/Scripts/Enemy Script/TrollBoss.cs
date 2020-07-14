@@ -185,15 +185,6 @@ public class TrollBoss : MonoBehaviour
 
         bool colplayer;
         colplayer = Physics2D.Linecast(player.position, playerpos.position, 1 << LayerMask.NameToLayer("EnemyFollowRange"));
-        // bool isRun;
-        // isRun = Physics2D.Linecast(player.position, playerpos.position, 1 << LayerMask.NameToLayer("BossRunningArea"));
-        // if(isRun){
-        //        anim.SetBool("Run",true);
-        // }
-        // else{
-        //     anim.SetBool("Run",false);
-        // }
-
         if(!collision || hp<=0){
             speedFollow=0;
         }
