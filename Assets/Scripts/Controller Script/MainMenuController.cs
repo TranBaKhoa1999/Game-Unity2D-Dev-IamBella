@@ -10,7 +10,7 @@ public class MainMenuController : MonoBehaviour
     public static bool level2{ get ; set ; }=false;
     public static bool level4{ get ; set ; }=false;
     public static bool level5{ get ; set ; }=false;
-    public static int Money=500000;
+    public static int Money=5000000;
 
     //item
     public static int ArmorLv1=0;
@@ -120,7 +120,7 @@ public class MainMenuController : MonoBehaviour
             HpRestoreLv2 = save.hpRestoreLv2;
         }
         else{
-            Money = 5000;
+            Money = 5000000;
             MagicDmg = 100;
             Health = 100;
             PhysicDmg = 20;
